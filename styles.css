@@ -1,0 +1,62 @@
+body{
+  background-color: #f5f2fd;
+}
+
+.logo{
+  width: 70px;
+}
+
+.logo-title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logo-title h4{
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: "Concert One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+  letter-spacing: .01em;
+  color: #2c1d4f;
+}
+
+.navbar{
+  background-color: transparent !important;
+  position: fixed !important;
+  width: 100vw !important;
+}
+
+.nav-link {
+  text-decoration: none; 
+  position: relative; 
+  display: inline-block; 
+  font-family: "Concert One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15 !important;
+  color: rgb(129, 123, 143);
+  letter-spacing: .01em;
+  cursor: pointer;
+}
+
+.nav-link:hover{
+  color: #f7d077;
+}
+
+.underline-li:hover::after {
+  content: ""; 
+  display: block; 
+  position: absolute; 
+  bottom: -0px; 
+  left: 0; 
+  width: 100%; 
+  height: 4px; 
+  background-color: #f7d077;
+}
+
+
+
