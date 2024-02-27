@@ -61,11 +61,11 @@
           </ul>
         </li>
       </ul>
-      <ul class="navbar-nav">
-        <li class="nav-item">
+      <ul class="navbar-nav" style="display: flex; gap: 10px;">
+        <li class="nav-item signing-up">
           <a class="nav-link" href="#">Sign In</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item signing-up">
           <a class="nav-link" href="#">Sign Up</a>
         </li>
       </ul>

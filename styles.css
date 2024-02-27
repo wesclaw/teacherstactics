@@ -58,5 +58,17 @@ body{
   background-color: #f7d077;
 }
 
+.signing-up{
+  background-color: rgb(223, 100, 123) !important;
+  display: flex;
+  gap: 30px;
+  border-radius: 20px;
+  padding: 0px 20px;
+ 
+}
 
-
+.signing-up a{
+  color: ghostwhite;
+  font-family: sans-serif;
+  font-weight: bold;
+}
