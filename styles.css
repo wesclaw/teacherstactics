@@ -45,6 +45,7 @@ body{
 
 .nav-link:hover{
   color: #f7d077;
+  transition: none; 
 }
 
 .underline-li:hover::after {
@@ -71,4 +72,8 @@ body{
   color: ghostwhite;
   font-family: sans-serif;
   font-weight: bold;
+}
+
+.navbar-nav .nav-item.dropdown:hover .dropdown-menu {
+  display: block;
 }

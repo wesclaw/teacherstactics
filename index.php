@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <!-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container">
     <a class="navbar-brand" href="#">
       <div style="display: flex; justify-content: center; align-items: center;">
@@ -71,7 +71,72 @@
       </ul>
     </div>
   </div>
+</nav> -->
+
+
+
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <img src="icons/education.png" class="logo img-fluid">
+        <div class="logo-title">
+          <h4>Teachers</h4>
+          <h4>Tactics</h4>
+        </div>
+      </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link underline-li" aria-current="page" href="#">Lesson Plans</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link underline-li" href="#">Games</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link underline-li" href="#">Games</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link underline-li" href="#">Games</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link underline-li" href="#">Games</a>
+        </li>
+        <!-- Add more navbar items as needed -->
+
+        <!-- Ages dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Ages
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Preschool</a></li>
+            <li><a class="dropdown-item" href="#">Primary</a></li>
+            <li><a class="dropdown-item" href="#">Teens</a></li>
+            <li><a class="dropdown-item" href="#">Adults</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- Sign In and Sign Up links -->
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item signing-up">
+          <a class="nav-link" href="#">Sign In</a>
+        </li>
+        <li class="nav-item signing-up">
+          <a class="nav-link" href="#">Sign Up</a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </nav>
+
    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="" async defer></script>
