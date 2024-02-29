@@ -49,9 +49,6 @@
           <a class="nav-link underline-li">Expirements</a>
         </li>
       
-        <!-- Add more navbar items as needed -->
-
-        <!-- Ages dropdown -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Ages
@@ -67,6 +64,17 @@
     </div>
   </div>
 </nav>
+
+<main>
+  <h1>The PHP Framework</h1>
+  <h2>for Preschool Teachers</h2>
+  <p>We focus on creating materials that can have an impact on your students. We’ve already laid the foundation — freeing you to create without sweating the small things.</p>
+  <div>
+  <button class="sign-in">Sign In</button>
+  <button class='sign-up'>Sign Up</button>
+  </div>
+  
+</main>
 
    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
