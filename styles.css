@@ -1,3 +1,7 @@
+:root{
+  --main-blue: rgb(226, 246, 253);
+}
+
 .navbar{
   min-height: 90px;
   position: fixed;
@@ -23,12 +27,12 @@
 }
 
 .nav-logo{
-  width: 100px;
+  height: 45px;
 }
 
 main{
   height: 100vh;
-  background-color: rgb(226, 246, 253);
+  background-color:var(--main-blue);
   background-image: url(icons/wave3.svg);
   background-repeat: no-repeat;
   background-position: bottom;
@@ -89,4 +93,14 @@ main .container p {
 .login-btn p {
   margin: 0;
   color: black !important;
+}
+
+@media(max-width: 1200px){
+  .nav-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    /* remove the margin on mobile */
+  }
 }
