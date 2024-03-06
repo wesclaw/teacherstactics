@@ -1,8 +1,79 @@
+:root{
+  --side-bar-color: ghostwhite;
+}
+
+*{
+  box-sizing: border-box !important;
+}
+
 .sidebar{
-  width: 250px;
+  width: 260px;
   height: 100vh;
-  background-color: rgb(143, 233, 195);
+  background-color: var(--side-bar-color);
   position: fixed;
   z-index: -1;
+  overflow-y: auto;
+}
+
+.holder h4{
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: rgb(52, 52, 53);
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 0;
+}
+
+.line{
+  width: 100%;
+  height: 1px;
+  background-color: black;
+  opacity: 10%;
+  margin-top: 10px;
+}
+
+.accordion {
+  margin-top: 20px;
+}
+
+.accordion-body ul{
+  padding: 0;
+}
+
+.accordion-body{
+  padding: 0px;
+}
+
+.filter-icon{
+  width: 20px;
+}
+
+.accordion-body li{
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid rgba(0, 0, 0, 0.082);
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  /* font-weight: bold; */
+}
+
+label{
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.checkbox{
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  accent-color: rgb(121, 214, 178);
+  margin-right: 10px;
+}
+
+.accordion-button{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.1rem;
+  font-weight: bold;
 }
 
