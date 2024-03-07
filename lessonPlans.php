@@ -16,8 +16,8 @@
 
   <div class="container">
   <div class="sidebar">
-    <div class="holder">
-      <div style="display: flex; justify-content: center; align-items: center; margin-top: 110px;">
+    <div class="holder"> 
+      <div style="display: flex; justify-content: center; align-items: center; margin-top: 110px;">       
         <img src="icons/filter.png" class="filter-icon">
         <h4>Filter by</h4>
       </div>
@@ -26,7 +26,7 @@
         <div class="accordion-item">
           <h2 class="accordion-header">
             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              Ages
+              Age
             </button>
           </h2>
           <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
@@ -104,19 +104,53 @@
           </h2>
           <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-              
+            <li>
+                <label for="math" name='li'>Math</label>
+                <input type="checkbox" name='li' id='math' class='checkbox'>
+              </li>
+            <li>
+                <label for="reading" name='li'>Reading</label>
+                <input type="checkbox" name='li' id='reading' class='checkbox'>
+              </li>
+            <li>
+                <label for="social-studies" name='li'>Social Studies</label>
+                <input type="checkbox" name='li' id='social-studies' class='checkbox'>
+              </li>
+            <li>
+                <label for="science" name='li'>Science</label>
+                <input type="checkbox" name='li' id='science' class='checkbox'>
+              </li>
+            <li>
+                <label for="writing" name='li'>Writing</label>
+                <input type="checkbox" name='li' id='writing' class='checkbox'>
+              </li>
+            <li>
+                <label for="language-arts" name='li'>Language Arts</label>
+                <input type="checkbox" name='li' id='language-arts' class='checkbox'>
+              </li>
             </div>
           </div>
         </div>
         <div class="accordion-item">
           <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              Accordion Item #3
+              Language Level
             </button>
           </h2>
           <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-              <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            <li>
+                <label for="beginner" name='li'>Beginner</label>
+                <input type="checkbox" name='li' id='beginner' class='checkbox'>
+              </li>
+            <li>
+                <label for="intermediate" name='li'>Intermediate</label>
+                <input type="checkbox" name='li' id='intermediate' class='checkbox'>
+              </li>
+            <li>
+                <label for="advanced" name='li'>Advanced</label>
+                <input type="checkbox" name='li' id='advanced' class='checkbox'>
+              </li>
             </div>
           </div>
         </div>
