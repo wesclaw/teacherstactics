@@ -32,6 +32,7 @@
     </button>
     </div>
   </div>
+  
 </main>
 <section class='taglines'>
   <div class="container">

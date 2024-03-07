@@ -7,12 +7,11 @@
 }
 
 .sidebar{
-  width: 260px;
+  width: 260px; 
+  /* sidebar width matches the calc on the lesson plan width */
   height: 100vh;
   background-color: var(--side-bar-color);
-  position: fixed;
-  overflow: auto;
-  z-index: -1;
+  overflow-y: auto;
 }
 
 .holder h4{
@@ -78,3 +77,31 @@ label{
   font-weight: bold;
 }
 
+.lesson-plans-wrapper{
+  display: flex;
+}
+
+.lesson-plan{
+  height: 100vh;
+  width: calc(100% - 260px);
+  /* margin-top: 90px; */
+  padding: 90px 5px;
+  overflow: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  box-shadow: inset 0px 0px 10px 0px rgba(31, 30, 30, 0.24);
+}
+
+.plan{
+  max-width: 280px;
+  height: 400px;
+  margin-top: 50px;
+  border-radius: 5px;
+  border: 3px solid black;
+  border-style: dashed;
+  border-color: rgba(0, 0, 0, 0.185);
+  cursor: pointer;
+}

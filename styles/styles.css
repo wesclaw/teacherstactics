@@ -5,10 +5,6 @@
 main{
   height: 100vh;
   background-color:var(--main-blue);
-  background-image: url(icons/wave3.svg);
-  background-repeat: no-repeat;
-  background-position: bottom;
-  background-blend-mode:hard-light;
 }
 
 main .container{
