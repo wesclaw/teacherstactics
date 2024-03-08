@@ -14,29 +14,13 @@
   <body>
   <?php include("includes/navbar.html") ?>
 
-  <div class="container lesson-plans-wrapper">
-     <?php include("includes/lesson-plan-sidebar.html") ?>
-     <div class="lesson-plan">
-      <div class="plan">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, facilis!</p>
-      </div>
-      <div class="plan">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, facilis!</p>
-      </div>
-      <div class="plan">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, facilis!</p>
-      </div>
-      <div class="plan">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, facilis!</p>
-      </div>
-      <div class="plan">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, facilis!</p>
-      </div>
-      <div class="plan">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, facilis!</p>
-      </div>
-`     </div>
+
+  <div class="container lesson-plan-wrapper">
+  <?php include("includes/sidebar.html") ?>
+  
   </div>
+  
+    
 
  
   
