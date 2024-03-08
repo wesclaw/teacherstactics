@@ -20,7 +20,22 @@
       <div class="plan">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, facilis!</p>
       </div>
-     </div>
+      <div class="plan">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, facilis!</p>
+      </div>
+      <div class="plan">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, facilis!</p>
+      </div>
+      <div class="plan">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, facilis!</p>
+      </div>
+      <div class="plan">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, facilis!</p>
+      </div>
+      <div class="plan">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, facilis!</p>
+      </div>
+`     </div>
   </div>
 
  
