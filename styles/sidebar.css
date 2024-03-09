@@ -1,8 +1,10 @@
 .sidebar{
   width: 260px; 
-  height: 100vh;
   background-color: var(--side-bar-color);
+  padding-top: 100px;
+  position: fixed;
   overflow-y: auto;
+  height: 100vh;
 }
 
 .holder h4{
@@ -44,8 +46,8 @@
   border: 1px solid rgba(0, 0, 0, 0.082);
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
-  /* font-weight: bold;
-  color: rgba(0, 0, 0, .55); */
+  font-weight: bold;
+  color: rgba(0, 0, 0, .55);
 }
 
 label{
@@ -66,4 +68,20 @@ label{
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.1rem;
   font-weight: bold;
+}
+
+.search-lesson{
+  padding: 7px;
+  font-size: 1.1rem;
+  border: none;
+  border: 1px solid rgba(0, 0, 0, 0.39);
+  outline: none;
+  width: 95%;
+  /* box-shadow: 0px 0px 3px rgba(53, 52, 52, 0.432); */
+}
+
+.holder-for-input{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 }

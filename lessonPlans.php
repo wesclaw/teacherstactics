@@ -15,11 +15,81 @@
   <?php include("includes/navbar.html") ?>
 
 
-  <div class="container lesson-plan-wrapper">
-  <?php include("includes/sidebar.html") ?>
-  
+ 
+  <div class="container lesson-wrapper">
+    <?php include("includes/sidebar.html")?>
+    <div class="lesson-plan">
+      <div class="plan">
+        <p>aksldjasdkj</p>
+      </div>
+      <div class="plan">
+        <p>aksldjasdkj</p>
+      </div>
+      <div class="plan">
+        <p>aksldjasdkj</p>
+      </div>
+      <div class="plan">
+        <p>aksldjasdkj</p>
+      </div>
+      <div class="plan">
+        <p>aksldjasdkj</p>
+      </div>
+      <div class="plan">
+        <p>aksldjasdkj</p>
+      </div>
+      <div class="plan">
+        <p>aksldjasdkj</p>
+      </div>
+      <div class="plan">
+        <p>aksldjasdkj</p>
+      </div>
+      <div class="plan">
+        <p>aksldjasdkj</p>
+      </div>
+      <div class="plan">
+        <p>aksldjasdkj</p>
+      </div>
+      <div class="plan">
+        <p>aksldjasdkj</p>
+      </div>
+      <div class="plan">
+        <p>aksldjasdkj</p>
+      </div>
+      <div class="plan">
+        <p>aksldjasdkj</p>
+      </div>
+      <div class="plan">
+        <p>aksldjasdkj</p>
+      </div>
+      <div class="plan">
+        <p>aksldjasdkj</p>
+      </div>
+      <div class="plan">
+        <p>aksldjasdkj</p>
+      </div>
+      <div class="plan">
+        <p>aksldjasdkj</p>
+      </div>
+      <div class="plan">
+        <p>aksldjasdkj</p>
+      </div>
+      <div class="plan">
+        <p>aksldjasdkj</p>
+      </div>
+      <div class="plan">
+        <p>aksldjasdkj</p>
+      </div>
+      <div class="plan">
+        <p>aksldjasdkj</p>
+      </div>
+      <div class="plan">
+        <p>aksldjasdkj</p>
+      </div>
+      <div class="plan">
+        <p>aksldjasdkj</p>
+      </div>
+    </div>
   </div>
-  
     
 
  

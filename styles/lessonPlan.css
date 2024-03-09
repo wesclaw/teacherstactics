@@ -1,0 +1,22 @@
+.lesson-wrapper{
+  min-height: 100vh;
+  display: flex;
+  width: 100vw;
+}
+
+.lesson-plan{
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 260px;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 30px;
+  gap: 30px;
+}
+
+.plan{
+  width: 280px;
+  height: 350px;
+  border: 1px solid rgba(0, 0, 0, 0.11);
+  cursor: pointer;
+}
