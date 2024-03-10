@@ -1,0 +1,14 @@
+{
+    "name": "wdknu/teacherstactics",
+    "authors": [
+        {
+            "name": "wesclaw",
+            "email": "108541397+wesclaw@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.4"
+    }
+}
+
+
