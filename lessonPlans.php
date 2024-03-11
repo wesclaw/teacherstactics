@@ -1,3 +1,7 @@
+<?php
+  include("dbh.inc.php");
+?>
+
 <!DOCTYPE html>
 
 <html>
@@ -14,13 +18,27 @@
   <body>
   <?php include("includes/navbar.html") ?>
 
+  <?php 
+  $sql = "SELECT * FROM lessons";
+  $result = mysqli_query($conn, $sql);
+  $resultCheck = mysqli_num_rows($result);
 
+  
+  ?>
  
   <div class="container lesson-wrapper">
     <?php include("includes/sidebar.html")?>
     <div class="lesson-plan">
       <div class="plan">
-        <p>aksldjasdkj</p>
+      <?php
+      if ($resultCheck > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+          echo '<p>' . $row['Title'] . '</p>';
+        }
+      } else {
+        echo '<p>No lessons found.</p>';
+      }
+      ?>
       </div>
       <div class="plan">
         <p>aksldjasdkj</p>
