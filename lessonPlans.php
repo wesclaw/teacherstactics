@@ -19,96 +19,31 @@
   <?php include("includes/navbar.html") ?>
 
   <?php 
-  $sql = "SELECT * FROM lessons";
+  $sql = "SELECT Title, Description, coverImage, Level FROM lessons";
   $result = mysqli_query($conn, $sql);
   $resultCheck = mysqli_num_rows($result);
-
-  
   ?>
  
-  <div class="container lesson-wrapper">
+ <div class="container lesson-wrapper">
     <?php include("includes/sidebar.html")?>
     <div class="lesson-plan">
-      <div class="plan">
-      <?php
-      if ($resultCheck > 0) {
-        while ($row = mysqli_fetch_assoc($result)) {
-          echo '<p>' . $row['Title'] . '</p>';
+        <?php
+        if ($resultCheck > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo '<div class="plan">';
+                echo '<img src="' . $row['coverImage'] . '" alt="Lesson Image" class="coverImage">';
+                echo '<h2>' . $row['Title'] . '</h2>';
+                echo '<p>' . $row['Level'] . '</p>';
+                echo '<p>' . $row['Description'] . '</p>';
+                echo '</div>'; // Close .plan div
+            }
+        } else {
+            echo '<p>No lessons found.</p>';
         }
-      } else {
-        echo '<p>No lessons found.</p>';
-      }
-      mysqli_close($conn);
-      ?>
-      </div>
-      <div class="plan">
-        <p>aksldjasdkj</p>
-      </div>
-      <div class="plan">
-        <p>aksldjasdkj</p>
-      </div>
-      <div class="plan">
-        <p>aksldjasdkj</p>
-      </div>
-      <div class="plan">
-        <p>aksldjasdkj</p>
-      </div>
-      <div class="plan">
-        <p>aksldjasdkj</p>
-      </div>
-      <div class="plan">
-        <p>aksldjasdkj</p>
-      </div>
-      <div class="plan">
-        <p>aksldjasdkj</p>
-      </div>
-      <div class="plan">
-        <p>aksldjasdkj</p>
-      </div>
-      <div class="plan">
-        <p>aksldjasdkj</p>
-      </div>
-      <div class="plan">
-        <p>aksldjasdkj</p>
-      </div>
-      <div class="plan">
-        <p>aksldjasdkj</p>
-      </div>
-      <div class="plan">
-        <p>aksldjasdkj</p>
-      </div>
-      <div class="plan">
-        <p>aksldjasdkj</p>
-      </div>
-      <div class="plan">
-        <p>aksldjasdkj</p>
-      </div>
-      <div class="plan">
-        <p>aksldjasdkj</p>
-      </div>
-      <div class="plan">
-        <p>aksldjasdkj</p>
-      </div>
-      <div class="plan">
-        <p>aksldjasdkj</p>
-      </div>
-      <div class="plan">
-        <p>aksldjasdkj</p>
-      </div>
-      <div class="plan">
-        <p>aksldjasdkj</p>
-      </div>
-      <div class="plan">
-        <p>aksldjasdkj</p>
-      </div>
-      <div class="plan">
-        <p>aksldjasdkj</p>
-      </div>
-      <div class="plan">
-        <p>aksldjasdkj</p>
-      </div>
+        mysqli_close($conn);
+        ?>
     </div>
-  </div>
+</div>
     
 
  
@@ -117,3 +52,18 @@
     <script src="" async defer></script>
   </body>
 </html>
+
+
+
+<?php
+            // if ($resultCheck > 0) {
+            //     $row = mysqli_fetch_assoc($result);
+            //     echo '<img src="' . $row['coverImage'] . '" alt="Lesson Image" class="coverImage">';
+            //     echo '<h2>' . $row['Title'] . '</h2>';
+            //     echo '<p>' . $row['Description'] . '</p>';
+                
+            // } else {
+            //     echo '<p>No lessons found.</p>';
+            // }
+            // mysqli_close($conn);
+            ?>
