@@ -38,6 +38,7 @@
       } else {
         echo '<p>No lessons found.</p>';
       }
+      mysqli_close($conn);
       ?>
       </div>
       <div class="plan">
