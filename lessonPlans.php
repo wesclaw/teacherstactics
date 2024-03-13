@@ -31,14 +31,18 @@
         if ($resultCheck > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
                 echo '<div class="plan">';
-                echo '<img src="' . $row['coverImage'] . '" alt="Lesson Image" class="coverImage">';
-                echo '<h2>' . $row['Title'] . '</h2>';
-                echo '<p>' . $row['Level'] . '</p>';
-                echo '<p>' . $row['Description'] . '</p>';
-                echo '</div>'; // Close .plan div
+                echo '<img src="' . $row['coverImage'] . '" alt="Lesson Image" class="img-fluid">';
+                echo '<h3 class="title">' . $row['Title'] . '</h3>';
+                echo '<p class="level">' . $row['Level'] . '</p>';
+                echo '<p class="description">' . $row['Description'] . '</p>';
+                echo '<div class="btn-holder">';
+                echo '<button class="plan-btn">Show</button>';
+                echo '<img src="icons/lock.png" class="img-fluid plan-lock">';
+                echo '</div>';
+                echo '</div>'; 
             }
         } else {
-            echo '<p>No lessons found.</p>';
+            echo '<p>No lesson found.</p>';
         }
         mysqli_close($conn);
         ?>

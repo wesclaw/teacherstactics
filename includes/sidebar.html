@@ -9,9 +9,16 @@
           </div>
           <div class="line"></div>
           <!--  -->
-          <div class="holder-for-input">
+          <!-- <div class="holder-for-input">
             <input type="text" class="search-lesson" placeholder="Search...">
-          </div>
+            <img src="icons/search.png" class="search-icon">
+          </div> -->
+          <form id="searchForm" action="your_search_endpoint.php" method="GET">
+            <div class="holder-for-input">
+                <input type="text" class="search-lesson" name="search" placeholder="Search...">
+                <img src="icons/search.png" class="search-icon" id="searchButton">
+            </div>
+        </form>
           <!--  -->
           <div class="accordion" id="accordionExample">
             <div class="accordion-item">
