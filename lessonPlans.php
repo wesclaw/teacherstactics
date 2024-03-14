@@ -19,7 +19,7 @@
   <?php include("includes/navbar.html") ?>
 
   <?php 
-  $sql = "SELECT Title, Description, coverImage, Level FROM lessons";
+ $sql = "SELECT Id, Title, Description, coverImage, Level FROM lessons";
   $result = mysqli_query($conn, $sql);
   $resultCheck = mysqli_num_rows($result);
   ?>
@@ -29,18 +29,20 @@
     <div class="lesson-plan">
         <?php
         if ($resultCheck > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
-                echo '<div class="plan">';
-                echo '<img src="' . $row['coverImage'] . '" alt="Lesson Image" class="img-fluid">';
-                echo '<h3 class="title">' . $row['Title'] . '</h3>';
-                echo '<p class="level">' . $row['Level'] . '</p>';
-                echo '<p class="description">' . $row['Description'] . '</p>';
-                echo '<div class="btn-holder">';
-                echo '<button class="plan-btn">Show</button>';
-                echo '<img src="icons/lock.png" class="img-fluid plan-lock">';
-                echo '</div>';
-                echo '</div>'; 
-            }
+          while ($row = mysqli_fetch_assoc($result)) {
+            echo '<a href="plan.php?id=' . $row['Id'] . '" class="lesson-link">'; // Link to plan.php with lesson ID as parameter
+            echo '<div class="plan">';
+            echo '<img src="' . $row['coverImage'] . '" alt="Lesson Image" class="img-fluid">';
+            echo '<h3 class="title">' . $row['Title'] . '</h3>';
+            echo '<p class="level">' . $row['Level'] . '</p>';
+            echo '<p class="description">' . $row['Description'] . '</p>';
+            echo '<div class="btn-holder">';
+            echo '<button class="plan-btn">Show</button>';
+            echo '<img src="icons/lock.png" class="img-fluid plan-lock">';
+            echo '</div>';
+            echo '</div>'; 
+            echo '</a>'; 
+        }
         } else {
             echo '<p>No lesson found.</p>';
         }
