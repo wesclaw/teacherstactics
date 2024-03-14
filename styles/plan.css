@@ -1,0 +1,44 @@
+:root{
+  --lesson-border: 5px;
+  --lesson-box-shadow:  0px 0px 10px rgba(0, 0, 0, 0.144);
+  --lesson-width: 800px;
+  --lesson-main-color: ghostwhite;
+  --lesson-margin: 20px auto;
+  --title-color:rgba(16, 131, 16, 0.705);
+  --lesson-text-color: #404145;
+  --font-weight-text: 600;
+  --skel-load-color: rgba(128, 128, 128, 0.185);
+}
+
+.plan{
+  max-width: var(--lesson-width) !important;
+  margin: var(--lesson-margin) !important;
+  background-color: var(--lesson-main-color) ;
+  border-radius: var(--lesson-border) ;
+  box-shadow: var(--lesson-box-shadow);
+  padding: 20px;
+  overflow-x: hidden !important;
+}
+
+
+.back-btn{
+  margin-top: 120px;
+  border: none;
+  background-color: ghostwhite;
+  border-radius: 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.733);
+  box-shadow:0px 0px 10px rgba(0, 0, 0, 0.178);
+  transition: transform 0.3s ease; 
+}
+
+.back-btn:hover{
+  transform: translateX(-5px);
+  transition: .5s;
+}
+
+.make-this-sticky{
+  position: sticky;
+  top: 0;
+}
