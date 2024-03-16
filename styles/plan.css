@@ -18,6 +18,7 @@
   box-shadow: var(--lesson-box-shadow);
   padding: 20px;
   overflow-x: hidden !important;
+  font-size: 1.3rem;
 }
 
 

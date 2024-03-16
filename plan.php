@@ -1,29 +1,20 @@
 <?php
 include("dbh.inc.php");
 
-// Check if the 'id' parameter is set in the URL
 if (isset($_GET['id'])) {
-    // Get the 'id' value from the URL
     $lessonID = $_GET['id'];
-
-    // Fetch the title of the lesson based on the 'id' from the database
-    $sql = "SELECT Title FROM lessons WHERE Id = $lessonID";
+    $sql = "SELECT Title FROM full_preschool_lesson_plans WHERE Id = $lessonID";
     $result = mysqli_query($conn, $sql);
 
     if ($result && mysqli_num_rows($result) > 0) {
-        // If a lesson with the provided ID is found, fetch the title
         $row = mysqli_fetch_assoc($result);
         $lessonTitle = $row['Title'];
     } else {
-        // If no lesson with the provided ID is found, set a default title
         $lessonTitle = "Lesson Not Found";
     }
 } else {
-    // If 'id' parameter is not provided in the URL, set a default title
-    $lessonTitle = "Lesson ID not provided";
+  $lessonTitle = "Lesson ID not provided";
 }
-
-// Close the database connection
 mysqli_close($conn);
 ?>
 
@@ -43,6 +34,26 @@ mysqli_close($conn);
     <?php include("includes/navbar.html") ?>
     <!-- This page will fetch from the database and display the plan based on the users click -->
 
+    <?php
+    include("dbh.inc.php");
+     $sql = "SELECT Full_lesson FROM full_preschool_lesson_plans";
+
+     // Executing the query
+     $result = mysqli_query($conn, $sql);
+ 
+     // Checking if there are any rows returned
+     if (mysqli_num_rows($result) > 0) {
+         // Fetching the result as an associative array
+         $row = mysqli_fetch_assoc($result);
+ 
+         // Storing the Full_lesson content in a variable
+         $fullLesson = $row['Full_lesson'];
+     } else {
+         // If no rows are returned or Full_lesson is empty, set a default value
+         $fullLesson = "No lesson available.";
+     }
+    ?>
+
     <div class="container">
     <div class="make-this-sticky">
     <button id="go_back_btn" class="back-btn"><img src="icons/back.png" alt="back btn">Back to plans</button>
@@ -51,7 +62,7 @@ mysqli_close($conn);
 
       </div>
       <div class="plan">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere vero, libero tenetur illo voluptate, est incidunt esse, eaque dolore mollitia voluptatem aut exercitationem a alias! Alias, delectus? Veritatis necessitatibus animi fugiat id! Sapiente eaque cum, dolorum officiis placeat nostrum exercitationem enim! Sequi assumenda minus unde, labore nihil sit? At illum debitis consectetur in vel! Vero tempore magni molestias explicabo ipsa tempora non enim exercitationem tenetur doloremque eaque, eveniet adipisci fugiat optio saepe quasi aspernatur neque provident id quis incidunt labore eos deserunt? Itaque quibusdam doloremque non eligendi qui maxime vitae beatae similique dignissimos quas voluptates, nulla amet sint? Minus, repudiandae.</p>
+        <p><?php echo $fullLesson; ?></p>
       </div>
     </div>
 
