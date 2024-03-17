@@ -36,22 +36,17 @@ mysqli_close($conn);
 
     <?php
     include("dbh.inc.php");
-     $sql = "SELECT Full_lesson FROM full_preschool_lesson_plans";
-
-     // Executing the query
-     $result = mysqli_query($conn, $sql);
- 
-     // Checking if there are any rows returned
-     if (mysqli_num_rows($result) > 0) {
-         // Fetching the result as an associative array
-         $row = mysqli_fetch_assoc($result);
- 
-         // Storing the Full_lesson content in a variable
-         $fullLesson = $row['Full_lesson'];
-     } else {
-         // If no rows are returned or Full_lesson is empty, set a default value
-         $fullLesson = "No lesson available.";
-     }
+    $sql = "SELECT Full_lesson, lesson_titles FROM full_preschool_lesson_plans";
+    $result = mysqli_query($conn, $sql);
+    
+    if (mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+        $fullLesson = $row['Full_lesson'];
+        $lessonTitles = $row['lesson_titles'];
+    } else {
+        $fullLesson = "No lesson available.";
+        $lessonTitles = "No lesson titles available.";
+    }
     ?>
 
     <div class="container">
@@ -62,7 +57,11 @@ mysqli_close($conn);
 
       </div>
       <div class="plan">
-        <p><?php echo $fullLesson; ?></p>
+        <h1><?php echo $lessonTitle ?></h1>
+        <p>Circle time</p>
+        <b><?php echo $lessonTitles?></b>
+
+
       </div>
     </div>
 
