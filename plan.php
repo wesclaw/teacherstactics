@@ -34,19 +34,21 @@ mysqli_close($conn);
     <?php include("includes/navbar.html") ?>
     <!-- This page will fetch from the database and display the plan based on the users click -->
 
-    <?php
+    <?php  
     include("dbh.inc.php");
-    $sql = "SELECT Full_lesson, lesson_titles FROM full_preschool_lesson_plans";
+    $sql = "SELECT Full_lesson, Level FROM full_preschool_lesson_plans";
     $result = mysqli_query($conn, $sql);
     
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
         $fullLesson = $row['Full_lesson'];
-        $lessonTitles = $row['lesson_titles'];
+        $Level = $row['Level']; 
+        
     } else {
         $fullLesson = "No lesson available.";
-        $lessonTitles = "No lesson titles available.";
+       
     }
+
     ?>
 
     <div class="container">
@@ -57,19 +59,37 @@ mysqli_close($conn);
 
       </div>
       <div class="plan">
-        <h1><?php echo $lessonTitle ?></h1>
-        <p>Circle time</p>
-        <b><?php echo $lessonTitles?></b>
+        <h1 class='lesson-title'><?php echo $lessonTitle ?></h1>
+        <p class='lesson-level'><?php echo $Level ?></p>
+        <div class="line"></div>
+        <!-- <p class='circle-time-text'>Circle time</p> -->
+        <div class="circle-time">
+          <img src="icons/circletime.png" class="img-fluid plan-icon"> <em class='circle-time-text'>Circle Time</em>
+        </div>
+        <p class='full_lesson'><?php echo $fullLesson ?></p>
 
+       
 
       </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script>
-      const go_back_btn =document.getElementById('go_back_btn').addEventListener('click',()=>{
+      // 
+
+      const go_back_btn = document.getElementById('go_back_btn').addEventListener('click',()=>{
         window.history.back()
       })
+
+      // 
+
+      // this code finds any sentence ending in ':' and then wrapping the whole sentence in <br> tags and then setting the sentences to a <b> tag.
+      const full_lesson = document.querySelector('.full_lesson');
+      const lessonText = full_lesson.textContent;
+      const regex = /([^.!?:]*?:)(?=\s|$)/g;
+      const modifiedText = lessonText.replace(regex, '<br><b>$1</b><br>');
+      full_lesson.innerHTML = modifiedText;
+      // 
     </script>
   </body>
 </html>
