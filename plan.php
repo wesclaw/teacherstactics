@@ -36,14 +36,15 @@ mysqli_close($conn);
 
     <?php  
     include("dbh.inc.php");
-    $sql = "SELECT Full_lesson, Level FROM full_preschool_lesson_plans";
+    $sql = "SELECT Full_lesson, Level, Games, time FROM full_preschool_lesson_plans";
     $result = mysqli_query($conn, $sql);
     
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
         $fullLesson = $row['Full_lesson'];
         $Level = $row['Level']; 
-        
+        $time = $row['time'];
+        $Games = $row['Games'];
     } else {
         $fullLesson = "No lesson available.";
        
@@ -52,22 +53,39 @@ mysqli_close($conn);
     ?>
 
     <div class="container">
-    <div class="make-this-sticky">
-    <button id="go_back_btn" class="back-btn"><img src="icons/back.png" alt="back btn">Back to plans</button>
-  </div>
+      <div class="make-this-sticky">
+          <button id="go_back_btn" class="back-btn"><img src="icons/back.png" alt="back btn">Back to plans</button>
+      </div>
       <div class="sidebar">
 
       </div>
       <div class="plan">
+        <p class='topic-text'><b>Topic:</b></p>
         <h1 class='lesson-title'><?php echo $lessonTitle ?></h1>
-        <p class='lesson-level'><?php echo $Level ?></p>
-        <div class="line"></div>
-        <!-- <p class='circle-time-text'>Circle time</p> -->
-        <div class="circle-time">
-          <img src="icons/circletime.png" class="img-fluid plan-icon"> <em class='circle-time-text'>Circle Time</em>
+        <p class='time-text'><b>Circle Time:</b> <?php echo $time?></p>
+        <p class='lesson-level'><b>Level:</b> <?php echo $Level ?></p>
+
+
+        <!-- <p class='materials-used'><b>Materials:</b> <a href="" class='link-for-materials'>See here</a></p> -->
+
+        <div class="make-this-sticky">
+        <p class='materials-used'><b>Materials:</b> <a href="" class='link-for-materials'>See here</a></p>
         </div>
+        
+
+        <div class="line"></div>
+
+        <div class="circle-time">
+          <img src="icons/circletime.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Circle Time</p>
+        </div>
+
         <p class='full_lesson'><?php echo $fullLesson ?></p>
 
+        <div class="circle-time">
+          <img src="icons/movement.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Games</p>
+        </div>
+
+        <p class='full_lesson'><?php echo $Games?></p>
        
 
       </div>
@@ -89,6 +107,17 @@ mysqli_close($conn);
       const regex = /([^.!?:]*?:)(?=\s|$)/g;
       const modifiedText = lessonText.replace(regex, '<br><b>$1</b><br>');
       full_lesson.innerHTML = modifiedText;
+
+      // const full_lessons = document.querySelectorAll('.full_lesson');
+
+      // // Iterate over each element and apply modifications
+      // full_lessons.forEach(full_lesson => {
+      //     const lessonText = full_lesson.textContent;
+      //     const regex = /([^.!?:]*?:)(?=\s|$)/g;
+      //     const modifiedText = lessonText.replace(regex, '<br><b>$1</b><br>');
+      //     full_lesson.innerHTML = modifiedText;
+      // });
+            
       // 
     </script>
   </body>
