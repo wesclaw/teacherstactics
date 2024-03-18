@@ -46,6 +46,7 @@ html{
 .make-this-sticky{
   position: sticky;
   top: 0;
+  width: 185px;
 }
 
 .circle-time-text{
@@ -64,6 +65,11 @@ html{
 
 .lesson-title{
   text-align: center;
+  color: rgb(236, 81, 81);
+  font-family: "Angkor", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
 }
 
 .lesson-level{
@@ -106,4 +112,29 @@ html{
 
 .games-section{
   margin-top: 20px;
+}
+
+.youtube-link{
+  width: 350px;
+  height: 300px;
+  border-radius: 20px;
+}
+
+.book-link-container{
+  margin-top: 20px;
+}
+
+.flex{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  /* width: 100%; */
+}
+
+iframe{
+  width: 350px;
+  height: 300px;
+  border-radius: 20px;
 }

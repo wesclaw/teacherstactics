@@ -28,15 +28,19 @@ mysqli_close($conn);
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!--  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Angkor&display=swap" rel="stylesheet">
+    <!--  -->
     <link rel="stylesheet" href="styles/plan.css">
   </head>
   <body>
     <?php include("includes/navbar.html") ?>
     <!-- This page will fetch from the database and display the plan based on the users click -->
-
     <?php  
     include("dbh.inc.php");
-    $sql = "SELECT Full_lesson, Level, Games, time, Books FROM full_preschool_lesson_plans";
+    $sql = "SELECT Full_lesson, Level, Games, time, Books, Songs FROM full_preschool_lesson_plans";
     $result = mysqli_query($conn, $sql);
     
     if (mysqli_num_rows($result) > 0) {
@@ -46,9 +50,9 @@ mysqli_close($conn);
         $time = $row['time'];
         $Games = $row['Games'];
         $Books = $row['Books'];
+        $Songs = $row['Songs'];
     } else {
         $fullLesson = "No lesson available.";
-       
     }
 
     ?>
@@ -66,7 +70,7 @@ mysqli_close($conn);
         <p class='time-text'><b>Circle Time:</b> <?php echo $time?></p>
         <p class='lesson-level'><b>Level:</b> <?php echo $Level ?></p>
 
-        <div class="make-this-sticky">
+        <div>
         <p class='materials-used'><b>Materials:</b> <a href="" class='link-for-materials'>See here</a></p>
         </div>
         
@@ -89,26 +93,22 @@ mysqli_close($conn);
           <img src="icons/blue-book.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Books</p>
         </div>
 
-        <?php
-// Assuming $Books variable contains multiple YouTube video IDs as text from your database
+       
+        <div class='book-link-container'>
+          <div class='flex'><?php echo $Books?></div>
+        </div>
 
-// Split the $Books variable into an array of individual video IDs (assuming each video ID is separated by a delimiter like a comma)
-$videoArray = explode(',', $Books);
-
-// Loop through each video ID and generate the corresponding iframe elements
-foreach ($videoArray as $videoID) {
-    // Trim whitespace from the video ID
-    $videoID = trim($videoID);
-    
-    // Output the iframe element with the YouTube video ID as the src attribute
-    echo "<iframe width='560' height='315' src='https://www.youtube.com/embed/$videoID' frameborder='0' allowfullscreen></iframe>";
-}
-?>
-
-
+        <div class="circle-time" style='margin-top: 20px;'>
+          <img src="icons/music.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Songs</p>
+        </div>
         
-
+        <div class='book-link-container'>
+          <div class='flex'><?php echo $Songs?></div>
+        </div>
         
+        <div class="circle-time" style='margin-top: 20px;'>
+          <img src="icons/music.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Experiments</p>
+        </div>
 
       </div>
     </div>
@@ -125,28 +125,11 @@ foreach ($videoArray as $videoID) {
 
       // this code finds any sentence ending in ':' and then wrapping the whole sentence in <br> tags and then setting the sentences to a <b> tag.
 
-
       const full_lesson = document.querySelector('.full_lesson');
       const lessonText = full_lesson.textContent;
       const regex = /([^.!?:]*?:)(?=\s|$)/g;
       const modifiedText = lessonText.replace(regex, '<br><b>$1</b><br>');
       full_lesson.innerHTML = modifiedText;
-
-      // const full_lessons = document.querySelectorAll('.full_lesson');
-      // full_lessons.forEach(full_lesson => {
-      //     const lessonText = full_lesson.textContent;
-      //     const regex = /([^.!?:]*?:)(?=\s|$)/g;
-      //     const modifiedText = lessonText.replace(regex, '<br><b>$1</b><br>');
-      //     full_lesson.innerHTML = modifiedText;
-      // });
-
-
-      // const games_section = document.querySelector('.games-section');
-      // const games = games_section.textContent;
-      // const regex_games = /([^.!?:]*?:)(?=\s|$)/g;
-      // const modifiedText_games = games.replace(regex_games, '<br><b style="text-align: center;">$1</b><br>');
-      // games_section.innerHTML = modifiedText_games;
-
 
       const games_section = document.querySelector('.games-section');
       const games = games_section.textContent;
