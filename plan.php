@@ -36,7 +36,7 @@ mysqli_close($conn);
 
     <?php  
     include("dbh.inc.php");
-    $sql = "SELECT Full_lesson, Level, Games, time FROM full_preschool_lesson_plans";
+    $sql = "SELECT Full_lesson, Level, Games, time, Books FROM full_preschool_lesson_plans";
     $result = mysqli_query($conn, $sql);
     
     if (mysqli_num_rows($result) > 0) {
@@ -45,6 +45,7 @@ mysqli_close($conn);
         $Level = $row['Level']; 
         $time = $row['time'];
         $Games = $row['Games'];
+        $Books = $row['Books'];
     } else {
         $fullLesson = "No lesson available.";
        
@@ -65,9 +66,6 @@ mysqli_close($conn);
         <p class='time-text'><b>Circle Time:</b> <?php echo $time?></p>
         <p class='lesson-level'><b>Level:</b> <?php echo $Level ?></p>
 
-
-        <!-- <p class='materials-used'><b>Materials:</b> <a href="" class='link-for-materials'>See here</a></p> -->
-
         <div class="make-this-sticky">
         <p class='materials-used'><b>Materials:</b> <a href="" class='link-for-materials'>See here</a></p>
         </div>
@@ -85,16 +83,40 @@ mysqli_close($conn);
           <img src="icons/movement.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Games</p>
         </div>
 
-        <p class='full_lesson'><?php echo $Games?></p>
-       
+        <p class='games-section'><?php echo $Games?></p>
+
+        <div class="circle-time">
+          <img src="icons/blue-book.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Books</p>
+        </div>
+
+        <?php
+// Assuming $Books variable contains multiple YouTube video IDs as text from your database
+
+// Split the $Books variable into an array of individual video IDs (assuming each video ID is separated by a delimiter like a comma)
+$videoArray = explode(',', $Books);
+
+// Loop through each video ID and generate the corresponding iframe elements
+foreach ($videoArray as $videoID) {
+    // Trim whitespace from the video ID
+    $videoID = trim($videoID);
+    
+    // Output the iframe element with the YouTube video ID as the src attribute
+    echo "<iframe width='560' height='315' src='https://www.youtube.com/embed/$videoID' frameborder='0' allowfullscreen></iframe>";
+}
+?>
+
+
+        
+
+        
 
       </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script>
-      // 
 
+      // 
       const go_back_btn = document.getElementById('go_back_btn').addEventListener('click',()=>{
         window.history.back()
       })
@@ -102,6 +124,8 @@ mysqli_close($conn);
       // 
 
       // this code finds any sentence ending in ':' and then wrapping the whole sentence in <br> tags and then setting the sentences to a <b> tag.
+
+
       const full_lesson = document.querySelector('.full_lesson');
       const lessonText = full_lesson.textContent;
       const regex = /([^.!?:]*?:)(?=\s|$)/g;
@@ -109,16 +133,29 @@ mysqli_close($conn);
       full_lesson.innerHTML = modifiedText;
 
       // const full_lessons = document.querySelectorAll('.full_lesson');
-
-      // // Iterate over each element and apply modifications
       // full_lessons.forEach(full_lesson => {
       //     const lessonText = full_lesson.textContent;
       //     const regex = /([^.!?:]*?:)(?=\s|$)/g;
       //     const modifiedText = lessonText.replace(regex, '<br><b>$1</b><br>');
       //     full_lesson.innerHTML = modifiedText;
       // });
-            
-      // 
+
+
+      // const games_section = document.querySelector('.games-section');
+      // const games = games_section.textContent;
+      // const regex_games = /([^.!?:]*?:)(?=\s|$)/g;
+      // const modifiedText_games = games.replace(regex_games, '<br><b style="text-align: center;">$1</b><br>');
+      // games_section.innerHTML = modifiedText_games;
+
+
+      const games_section = document.querySelector('.games-section');
+      const games = games_section.textContent;
+      const regex_games = /([^.!?:]*?:)(?=\s|$)/g;
+      const modifiedText_games = games.replace(regex_games, '<div style="text-align: center;"><b>$1</b></div>');
+      games_section.innerHTML = modifiedText_games;
+
+    
+
     </script>
   </body>
 </html>
