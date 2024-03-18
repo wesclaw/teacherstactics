@@ -28,6 +28,7 @@ mysqli_close($conn);
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
     <!--  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,7 +41,7 @@ mysqli_close($conn);
     <!-- This page will fetch from the database and display the plan based on the users click -->
     <?php  
     include("dbh.inc.php");
-    $sql = "SELECT Full_lesson, Level, Games, time, Books, Songs FROM full_preschool_lesson_plans";
+    $sql = "SELECT Full_lesson, Level, Games, time, Books, Songs, Experiments, Projects, Arts_and_crafts, School_trips, Other_ideas FROM full_preschool_lesson_plans";
     $result = mysqli_query($conn, $sql);
     
     if (mysqli_num_rows($result) > 0) {
@@ -51,6 +52,11 @@ mysqli_close($conn);
         $Games = $row['Games'];
         $Books = $row['Books'];
         $Songs = $row['Songs'];
+        $Experiments = $row['Experiments'];
+        $Projects = $row['Projects'];
+        $Arts_and_crafts = $row['Arts_and_crafts'];
+        $School_trips = $row['School_trips'];
+        $Other_ideas = $row['Other_ideas'];
     } else {
         $fullLesson = "No lesson available.";
     }
@@ -74,7 +80,6 @@ mysqli_close($conn);
         <p class='materials-used'><b>Materials:</b> <a href="" class='link-for-materials'>See here</a></p>
         </div>
         
-
         <div class="line"></div>
 
         <div class="circle-time">
@@ -107,7 +112,43 @@ mysqli_close($conn);
         </div>
         
         <div class="circle-time" style='margin-top: 20px;'>
-          <img src="icons/music.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Experiments</p>
+          <img src="icons/science2.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Experiments</p>
+        </div>
+
+        <div class='book-link-container'>
+          <p class='games-section'><?php echo $Experiments?></p>
+        </div>
+
+        <div class="circle-time" style='margin-top: 20px;'>
+          <img src="icons/projects.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Projects</p>
+        </div>
+
+        <div class='book-link-container'>
+          <p class='games-section'><?php echo $Projects?></p>
+        </div>
+
+        <div class="circle-time" style='margin-top: 20px;'>
+          <img src="icons/art.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Arts & Crafts</p>
+        </div>
+
+        <div class='book-link-container'>
+          <p class='games-section'><?php echo $Arts_and_crafts?></p>
+        </div>
+
+        <div class="circle-time" style='margin-top: 20px;'>
+          <img src="icons/trips.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Trips</p>
+        </div>
+
+        <div class='book-link-container'>
+          <p class='games-section'><?php echo $School_trips?></p>
+        </div>
+
+        <div class="circle-time" style='margin-top: 20px;'>
+          <img src="icons/otherideas.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Other Ideas</p>
+        </div>
+
+        <div class='book-link-container'>
+          <p class='games-section'><?php echo $Other_ideas?></p>
         </div>
 
       </div>
@@ -116,12 +157,9 @@ mysqli_close($conn);
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script>
 
-      // 
       const go_back_btn = document.getElementById('go_back_btn').addEventListener('click',()=>{
         window.history.back()
       })
-
-      // 
 
       // this code finds any sentence ending in ':' and then wrapping the whole sentence in <br> tags and then setting the sentences to a <b> tag.
 
@@ -131,13 +169,14 @@ mysqli_close($conn);
       const modifiedText = lessonText.replace(regex, '<br><b>$1</b><br>');
       full_lesson.innerHTML = modifiedText;
 
-      const games_section = document.querySelector('.games-section');
-      const games = games_section.textContent;
-      const regex_games = /([^.!?:]*?:)(?=\s|$)/g;
-      const modifiedText_games = games.replace(regex_games, '<div style="text-align: center;"><b>$1</b></div>');
-      games_section.innerHTML = modifiedText_games;
+      const games_sections = document.querySelectorAll('.games-section');
 
-    
+      games_sections.forEach(games_section => {
+          const games = games_section.textContent;
+          const regex_games = /([^.!?:]*?:)(?=\s|$)/g;
+          const modifiedText_games = games.replace(regex_games, '<div style="text-align: center;"><b>$1</b></div>');
+          games_section.innerHTML = modifiedText_games;
+      });
 
     </script>
   </body>

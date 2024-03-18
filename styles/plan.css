@@ -61,6 +61,9 @@ html{
   margin-top: 10px;
   gap: 5px;
   font-weight: 400;
+  /* color: rgb(124, 110, 216); */
+  font-weight: bold;
+  font-size: 2rem;
 }
 
 .lesson-title{
@@ -86,7 +89,7 @@ html{
 }
 
 .plan-icon{
-  width: 30px;
+  width: 35px;
   object-fit: cover;
 }
 
