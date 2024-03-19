@@ -67,9 +67,44 @@ mysqli_close($conn);
       <div class="make-this-sticky">
           <button id="go_back_btn" class="back-btn"><img src="icons/back.png" alt="back btn">Back to plans</button>
       </div>
+      <!--  -->
       <div class="sidebar">
-
+        <p>On this page</p>
+        <ul>
+          <li>
+            <a href="">ads</a>
+          </li>
+          <li>
+            <a href="">asd</a>
+          </li>
+          <li>
+            <a href="">asd</a>
+          </li>
+          <li>
+            <a href="">asd</a>
+          </li>
+          <li>
+            <a href="">ads</a>
+          </li>
+          <li>
+            <a href="">ads</a>
+          </li>
+          <li>
+            <a href="">asd</a>
+          </li>
+          <li>
+            <a href="">asd</a>
+          </li>
+          <li>
+            <a href="">asd</a>
+          </li>
+          <li>
+            <a href="">asd</a>
+          </li>
+        </ul>
       </div>
+      
+      <!--  -->
       <div class="plan">
         <p class='topic-text'><b>Topic:</b></p>
         <h1 class='lesson-title'><?php echo $lessonTitle ?></h1>
@@ -151,8 +186,16 @@ mysqli_close($conn);
           <p class='games-section'><?php echo $Other_ideas?></p>
         </div>
 
+        <div class="circle-time" style='margin-top: 20px;'>
+          <img src="icons/worksheets.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Worksheets</p>
+        </div>
+
       </div>
     </div>
+
+    <section class='worksheets'>
+
+    </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script>
