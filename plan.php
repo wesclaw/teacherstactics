@@ -69,41 +69,26 @@ mysqli_close($conn);
       </div>
       <!--  -->
       <div class="sidebar">
-        <p>On this page</p>
+        <div class="make-this" id="on-this-page">
+        <h2>On This Page</h2>
         <ul>
-          <li>
-            <a href="">ads</a>
-          </li>
-          <li>
-            <a href="">asd</a>
-          </li>
-          <li>
-            <a href="">asd</a>
-          </li>
-          <li>
-            <a href="">asd</a>
-          </li>
-          <li>
-            <a href="">ads</a>
-          </li>
-          <li>
-            <a href="">ads</a>
-          </li>
-          <li>
-            <a href="">asd</a>
-          </li>
-          <li>
-            <a href="">asd</a>
-          </li>
-          <li>
-            <a href="">asd</a>
-          </li>
-          <li>
-            <a href="">asd</a>
-          </li>
+            <li><a href="#section1">Circle Time</a></li>
+            <li><a href="#section2">Games</a></li>
+            <li><a href="#section3">Books</a></li>
+            <li><a href="#section4">Songs</a></li>
+            <li><a href="#section5">Experiments</a></li>
+            <li><a href="#section6">Projects</a></li>
+            <li><a href="#section7">Arts & Crafts</a></li>
+            <li><a href="#section8">Trips</a></li>
+            <li><a href="#section9">Other Ideas</a></li>
+            <li><a href="#section10">Worksheets</a></li>
+            <!-- Add more links as needed -->
         </ul>
+        </ul>
+        </div>
+        
       </div>
-      
+
       <!--  -->
       <div class="plan">
         <p class='topic-text'><b>Topic:</b></p>
@@ -117,19 +102,19 @@ mysqli_close($conn);
         
         <div class="line"></div>
 
-        <div class="circle-time">
+        <div class="circle-time" id='section1'>
           <img src="icons/circletime.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Circle Time</p>
         </div>
 
         <p class='full_lesson'><?php echo $fullLesson ?></p>
 
-        <div class="circle-time">
+        <div class="circle-time" id='section2'>
           <img src="icons/movement.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Games</p>
         </div>
 
         <p class='games-section'><?php echo $Games?></p>
 
-        <div class="circle-time">
+        <div class="circle-time" id='section3'>
           <img src="icons/blue-book.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Books</p>
         </div>
 
@@ -138,7 +123,7 @@ mysqli_close($conn);
           <div class='flex'><?php echo $Books?></div>
         </div>
 
-        <div class="circle-time" style='margin-top: 20px;'>
+        <div class="circle-time" style='margin-top: 20px;' id='section4'>
           <img src="icons/music.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Songs</p>
         </div>
         
@@ -146,15 +131,15 @@ mysqli_close($conn);
           <div class='flex'><?php echo $Songs?></div>
         </div>
         
-        <div class="circle-time" style='margin-top: 20px;'>
+        <div class="circle-time" style='margin-top: 20px;' id='section5'>
           <img src="icons/science2.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Experiments</p>
         </div>
 
-        <div class='book-link-container'>
+        <div class='book-link-container' >
           <p class='games-section'><?php echo $Experiments?></p>
         </div>
 
-        <div class="circle-time" style='margin-top: 20px;'>
+        <div class="circle-time" style='margin-top: 20px;'id='section6'>
           <img src="icons/projects.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Projects</p>
         </div>
 
@@ -162,7 +147,7 @@ mysqli_close($conn);
           <p class='games-section'><?php echo $Projects?></p>
         </div>
 
-        <div class="circle-time" style='margin-top: 20px;'>
+        <div class="circle-time" style='margin-top: 20px;' id='section7'>
           <img src="icons/art.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Arts & Crafts</p>
         </div>
 
@@ -170,7 +155,7 @@ mysqli_close($conn);
           <p class='games-section'><?php echo $Arts_and_crafts?></p>
         </div>
 
-        <div class="circle-time" style='margin-top: 20px;'>
+        <div class="circle-time" style='margin-top: 20px;' id='section8'>
           <img src="icons/trips.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Trips</p>
         </div>
 
@@ -178,7 +163,7 @@ mysqli_close($conn);
           <p class='games-section'><?php echo $School_trips?></p>
         </div>
 
-        <div class="circle-time" style='margin-top: 20px;'>
+        <div class="circle-time" style='margin-top: 20px;' id='section9'>
           <img src="icons/otherideas.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Other Ideas</p>
         </div>
 
@@ -186,7 +171,7 @@ mysqli_close($conn);
           <p class='games-section'><?php echo $Other_ideas?></p>
         </div>
 
-        <div class="circle-time" style='margin-top: 20px;'>
+        <div class="circle-time" style='margin-top: 20px;'id='section10'>
           <img src="icons/worksheets.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Worksheets</p>
         </div>
 
@@ -220,6 +205,23 @@ mysqli_close($conn);
           const modifiedText_games = games.replace(regex_games, '<div style="text-align: center;"><b>$1</b></div>');
           games_section.innerHTML = modifiedText_games;
       });
+
+      window.addEventListener('scroll', function() {
+        const sections = document.querySelectorAll('div[id^="section"]');
+        const sidebarLinks = document.querySelectorAll('#on-this-page ul li a');
+
+        const offset = 550; // Adjust this offset value to trigger the change sooner
+    
+        sections.forEach((section, index) => {
+            const sectionTop = section.offsetTop;
+            if (pageYOffset >= sectionTop - offset) {
+                sidebarLinks.forEach(link => {
+                    link.classList.remove('active');
+                });
+                sidebarLinks[index].classList.add('active');
+            }
+        });
+    });
 
     </script>
   </body>

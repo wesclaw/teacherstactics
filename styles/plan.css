@@ -50,14 +50,35 @@ html{
   width: 185px;
 }
 
-.sidebar{
-  background-color: rgb(196, 194, 194);
-  min-width: 120px;
-  position: fixed;
-  top: 120px;
-  width: 185px;
-  /* right: 0; */
+/*  */
+
+.container{
+  position: relative;
 }
+
+.make-this{
+  position: fixed;
+  background-color: ghostwhite;
+  min-width: 120px;
+  padding: 20px;
+}
+
+.make-this p {
+  font-weight: bold;
+}
+
+.sidebar{
+  position: absolute;
+  top: 120px;
+  min-width: 185px;
+  right: 0;
+}
+
+.active{
+  color: red;
+}
+
+/*  */
 
 .circle-time-text{
   margin: 0;
