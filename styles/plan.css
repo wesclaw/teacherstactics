@@ -59,7 +59,7 @@ html{
 .make-this{
   position: fixed;
   background-color: ghostwhite;
-  min-width: 120px;
+  min-width: 190px;
   padding: 10px;
 }
 
@@ -135,6 +135,7 @@ html{
   background-color: rgba(0, 0, 0, 0.336);
   opacity: 50%;
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .plan-icon{
@@ -195,6 +196,6 @@ iframe{
   min-height: 400px;
   background-color:ghostwhite;
   position: relative;
-  border: 5px dashed rgba(0, 0, 0, 0.548);
+  border: 3px dashed rgba(0, 0, 0, 0.274);
 }
 

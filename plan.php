@@ -27,6 +27,7 @@ mysqli_close($conn);
     <title><?php echo htmlspecialchars($lessonTitle); ?></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="icons/logo-pencil.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <!--  -->
@@ -71,6 +72,7 @@ mysqli_close($conn);
       <div class="sidebar">
         <div class="make-this" id="on-this-page">
         <h2>On This Page</h2>
+        <div class="line"></div>
         <ul>
             <li><a href="#section1">Circle Time</a></li>
             <li><a href="#section2">Games</a></li>
