@@ -187,6 +187,7 @@ mysqli_close($conn);
 
       const go_back_btn = document.getElementById('go_back_btn').addEventListener('click',()=>{
         window.history.back()
+        location.href = 'lessonPlans.php'
       })
 
       // this code finds any sentence ending in ':' and then wrapping the whole sentence in <br> tags and then setting the sentences to a <b> tag.
@@ -219,6 +220,7 @@ mysqli_close($conn);
                     link.classList.remove('active');
                 });
                 sidebarLinks[index].classList.add('active');
+
             }
         });
     });
