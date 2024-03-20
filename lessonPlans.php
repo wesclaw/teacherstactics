@@ -58,18 +58,3 @@
     <script src="" async defer></script>
   </body>
 </html>
-
-
-
-<?php
-            // if ($resultCheck > 0) {
-            //     $row = mysqli_fetch_assoc($result);
-            //     echo '<img src="' . $row['coverImage'] . '" alt="Lesson Image" class="coverImage">';
-            //     echo '<h2>' . $row['Title'] . '</h2>';
-            //     echo '<p>' . $row['Description'] . '</p>';
-                
-            // } else {
-            //     echo '<p>No lessons found.</p>';
-            // }
-            // mysqli_close($conn);
-            ?>

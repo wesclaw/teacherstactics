@@ -1,21 +1,34 @@
 <?php
+
 include("dbh.inc.php");
+
+$lessonTitle = "Lesson Not Found"; // Default value
 
 if (isset($_GET['id'])) {
     $lessonID = $_GET['id'];
-    $sql = "SELECT Title FROM full_preschool_lesson_plans WHERE Id = $lessonID";
+    $sql = "SELECT Title, Description, CoverImage, Level, Full_lesson, Games, time, Books, Songs, Experiments, Projects, Arts_and_crafts, School_trips, Other_ideas FROM full_preschool_lesson_plans WHERE Id = $lessonID";
     $result = mysqli_query($conn, $sql);
 
     if ($result && mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
+        // Assign retrieved values to variables
         $lessonTitle = $row['Title'];
-    } else {
-        $lessonTitle = "Lesson Not Found";
+        $Description = $row['Description'];
+        $CoverImage = $row['CoverImage'];
+        $Level = $row['Level'];
+        $fullLesson = $row['Full_lesson'];
+        $Games = $row['Games'];
+        $time = $row['time'];
+        $Books = $row['Books'];
+        $Songs = $row['Songs'];
+        $Experiments = $row['Experiments'];
+        $Projects = $row['Projects'];
+        $Arts_and_crafts = $row['Arts_and_crafts'];
+        $School_trips = $row['School_trips'];
+        $Other_ideas = $row['Other_ideas'];
     }
-} else {
-  $lessonTitle = "Lesson ID not provided";
 }
-mysqli_close($conn);
+mysqli_close($conn); 
 ?>
 
 <!DOCTYPE html>
@@ -39,31 +52,7 @@ mysqli_close($conn);
   </head>
   <body>
     <?php include("includes/navbar.html") ?>
-    <!-- This page will fetch from the database and display the plan based on the users click -->
-    <?php  
-    include("dbh.inc.php");
-    $sql = "SELECT Full_lesson, Level, Games, time, Books, Songs, Experiments, Projects, Arts_and_crafts, School_trips, Other_ideas FROM full_preschool_lesson_plans";
-    $result = mysqli_query($conn, $sql);
-    
-    if (mysqli_num_rows($result) > 0) {
-        $row = mysqli_fetch_assoc($result);
-        $fullLesson = $row['Full_lesson'];
-        $Level = $row['Level']; 
-        $time = $row['time'];
-        $Games = $row['Games'];
-        $Books = $row['Books'];
-        $Songs = $row['Songs'];
-        $Experiments = $row['Experiments'];
-        $Projects = $row['Projects'];
-        $Arts_and_crafts = $row['Arts_and_crafts'];
-        $School_trips = $row['School_trips'];
-        $Other_ideas = $row['Other_ideas'];
-    } else {
-        $fullLesson = "No lesson available.";
-    }
-
-    ?>
-
+   
     <div class="container">
       <div class="make-this-sticky">
           <button id="go_back_btn" class="back-btn"><img src="icons/back.png" alt="back btn">Back to plans</button>
