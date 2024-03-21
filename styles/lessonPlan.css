@@ -20,16 +20,20 @@
 
 .plan{
   max-width: 290px;
-  min-height: 100px;
+  max-height: ;
+  /* min-height: 100px; */
+  min-height: 480px;
   background-color: ghostwhite;
   border: 1px solid rgba(0, 0, 0, 0.445);
   cursor: pointer;
   display: flex;
   flex-direction: column;
+  /* justify-content: space-between; */
   margin: 0;
   padding: 15px;
   box-sizing: border-box;
   border-radius: 4px;
+  position: relative;
 }
 
 .plan:hover{
@@ -65,7 +69,11 @@
 .btn-holder{
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 90%;
+  max-width: 260px;
+  position: absolute;
+  bottom: 15px;
+  align-items: center;
 }
 
 .plan-btn{
