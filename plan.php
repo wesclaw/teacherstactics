@@ -177,7 +177,6 @@ mysqli_close($conn);
     <script>
 
       const go_back_btn = document.getElementById('go_back_btn').addEventListener('click',()=>{
-        window.history.back()
         location.href = 'lessonPlans.php'
       })
 
