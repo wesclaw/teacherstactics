@@ -32,7 +32,7 @@
           while ($row = mysqli_fetch_assoc($result)) {
             echo '<a href="plan.php?id=' . $row['Id'] . '" class="lesson-link">'; // Link to plan.php with lesson ID as parameter
             echo '<div class="plan">';
-            echo '<img src="' . $row['CoverImage'] . '" alt="Lesson Image" class="img-fluid">';
+            echo '<img src="' . $row['CoverImage'] . '" alt="Lesson Image" class="img-fluid coverImage" loading="lazy">';
             echo '<h3 class="title">' . $row['Title'] . '</h3>';
             echo '<p class="level">' . $row['Level'] . '</p>';
             echo '<p class="description">' . $row['Description'] . '</p>';

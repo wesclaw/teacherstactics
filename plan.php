@@ -71,7 +71,7 @@ mysqli_close($conn);
             <li><a href="#section6">Projects</a></li>
             <li><a href="#section7">Arts & Crafts</a></li>
             <li><a href="#section8">Trips</a></li>
-            <li><a href="#section9">Other Ideas</a></li>
+            <li class='link_for_other_ideas'><a href="#section9">Other Ideas</a></li>
             <li><a href="#section10">Worksheets</a></li>
             <!-- Add more links as needed -->
         </ul>
@@ -159,7 +159,7 @@ mysqli_close($conn);
         </div>
 
         <div class='book-link-container'>
-          <p class='games-section'><?php echo $Other_ideas?></p>
+          <p class='games-section otherIdeas'><?php echo $Other_ideas?></p>
         </div>
 
         <div class="circle-time" style='margin-top: 20px;'id='section10'>
@@ -174,47 +174,6 @@ mysqli_close($conn);
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script>
-
-      const go_back_btn = document.getElementById('go_back_btn').addEventListener('click',()=>{
-        location.href = 'lessonPlans.php'
-      })
-
-      // this code finds any sentence ending in ':' and then wrapping the whole sentence in <br> tags and then setting the sentences to a <b> tag.
-
-      const full_lesson = document.querySelector('.full_lesson');
-      const lessonText = full_lesson.textContent;
-      const regex = /([^.!?:]*?:)(?=\s|$)/g;
-      const modifiedText = lessonText.replace(regex, '<br><b>$1</b><br>');
-      full_lesson.innerHTML = modifiedText;
-
-      const games_sections = document.querySelectorAll('.games-section');
-
-      games_sections.forEach(games_section => {
-          const games = games_section.textContent;
-          const regex_games = /([^.!?:]*?:)(?=\s|$)/g;
-          const modifiedText_games = games.replace(regex_games, '<div style="text-align: center;"><b>$1</b></div>');
-          games_section.innerHTML = modifiedText_games;
-      });
-
-      window.addEventListener('scroll', function() {
-        const sections = document.querySelectorAll('div[id^="section"]');
-        const sidebarLinks = document.querySelectorAll('#on-this-page ul li a');
-
-        const offset = 550; // Adjust this offset value to trigger the change sooner
-    
-        sections.forEach((section, index) => {
-            const sectionTop = section.offsetTop;
-            if (pageYOffset >= sectionTop - offset) {
-                sidebarLinks.forEach(link => {
-                    link.classList.remove('active');
-                });
-                sidebarLinks[index].classList.add('active');
-
-            }
-        });
-    });
-
-    </script>
+    <script src="js/plan.js"></script>
   </body>
 </html>

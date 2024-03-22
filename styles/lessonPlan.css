@@ -20,9 +20,8 @@
 
 .plan{
   max-width: 290px;
-  max-height: ;
   /* min-height: 100px; */
-  min-height: 480px;
+  min-height: 500px;
   background-color: ghostwhite;
   border: 1px solid rgba(0, 0, 0, 0.445);
   cursor: pointer;
@@ -42,8 +41,9 @@
 }
 
 .coverImage{
-  width: 100%;
+  height: 150px;
   object-fit: cover;
+  margin-bottom: 10px;
 }
 
 .title{
