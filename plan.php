@@ -67,8 +67,8 @@ mysqli_close($conn);
             <li><a href="#section2">Games</a></li>
             <li><a href="#section3">Books</a></li>
             <li><a href="#section4">Songs</a></li>
-            <li><a href="#section5">Experiments</a></li>
-            <li><a href="#section6">Projects</a></li>
+            <li class='link_for_experiments'><a href="#section5">Experiments</a></li>
+            <li class='link_for_projects'><a href="#section6">Projects</a></li>
             <li><a href="#section7">Arts & Crafts</a></li>
             <li><a href="#section8">Trips</a></li>
             <li class='link_for_other_ideas'><a href="#section9">Other Ideas</a></li>
@@ -127,7 +127,7 @@ mysqli_close($conn);
         </div>
 
         <div class='book-link-container' >
-          <p class='games-section'><?php echo $Experiments?></p>
+          <p class='games-section experiments_text'><?php echo $Experiments?></p>
         </div>
 
         <div class="circle-time" style='margin-top: 20px;'id='section6'>
@@ -135,7 +135,7 @@ mysqli_close($conn);
         </div>
 
         <div class='book-link-container'>
-          <p class='games-section'><?php echo $Projects?></p>
+          <p class='games-section project_text'><?php echo $Projects?></p>
         </div>
 
         <div class="circle-time" style='margin-top: 20px;' id='section7'>
@@ -168,9 +168,18 @@ mysqli_close($conn);
 
       </div>
     </div>
-
+    <!-- WORKSHEETS -->
     <section class='worksheets'>
-
+      
+      <div class="worksheet">
+      <a href="#" class='worksheet-link-a-tag'>
+        <img src="" class="worksheet-img img-fluid">
+        <div class="title">
+          <p>guess the numbers and trace</p>
+        </div>
+        </a>
+      </div>
+      
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

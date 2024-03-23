@@ -36,6 +36,8 @@ window.addEventListener('scroll', function() {
   });
 });
 
+// checking for OTHER IDEAS 
+
 const section9 = document.getElementById('section9')
 const otherIdeas = document.querySelector('.otherIdeas')
 const link_for_other_ideas = document.querySelector('.link_for_other_ideas')
@@ -46,7 +48,36 @@ function checkForOtherIdeas(){
     section9.remove()  
 
   }
-  console.log(otherIdeas)
 }
 
 checkForOtherIdeas()
+
+// checking for PROJECTS
+
+const link_for_projects = document.querySelector('.link_for_projects')
+const section6 = document.getElementById('section6')
+const project_text = document.querySelector('.project_text')
+
+function checkForProjects() {
+  if(project_text.textContent===''){
+    link_for_projects.remove()
+    section6.remove()
+  }
+}
+
+checkForProjects()
+
+// checking for EXPERIMENTS
+
+const experiments_text = document.querySelector('.experiments_text')
+const link_for_experiments = document.querySelector('.link_for_experiments') 
+const section5 = document.getElementById('section5')
+
+function check_for_experiments(){
+  if(experiments_text.textContent===''){
+    link_for_experiments.remove()
+    section5.remove()
+  }
+}
+
+check_for_experiments()
