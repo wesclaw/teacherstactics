@@ -50,8 +50,6 @@ html{
   width: 185px;
 }
 
-/*  */
-
 .container{
   position: relative;
 }
@@ -96,8 +94,6 @@ html{
   text-align: center;
 }
 
-/*  */
-
 .circle-time-text{
   margin: 0;
 }
@@ -110,7 +106,6 @@ html{
   margin-top: 10px;
   gap: 5px;
   font-weight: 400;
-  /* color: rgb(124, 110, 216); */
   font-weight: bold;
   font-size: 2rem;
 }
@@ -163,8 +158,16 @@ html{
   font-weight: bold;
 }
 
+.full_lesson{
+  line-height: 1.8em;
+  color: rgb(14, 16, 26) !important;
+}
+
 .games-section{
   margin-top: 20px;
+  /* this is the p tag styles for only the games and below */
+  line-height: 1.8em;
+  color: rgb(14, 16, 26) !important;
 }
 
 .youtube-link{
@@ -197,10 +200,17 @@ iframe{
   background-color:ghostwhite;
   position: relative;
   border: 3px dashed rgba(0, 0, 0, 0.274);
+  padding: 20px;
 }
 
 .worksheet{
-  max-width: 350px;
-  height: 300px;
-  background-color: grey;
+  max-width: 400px;
+  height: 250px;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.678);
+}
+
+.worksheet_image{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

@@ -172,11 +172,8 @@ mysqli_close($conn);
     <section class='worksheets'>
       
       <div class="worksheet">
-      <a href="#" class='worksheet-link-a-tag'>
-        <img src="" class="worksheet-img img-fluid">
-        <div class="title">
-          <p>guess the numbers and trace</p>
-        </div>
+        <a href="#">
+        <img src="coverImages/com.png" class="img-fluid worksheet_image">
         </a>
       </div>
       
