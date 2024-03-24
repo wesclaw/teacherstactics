@@ -174,6 +174,7 @@ mysqli_close($conn);
       <div class="worksheet">
         <a href="#">
         <img src="coverImages/com.png" class="img-fluid worksheet_image">
+        <p class='worksheet-title'>writing and reading letters</p>
         </a>
       </div>
       
