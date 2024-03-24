@@ -172,9 +172,9 @@ mysqli_close($conn);
     <section class='worksheets'>
       
       <div class="worksheet">
-        <a href="#">
-        <img src="coverImages/com.png" class="img-fluid worksheet_image">
-        <p class='worksheet-title'>writing and reading letters</p>
+        <a href="preschool-worksheets/vet-pdfs/VETLettersWithS.pdf" class='a-tag-link' target="_blank">
+        <img src="preschool-worksheets/vet-worksheets-images/bettervetletters-min.jpg" class="img-fluid worksheet_image" loading='lazy'>
+        <p class='worksheet-title'>VET Display Letters with S</p>
         </a>
       </div>
       

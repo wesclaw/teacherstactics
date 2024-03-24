@@ -204,10 +204,9 @@ iframe{
 }
 
 .worksheet{
-  max-width: 400px;
-  height: 250px;
+  max-width: 630px;
+  height: 290px;
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.678);
-  text-align: center;
 }
 
 .worksheet_image{
@@ -216,6 +215,13 @@ iframe{
   object-fit: cover;
 }
 
-.worksheet-title{
-  box-shadow:  0px 0px 3px rgba(0, 0, 0, 0.678);
+.worksheet a {
+  text-decoration: none;
+  font-weight: 400;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.worksheet a:hover {
+  text-decoration: underline;
 }
