@@ -202,6 +202,12 @@ mysqli_close($conn);
         <p class='worksheet-title'>Words For The Letters VET</p>
         </a>
       </div>
+      <div class="worksheet">
+        <a href="preschool-worksheets/vet-pdfs/words_for_vet.pdf" class='a-tag-link' target="_blank">
+        <img src="preschool-worksheets/vet-worksheets-images/vetwords-min.jpg" class="img-fluid worksheet_image" loading='lazy'>
+        <p class='worksheet-title'>Words For The Letters VET</p>
+        </a>
+      </div>
       
     </section>
 
