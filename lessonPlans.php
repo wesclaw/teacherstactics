@@ -19,6 +19,7 @@
   <?php include("includes/navbar.html") ?>
 
   <?php 
+
  $sql = "SELECT Id, Title, Description, CoverImage, Level FROM full_preschool_lesson_plans";
   $result = mysqli_query($conn, $sql);
   $resultCheck = mysqli_num_rows($result); 
@@ -55,6 +56,6 @@
  
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <!-- <script src="js/lessonPlan.js" async defer></script> -->
+    <script src="js/lessonPlan.js" async defer></script>
   </body>
 </html>
