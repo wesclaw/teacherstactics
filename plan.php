@@ -70,7 +70,7 @@ mysqli_close($conn);
             <li class='link_for_experiments'><a href="#section5">Experiments</a></li>
             <li class='link_for_projects'><a href="#section6">Projects</a></li>
             <li><a href="#section7">Arts & Crafts</a></li>
-            <li><a href="#section8">Trips</a></li>
+            <li class="trip_text"><a href="#section8">Trips</a></li>
             <li class='link_for_other_ideas'><a href="#section9">Other Ideas</a></li>
             <li><a href="#section10">Worksheets</a></li>
             <!-- Add more links as needed -->
@@ -151,7 +151,7 @@ mysqli_close($conn);
         </div>
 
         <div class='book-link-container'>
-          <p class='games-section'><?php echo $School_trips?></p>
+          <p class='games-section school_trips_text'><?php echo $School_trips?></p>
         </div>
 
         <div class="circle-time" style='margin-top: 20px;' id='section9'>

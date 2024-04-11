@@ -1,5 +1,6 @@
 const go_back_btn = document.getElementById('go_back_btn').addEventListener('click',()=>{
-  location.href = 'lessonPlans.php'
+  // location.href = 'lessonPlans.php'
+  history.back()
 })
 
 // this code finds any sentence ending in ':' and then wrapping the whole sentence in <br> tags and then setting the sentences to a <b> tag.
@@ -82,5 +83,19 @@ function check_for_experiments(){
 
 check_for_experiments()
 
+////checking for TRIPS
+
+const section8 = document.getElementById('section8')
+const trip_text = document.querySelector('.trip_text')
+const school_trips_text = document.querySelector('.school_trips_text')
+
+function check_for_trips(){
+  if(school_trips_text.textContent===''){
+    trip_text.remove()
+    section8.remove()
+  }
+}
+
+check_for_trips()
 
 
