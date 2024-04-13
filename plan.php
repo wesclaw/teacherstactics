@@ -2,7 +2,7 @@
 
 include("dbh.inc.php");
 
-$lessonTitle = "Lesson Not Found"; // Default value
+$lessonTitle = "Lesson Not Found"; 
 
 if (isset($_GET['id'])) {
     $lessonID = $_GET['id'];
@@ -42,12 +42,9 @@ mysqli_close($conn);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="icons/logo-pencil.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <!--  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Angkor&display=swap" rel="stylesheet">
-    <!--  -->
     <link rel="stylesheet" href="styles/plan.css">
   </head>
   <body>
@@ -57,7 +54,7 @@ mysqli_close($conn);
       <div class="make-this-sticky">
           <button id="go_back_btn" class="back-btn"><img src="icons/back.png" alt="back btn">Back to plans</button>
       </div>
-      <!--  -->
+
       <div class="sidebar">
         <div class="make-this" id="on-this-page">
         <h2>On This Page</h2>
@@ -88,7 +85,7 @@ mysqli_close($conn);
         <p class='lesson-level'><b>Level:</b> <?php echo $Level ?></p>
 
         <div>
-        <p class='materials-used'><b>Materials:</b> <a href="" class='link-for-materials'>See here</a></p>
+        <p class='materials-used'><b>Materials:</b> <a href="#" class='link-for-materials'>See here</a></p>
         </div>
         
         <div class="line"></div>
@@ -97,7 +94,8 @@ mysqli_close($conn);
           <img src="icons/circletime.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Circle Time</p>
         </div>
 
-        <p class='full_lesson'><?php echo $fullLesson ?></p>
+        <!-- changed this from p tag to div to see if youtube links will work or a tags -->
+        <div class='full_lesson'><?php echo $fullLesson ?></div>
 
         <div class="circle-time" id='section2'>
           <img src="icons/movement.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Games</p>

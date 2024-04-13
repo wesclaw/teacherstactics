@@ -1,15 +1,16 @@
 const go_back_btn = document.getElementById('go_back_btn').addEventListener('click',()=>{
-  // location.href = 'lessonPlans.php'
   history.back()
 })
 
 // this code finds any sentence ending in ':' and then wrapping the whole sentence in <br> tags and then setting the sentences to a <b> tag.
 
 const full_lesson = document.querySelector('.full_lesson');
-const lessonText = full_lesson.textContent;
+const lessonText = full_lesson.innerHTML
 const regex = /([^.!?:]*?:)(?=\s|$)/g;
 const modifiedText = lessonText.replace(regex, '<br><b>$1</b><br>');
 full_lesson.innerHTML = modifiedText;
+
+///////////////////////////////////
 
 const games_sections = document.querySelectorAll('.games-section');
 
