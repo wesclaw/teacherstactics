@@ -11,7 +11,6 @@ if (isset($_GET['id'])) {
 
     if ($result && mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
-        // Assign retrieved values to variables
         $lessonTitle = $row['Title'];
         $Description = $row['Description'];
         $CoverImage = $row['CoverImage'];
@@ -70,14 +69,13 @@ mysqli_close($conn);
             <li class="trip_text"><a href="#section8">Trips</a></li>
             <li class='link_for_other_ideas'><a href="#section9">Other Ideas</a></li>
             <li><a href="#section10">Worksheets</a></li>
-            <!-- Add more links as needed -->
+           
         </ul>
         </ul>
         </div>
         
       </div>
-
-      <!--  -->
+      
       <div class="plan">
         <p class='topic-text'><b>Topic:</b></p>
         <h1 class='lesson-title'><?php echo $lessonTitle ?></h1>
@@ -94,7 +92,6 @@ mysqli_close($conn);
           <img src="icons/circletime.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Circle Time</p>
         </div>
 
-        <!-- changed this from p tag to div to see if youtube links will work or a tags -->
         <div class='full_lesson'><?php echo $fullLesson ?></div>
 
         <div class="circle-time" id='section2'>

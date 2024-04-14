@@ -1,4 +1,4 @@
-<?php include("dbh.inc.php");?>
+<?php /* include("dbh.inc.php"); */ ?>
 
 
 <!DOCTYPE html>
@@ -17,17 +17,21 @@
   <body>
   <?php include("includes/navbar.html") ?>
 
-  <?php 
+  <?php /*
 
-  $sql = "SELECT Id, Title, Description, CoverImage, Level FROM full_preschool_lesson_plans";
+  $sql = "SELECT Id, Title, Description, CoverImage, Level FROM full_preschool_lesson_plans LIMIT 9";
   $result = mysqli_query($conn, $sql);
-  $resultCheck = mysqli_num_rows($result); 
+  $resultCheck = mysqli_num_rows($result); */ 
   ?>
   
  <div class="container lesson-wrapper">
     <?php include("includes/sidebar.html")?>
     <div class="lesson-plan" id="lessonPlanContainer">
         <?php  
+        
+        include 'fetchLessonPlans.php'; 
+        
+        /*
         if ($resultCheck > 0) {
           while ($row = mysqli_fetch_assoc($result)) {
             echo '<a href="plan.php?id=' . $row['Id'] . '" class="lesson-link">'; // Link to plan.php with lesson ID as parameter
@@ -46,15 +50,66 @@
         } else {
             echo '<p>No lesson found.</p>';
         }
-        mysqli_close($conn); 
+        mysqli_close($conn); */
         ?>
-    </div>
+    </div>   
 </div>
     
+
 
 
  
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+
+  <script>
+ 
+
+  window.addEventListener('scroll', function() {
+      
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+          console.log('you are at the bottom')
+          loadMoreData();
+      }
+  });
+
+  
+  function loadMoreData() {
+    var offset = document.querySelectorAll('.lesson-link').length;
+
+    
+    
+    var url = 'fetchLessonPlans.php?offset=' + offset;
+    console.log('URL:', url)
+
+    var xhr = new XMLHttpRequest();
+
+    var url = 'fetchLessonPlans.php';
+
+    xhr.open('GET', 'fetchLessonPlans.php', true);
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+    
+            var newLessonPlansHTML = xhr.responseText;
+            var lessonPlanContainer = document.getElementById('lessonPlanContainer');
+            lessonPlanContainer.insertAdjacentHTML('beforeend', newLessonPlansHTML);
+        } else {
+            
+            console.error('Error loading more data:', xhr.statusText);
+        }
+    };
+
+    console.log('Response:', xhr.responseText);
+    
+    xhr.send();
+
+   
+}
+
+
+  </script>
+
   </body>
 </html>
