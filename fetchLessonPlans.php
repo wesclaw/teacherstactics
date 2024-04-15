@@ -21,10 +21,9 @@ $resultCheck = mysqli_num_rows($result);
       echo '</div>';
       echo '</div>'; 
       echo '</a>'; 
-  }
-  } else {
-  echo '<p>No lesson found.</p>';
-  }
+    }
+  } 
   mysqli_close($conn);
 
  
+
