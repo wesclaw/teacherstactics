@@ -51,7 +51,7 @@
         }
     };
     xhr.send();
-}
+};
 
 </script>
 
