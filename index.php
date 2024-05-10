@@ -17,19 +17,35 @@
   <div class="container">
     <h1>Innovate Your English Classroom</h1>
     <p>We provide all the <strong>resources</strong> you need for your classroom and school. Let us do the planning <strong>while you focus on the teaching.</strong></p>
-    <div> 
+
+    <div style="display: flex; align-items: center; justify-content: center;"> 
+    <!-- i added these classes to the div. before it was just an empty div but changed the btn to an a tag -->
+
     <button class='login-btn'>
       <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
       <img src="icons/login.png" class="btn-icon">
       <p>Log In</p>
       </div>
     </button>
-    <button class='member-btn'>
+
+
+    <!-- <button class='member-btn'>
       <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
       <img src="icons/plus.png" class="btn-icon">
       <p>Sign Up</p>
       </div>
-    </button>
+    </button> -->
+
+   
+      <a href="registration.php" class="member-link">
+        <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+        <img src="icons/plus.png" class="btn-icon">
+        <p>Sign Up</p>
+        </div>
+      </a>
+   
+    
+
     </div>
   </div>
   
