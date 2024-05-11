@@ -21,31 +21,25 @@
     <div style="display: flex; align-items: center; justify-content: center;"> 
     <!-- i added these classes to the div. before it was just an empty div but changed the btn to an a tag -->
 
-    <button class='login-btn'>
-      <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-      <img src="icons/login.png" class="btn-icon">
-      <p>Log In</p>
-      </div>
-    </button>
-
-
-    <!-- <button class='member-btn'>
-      <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-      <img src="icons/plus.png" class="btn-icon">
-      <p>Sign Up</p>
-      </div>
-    </button> -->
+    <a href="login.php" class="">
+        <button class="login-btn">
+          <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+          <img src="icons/login.png" class="btn-icon">
+          <p>Log in</p>
+          </div>
+        </button>
+      </a>
 
    
       <a href="registration.php" class="member-link">
-        <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-        <img src="icons/plus.png" class="btn-icon">
-        <p>Sign Up</p>
-        </div>
+        <button class="member-btn">
+          <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+          <img src="icons/plus.png" class="btn-icon">
+          <p>Sign Up</p>
+          </div>
+        </button>
       </a>
    
-    
-
     </div>
   </div>
   

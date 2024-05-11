@@ -33,7 +33,8 @@ main .container p {
 }
 
 .member-btn{
-  background-color: #5774fc;
+  /* background-color: #5774fc; */
+  background-color: rgb(98, 76, 241);
   padding: 10px 50px;
   font-size: 1.2rem;
   font-weight: 600;
