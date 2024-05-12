@@ -59,8 +59,31 @@ h1{
 }
 
 .input_style:focus{
-  /* border: 1px solid rgba(0, 0, 0, 0.247); */
-  /* outline: 3px dashed rgba(0, 0, 0, 0.521); */
   outline: 1px solid rgba(0, 0, 0, 0.425);
+}
+
+.google-sign-in-container{
+  margin-top: 20px;
+}
+
+.google-btn{
+  padding: 10px;
+  font-family:Arial, Helvetica, sans-serif;
+  border: none;
+  outline: none;
+  background-color: white;
+  box-shadow: 3px 1px 3px rgba(0, 0, 0, 0.342);
+  color: rgba(37, 37, 37, 0.692);
+  font-weight: bold;
+  border-radius: 3px;
+}
+
+.google-btn:hover{
+  box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.199);
+}
+
+.google-img{
+  width: 30px;
+  height: 30px;
 }
 

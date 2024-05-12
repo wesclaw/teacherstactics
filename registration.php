@@ -20,27 +20,12 @@
     <?php include 'includes/navbar.html'?>
 
    <div class="container main-section">
-    </div>
-
-    <?php 
-      if(isset($_POST)["submit"]){
-        $firstName = $_POST["first_name"];
-        $email = $_POST["email"];
-        $password = $_POST["password"];
-        $repeatPassword = $_POST["repeat_password"];
-      };
-      $error = array();
-      if(empty($firstName)){
-
-      };
-    ?>
-
-    
+     
     <h1>Sign Up</h1>
     
     <form action="registration.php">
       <div class="form-group">
-        <input type="text" name="first_name" placeholder="First Name" class="input_style">
+        <input type="text" name="first_name" placeholder="Name" class="input_style">
       </div>
       <div class="form-group">
         <input type="email" name="email" placeholder="Email" class="input_style">
@@ -57,6 +42,12 @@
     </form>
     <p style="margin-top: 20px; font-family: sans-serif;">By creating an account, you agree to our <a href="#">terms</a></p>
     <a href="login.php" style="text-align: center; margin-top: 10px;">Already have an account? Log in here</a>
+    <div class="google-sign-in-container">
+      <button class="google-btn">
+        <img src="icons/google.png" class="google-img">
+        Sign up with Google
+      </button>
+    </div>
    </div>
     
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
