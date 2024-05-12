@@ -43,7 +43,7 @@ main .container p {
 }
 
 .member-btn:hover{
-  outline: 3px dashed rgba(0, 0, 0, 0.445);
+  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.493);
 }
 
 .member-btn p{
@@ -64,7 +64,7 @@ main .container p {
 }
 
 .login-btn:hover{
-  outline: 3px dashed rgba(0, 0, 0, 0.445);
+  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.493);
 }
 
 .login-btn p {
