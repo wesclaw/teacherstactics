@@ -43,7 +43,7 @@ main .container p {
 }
 
 .member-btn:hover{
-  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.493);
+  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.925);
 }
 
 .member-btn p{
