@@ -20,6 +20,10 @@
     <?php include 'includes/navbar.html'?>
 
    <div class="container main-section">
+
+   <?php
+    
+   ?>
      
     <h1>Sign Up</h1>
     
