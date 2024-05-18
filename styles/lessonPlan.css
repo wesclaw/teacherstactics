@@ -11,10 +11,15 @@
 .lesson-plan{
   display: flex;
   flex-wrap: wrap;
-  margin-left: 260px;
+
+
+  /* add the margin left when there is a sidebar
+  margin-left: 260px; */
+  /* add the padding left and right when there is a sidebar
+  padding: 150px 30px; */
+
   justify-content: center;
-  /* align-items: center; */
-  padding: 150px 30px;
+  padding: 150px 0px;
   gap: 30px;
 }
 

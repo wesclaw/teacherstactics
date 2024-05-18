@@ -1,8 +1,12 @@
 <?php include 'dbh.inc.php'; 
 
-$offset = isset($_GET['offset']) ? intval($_GET['offset']) : 0;
+// $offset = isset($_GET['offset']) ? intval($_GET['offset']) : 0;
 
-$sql = "SELECT Id, Title, Description, CoverImage, Level FROM full_preschool_lesson_plans LIMIT 9 OFFSET $offset";
+// $sql = "SELECT Id, Title, Description, CoverImage, Level FROM full_preschool_lesson_plans LIMIT 9 OFFSET $offset";
+
+// $offset = isset($_GET['offset']);
+
+$sql = "SELECT Id, Title, Description, CoverImage, Level FROM full_preschool_lesson_plans";
 
 $result = mysqli_query($conn, $sql);
 $resultCheck = mysqli_num_rows($result); 

@@ -16,7 +16,7 @@
   <?php include("includes/navbar.html") ?>
   
  <div class="container lesson-wrapper">
-    <?php include("includes/sidebar.html")?>
+    <?php /* include("includes/sidebar.html") */ ?>
     <div class="lesson-plan" id="lessonPlanContainer">
         <?php include 'fetchLessonPlans.php';?>
     </div>   
@@ -25,33 +25,33 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script>
 
-  window.addEventListener('scroll', function() {
-      if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-          loadMoreData();
-      }
-  });
+//   window.addEventListener('scroll', function() {
+//       if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+//           loadMoreData();
+//       }
+//   });
 
-  function loadMoreData() {
-    var offset = document.querySelectorAll('.lesson-link').length;
+//   function loadMoreData() {
+//     var offset = document.querySelectorAll('.lesson-link').length;
     
-    var url = 'fetchLessonPlans.php?offset=' + offset;
+//     var url = 'fetchLessonPlans.php?offset=' + offset;
 
-    var xhr = new XMLHttpRequest();
+//     var xhr = new XMLHttpRequest();
 
-    xhr.open('GET', url, true); // Use the url variable here
-    xhr.onload = function() {
-        if (xhr.status === 200) {
-            var newLessonPlansHTML = xhr.responseText;
-            if (newLessonPlansHTML.trim() !== '') { // Check if response is not empty
-                var lessonPlanContainer = document.getElementById('lessonPlanContainer');
-                lessonPlanContainer.insertAdjacentHTML('beforeend', newLessonPlansHTML);
-            }
-        } else {
-            console.error('Error loading more data:', xhr.statusText);
-        }
-    };
-    xhr.send();
-};
+//     xhr.open('GET', url, true); // Use the url variable here
+//     xhr.onload = function() {
+//         if (xhr.status === 200) {
+//             var newLessonPlansHTML = xhr.responseText;
+//             if (newLessonPlansHTML.trim() !== '') { // Check if response is not empty
+//                 var lessonPlanContainer = document.getElementById('lessonPlanContainer');
+//                 lessonPlanContainer.insertAdjacentHTML('beforeend', newLessonPlansHTML);
+//             }
+//         } else {
+//             console.error('Error loading more data:', xhr.statusText);
+//         }
+//     };
+//     xhr.send();
+// };
 
 </script>
 
