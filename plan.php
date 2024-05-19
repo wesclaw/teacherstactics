@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 include("dbh.inc.php");
 
@@ -6,7 +6,8 @@ $lessonTitle = "Lesson Not Found";
 
 if (isset($_GET['id'])) {
     $lessonID = $_GET['id'];
-    $sql = "SELECT Title, Description, CoverImage, Level, Full_lesson, Games, time, Books, Songs, Experiments, Projects, Arts_and_crafts, School_trips, Other_ideas FROM full_preschool_lesson_plans WHERE Id = $lessonID";
+    $sql = "SELECT Title, Description, CoverImage, Level, Full_lesson, Games, time, Books, Songs, Experiments, Projects, Arts_and_crafts, School_trips, Other_ideas FROM full_preschool_lesson_plans WHERE Id = $lessonID"; 
+
     $result = mysqli_query($conn, $sql);
 
     if ($result && mysqli_num_rows($result) > 0) {
@@ -26,9 +27,16 @@ if (isset($_GET['id'])) {
         $School_trips = $row['School_trips'];
         $Other_ideas = $row['Other_ideas'];
     }
-}
+
+  }
+
 mysqli_close($conn); 
+
+
 ?>
+
+
+
 
 <!DOCTYPE html>
 
@@ -83,7 +91,7 @@ mysqli_close($conn);
         <p class='lesson-level'><b>Level:</b> <?php echo $Level ?></p>
 
         <div>
-        <p class='materials-used'><b>Materials:</b> <a href="#" class='link-for-materials'>See here</a></p>
+        <p class='materials-used'><b>Materials:</b> <a href="#materials" class='link-for-materials'>See here</a></p>
         </div>
         
         <div class="line"></div>
@@ -164,9 +172,14 @@ mysqli_close($conn);
       </div>
     </div>
     <!-- WORKSHEETS -->
-    <section class='worksheets'>
-      
-      <div class="worksheet">
+    <section class='worksheets' id="materials">
+
+    <div style="display: flex; flex-direction: column; text-align: center;">
+    <h1>Coming Soon!</h1>
+      <p style="font-size: 1.3rem;">We are hard at work preparing worksheets and materials for each lesson plan. </p>
+    </div>
+   
+      <!-- <div class="worksheet">
         <a href="preschool-worksheets/vet-pdfs/VETLettersWithS.pdf" class='a-tag-link' target="_blank">
         <img src="preschool-worksheets/vet-worksheets-images/bettervetletters-min.jpg" class="img-fluid worksheet_image" loading='lazy'>
         <p class='worksheet-title'>VET Display Letters with S</p>
@@ -202,7 +215,7 @@ mysqli_close($conn);
         <img src="preschool-worksheets/vet-worksheets-images/vetwords-min.jpg" class="img-fluid worksheet_image" loading='lazy'>
         <p class='worksheet-title'>Words For The Letters VET</p>
         </a>
-      </div>
+      </div> -->
       
     </section>
 
