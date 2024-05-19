@@ -1,8 +1,2 @@
-RewriteEngine On
-
-# Handle URLs like /plan/lesson-title
-RewriteRule ^plan/([a-zA-Z0-9_-]+)$ plan.php?title=$1 [L,QSA]
-
-<!-- RewriteRule ^(.*)$ plan.php? plan.php? url=$1 [QSA] -->
 
  
