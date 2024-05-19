@@ -1,4 +1,6 @@
-<?php include 'dbh.inc.php'; 
+
+
+<?php //////////////////////////////remove this
 
 // $offset = isset($_GET['offset']) ? intval($_GET['offset']) : 0;
 
@@ -6,10 +8,16 @@
 
 // $offset = isset($_GET['offset']);
 
+///////////////////////// ?>
+
+<?php include 'dbh.inc.php'; 
+
 $sql = "SELECT Id, Title, Description, CoverImage, Level FROM full_preschool_lesson_plans";
 
 $result = mysqli_query($conn, $sql);
 $resultCheck = mysqli_num_rows($result); 
+
+$results_per_page = 24;
 
    if ($resultCheck > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
@@ -30,4 +38,3 @@ $resultCheck = mysqli_num_rows($result);
   mysqli_close($conn);
 
  
-

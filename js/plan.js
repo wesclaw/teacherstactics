@@ -50,7 +50,6 @@ function checkForOtherIdeas(){
   if(otherIdeas.textContent===""){
     link_for_other_ideas.remove()
     section9.remove()  
-
   }
 }
 
