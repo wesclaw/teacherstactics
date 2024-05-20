@@ -19,20 +19,22 @@
   padding: 150px 30px; */
 
   justify-content: center;
-  padding: 150px 0px;
+  /* padding: 150px 0px; */
+
+  /* i added this instead of the padding tag because of the btn pagation. i removed the bottom padding. */
+  padding-top: 150px;
+  padding-bottom: 30px;
   gap: 30px;
 }
 
 .plan{
   max-width: 290px;
-  /* min-height: 100px; */
   min-height: 500px;
   background-color: ghostwhite;
   border: 1px solid rgba(0, 0, 0, 0.445);
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
   margin: 0;
   padding: 15px;
   box-sizing: border-box;
@@ -100,3 +102,31 @@
   text-decoration: none;
   color: black;
 }
+
+.lesson-btns{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#prevButton, #nextButton{
+  padding: 10px 30px;
+  font-weight: 200;
+  background-color: transparent;
+  border: 2px solid rgb(78, 77, 77);
+  font-family:Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  color: rgb(54, 54, 54);
+}
+
+#prevButton:hover, #nextButton:hover{
+  background-color: rgba(177, 176, 176, 0.11);
+}
+
+/* #nextButton{
+   
+} */
+

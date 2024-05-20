@@ -27,7 +27,6 @@ if (isset($_GET['id'])) {
         $School_trips = $row['School_trips'];
         $Other_ideas = $row['Other_ideas'];
     }
-
   }
 
 mysqli_close($conn); 
