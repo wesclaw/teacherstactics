@@ -2,6 +2,10 @@
   --level-color: rgba(241, 176, 176, 0.288);
 }
 
+body{
+  overflow-x: hidden;
+}
+
 .lesson-wrapper{
   min-height: 100vh;
   display: flex;
@@ -126,7 +130,29 @@
   background-color: rgba(177, 176, 176, 0.11);
 }
 
-/* #nextButton{
-   
-} */
+#paginationContainer button{
+  background-color: transparent;
+  border: none;
+  font-size: 1.3rem;
+}
 
+#paginationContainer{
+  gap: 5px;
+  display: flex;
+}
+
+@media (max-width: 1000px){
+  #paginationContainer{
+    gap: 0px;
+  }
+
+  .lesson-btns{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+}

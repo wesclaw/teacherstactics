@@ -1,6 +1,15 @@
-<?php include 'dbh.inc.php' ?>
+<?php include 'dbh.inc.php'?> 
 
 <?php 
+if (isset($_GET['getTotal'])) {
+    $sql = "SELECT COUNT(*) as total FROM full_preschool_lesson_plans";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($result);
+    echo $row['total'];
+    mysqli_close($conn);
+    exit();
+}
+
 $offset = isset($_GET['offset']) ? intval($_GET['offset']) : 0;
 $limit = isset($_GET['limit']) ? intval($_GET['limit']) : 12;
 
@@ -9,7 +18,7 @@ $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
-        echo '<a href="plan.php?id=' . $row['Id'] . '" class="lesson-link">'; 
+        echo '<a href="plan.php?id=' . $row['Id'] . '" class="lesson-link">';
         echo '<div class="plan">';
         echo '<img src="' . htmlspecialchars($row['CoverImage']) . '" alt="Lesson Image" class="img-fluid coverImage" >';
         echo '<h3 class="title">' . htmlspecialchars($row['Title']) . '</h3>';
@@ -19,12 +28,14 @@ if (mysqli_num_rows($result) > 0) {
         echo '<button class="plan-btn">Show</button>';
         echo '<img src="icons/lock.png" class="img-fluid plan-lock">';
         echo '</div>';
-        echo '</div>'; 
-        echo '</a>'; 
+        echo '</div>';
+        echo '</a>';
     }
 } 
 
 mysqli_close($conn);
+
+
 
 
 
@@ -51,42 +62,3 @@ mysqli_close($conn);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-<?php  /* include 'dbh.inc.php'; 
-
-$sql = "SELECT Id, Title, Description, CoverImage, Level FROM full_preschool_lesson_plans";
-
-$result = mysqli_query($conn, $sql);
-$resultCheck = mysqli_num_rows($result); 
-
-   if ($resultCheck > 0) {
-    while ($row = mysqli_fetch_assoc($result)) {
-      echo '<a href="plan.php?id=' . $row['Id'] . '" class="lesson-link">'; 
-      echo '<div class="plan">';
-      echo '<img src="' . $row['CoverImage'] . '" alt="Lesson Image" class="img-fluid coverImage" >';
-      echo '<h3 class="title">' . $row['Title'] . '</h3>';
-      echo '<p class="level">' . $row['Level'] . '</p>';
-      echo '<p class="description">' . $row['Description'] . '</p>';
-      echo '<div class="btn-holder">';
-      echo '<button class="plan-btn">Show</button>';
-      echo '<img src="icons/lock.png" class="img-fluid plan-lock">';
-      echo '</div>';
-      echo '</div>'; 
-      echo '</a>'; 
-    }
-  } 
-  mysqli_close($conn);
-
- 
-*/?>
