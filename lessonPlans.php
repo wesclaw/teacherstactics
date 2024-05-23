@@ -92,8 +92,6 @@ function generatePaginationButtons() {
         button.onclick = (function(page) {
             return function() {
                 loadMoreData(null, page);
-
-                // window.location.href = 'lessonPlans.php.php?page=' + page;
             };
         })(i);
         paginationContainer.appendChild(button);

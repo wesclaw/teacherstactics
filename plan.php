@@ -30,13 +30,7 @@ if (isset($_GET['id'])) {
   }
 
 mysqli_close($conn); 
-
-
 ?>
-
-
-
-
 <!DOCTYPE html>
 
 <html>
@@ -86,6 +80,7 @@ mysqli_close($conn);
       <div class="plan">
         <p class='topic-text'><b>Topic:</b></p>
         <h1 class='lesson-title'><?php echo $lessonTitle ?></h1>
+
         <p class='time-text'><b>Circle Time:</b> <?php echo $time?></p>
         <p class='lesson-level'><b>Level:</b> <?php echo $Level ?></p>
 
@@ -222,3 +217,4 @@ mysqli_close($conn);
     <script src="js/plan.js"></script>
   </body>
 </html>
+
