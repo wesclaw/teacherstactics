@@ -107,6 +107,7 @@ function updateActivePageButton() {
     var buttons = document.getElementById('paginationContainer').getElementsByTagName('button');
     for (var i = 0; i < buttons.length; i++) {
         buttons[i].disabled = (i + 1 === currentPage);
+        buttons[i].style.disabled = 'color: red;'
     }
 }
 

@@ -1,4 +1,4 @@
-<?php 
+<?php  
 
 include("dbh.inc.php");
 
@@ -29,8 +29,12 @@ if (isset($_GET['id'])) {
     }
   }
 
-mysqli_close($conn); 
+mysqli_close($conn);  
+
+
+
 ?>
+
 <!DOCTYPE html>
 
 <html>
