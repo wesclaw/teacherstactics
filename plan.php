@@ -1,12 +1,3 @@
-<?php
-
-  print_r($_GET);
-
-
-?>
-
-
-
 <?php  
 
 include("dbh.inc.php");

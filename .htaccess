@@ -1,7 +1,0 @@
-Options -Indexes
-
-RewriteEngine on
-RewriteRule ^(.*)$ plan.php
-
-
-
