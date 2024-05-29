@@ -26,6 +26,24 @@ html{
   margin-bottom: 0px !important;
 }
 
+.bookmark-btn{
+  position: absolute;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  padding: 7px 7px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.315);
+  background-image: linear-gradient(90deg, rgb(233, 138, 50), rgb(226, 55, 226)); 
+}
+
+.bookmark-btn:active{
+  box-shadow: inset 0px 10px 10px rgba(0, 0, 0, 0.233);
+}
+
+.bookmark-icon{
+  width: 32px;
+  height: 32px;
+}
 
 .back-btn{
   margin-top: 120px;
@@ -48,6 +66,7 @@ html{
   position: sticky;
   top: 0;
   width: 185px;
+  z-index: 99;
 }
 
 .container{

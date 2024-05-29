@@ -82,9 +82,17 @@ mysqli_close($conn);
       </div>
       
       <div class="plan">
-        <p class='topic-text'><b>Topic:</b></p>
-        <h1 class='lesson-title'><?php echo $lessonTitle ?></h1>
-
+        
+          <button class="bookmark-btn">
+            <img src="icons/white-bookmark.png" class="bookmark-icon">
+          </button>
+        
+        <p class='topic-text'>
+          <b>Topic:</b>
+        </p>
+        <h1 class='lesson-title'>
+          <?php echo $lessonTitle ?>
+        </h1>
         <p class='time-text'><b>Circle Time:</b> <?php echo $time?></p>
         <p class='lesson-level'><b>Level:</b> <?php echo $Level ?></p>
 

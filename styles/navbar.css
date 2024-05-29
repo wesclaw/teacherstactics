@@ -22,7 +22,6 @@
 .nav-icon{
   width: 20px;
   height: 20px;
-  object-fit: cover;
 }
 
 .nav-logo{
@@ -35,6 +34,15 @@
 
 .dropdown .btn{
   font-weight: 600;
+  letter-spacing: .05em;
+  font-family: Arial, Helvetica, sans-serif;
+  color: ghostwhite;
+}
+
+.btn-success, .btn-danger{
+  font-weight: bold;
+  letter-spacing: .05em;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 @media(max-width: 1200px){

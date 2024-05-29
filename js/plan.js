@@ -3,6 +3,7 @@ const go_back_btn = document.getElementById('go_back_btn').addEventListener('cli
   history.back()
 })
 
+
 // this code finds any sentence ending in ':' and then wrapping the whole sentence in <br> tags and then setting the sentences to a <b> tag.
 
 const full_lesson = document.querySelector('.full_lesson');
