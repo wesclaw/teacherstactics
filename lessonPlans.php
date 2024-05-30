@@ -53,6 +53,7 @@ function fetchTotalLessons() {
     xhr.send();
 }
 
+
 function loadMoreData(direction, page = null) {
     if (page !== null) {
         currentPage = page;
@@ -82,6 +83,7 @@ function loadMoreData(direction, page = null) {
     xhr.send();
 }
 
+
 function generatePaginationButtons() {
     var paginationContainer = document.getElementById('paginationContainer');
     paginationContainer.innerHTML = '';
@@ -110,6 +112,7 @@ function updateActivePageButton() {
         buttons[i].style.disabled = 'color: red;'
     }
 }
+
 
 fetchTotalLessons();
 loadMoreData('next');
