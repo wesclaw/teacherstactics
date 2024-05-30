@@ -10,7 +10,7 @@
     <link rel="icon" href="icons/logo-pencil.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/styles.css">
-  </head>
+  </head> 
   <body>
     <?php include("includes/navbar.html")?>
 <main>
@@ -21,7 +21,7 @@
     <div style="display: flex; align-items: center; justify-content: center;"> 
     <!-- i added these classes to the div. before it was just an empty div but changed the btn to an a tag -->
 
-    <a href="login.php" class="">
+    <a href="login.php">
         <button class="login-btn">
           <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
           <img src="icons/login.png" class="btn-icon">

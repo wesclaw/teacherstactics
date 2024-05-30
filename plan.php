@@ -83,9 +83,25 @@ mysqli_close($conn);
       
       <div class="plan">
         
+      <div class="top-part">
           <button class="bookmark-btn">
             <img src="icons/white-bookmark.png" class="bookmark-icon">
           </button>
+
+
+          <div class="like-btns">
+          <button>
+            <img src="icons/like.png" class="bookmark-icon">
+          </button>
+          <button>
+          <img src="icons/unlike.png" class="bookmark-icon">
+          </button>
+          </div>
+          
+      </div>
+          
+          
+
         
         <p class='topic-text'>
           <b>Topic:</b>

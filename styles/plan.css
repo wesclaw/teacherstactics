@@ -27,7 +27,7 @@ html{
 }
 
 .bookmark-btn{
-  position: absolute;
+  /* position: absolute; */
   border-radius: 50%;
   border: none;
   outline: none;
@@ -43,6 +43,19 @@ html{
 .bookmark-icon{
   width: 32px;
   height: 32px;
+}
+
+.top-part{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  /* background-color: green; */
+  top: 0;
+}
+
+.like-btns{
+ background-color: cyan;
 }
 
 .back-btn{
