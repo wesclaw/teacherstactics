@@ -1,4 +1,4 @@
-<?php include 'dbh.inc.php'?> 
+<?php include '../includes/dbh.inc.php'?> 
 
 <?php 
 
@@ -38,13 +38,13 @@ if ($stmt) {
             // For example, you can echo or manipulate $row data here
             echo '<a href="plan.php?id=' . $row['Id'] . '" class="lesson-link">';
             echo '<div class="plan">';
-            echo '<img src="' . htmlspecialchars($row['CoverImage']) . '" alt="Lesson Image" class="img-fluid coverImage" >';
+            echo '<img src="../' . htmlspecialchars($row['CoverImage']) . '" alt="Lesson Image" class="img-fluid coverImage" >';
             echo '<h3 class="title">' . htmlspecialchars($row['Title']) . '</h3>';
             echo '<p class="level">' . htmlspecialchars($row['Level']) . '</p>';
             echo '<p class="description">' . htmlspecialchars($row['Description']) . '</p>';
             echo '<div class="btn-holder">';
             echo '<button class="plan-btn">Show</button>';
-            echo '<img src="icons/unlock.png" class="img-fluid plan-lock">';
+            echo '<img src="../icons/unlock.png" class="img-fluid plan-lock">';
             echo '</div>';
             echo '</div>';
             echo '</a>';
@@ -63,10 +63,6 @@ if ($stmt) {
 
 // Close database connection
 mysqli_close($conn);
-
-
-
-
 
 
 

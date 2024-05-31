@@ -1,6 +1,6 @@
 <?php  
 
-include("dbh.inc.php");
+include("../includes/dbh.inc.php");
 
 $lessonTitle = "Lesson Not Found"; 
 
@@ -44,19 +44,19 @@ mysqli_close($conn);
     <title><?php echo htmlspecialchars($lessonTitle); ?></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="icons/logo-pencil.png">
+    <link rel="icon" href="../icons/logo-pencil.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Angkor&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/plan.css">
+    <link rel="stylesheet" href="../styles/plan.css">
   </head>
   <body>
-    <?php include("includes/navbar.html") ?>
+    <?php include("../bars/navbar.php") ?>
    
     <div class="container">
       <div class="make-this-sticky">
-          <button id="go_back_btn" class="back-btn"><img src="icons/back.png" alt="back btn">Back to plans</button>
+          <button id="go_back_btn" class="back-btn"><img src="../icons/back.png" alt="back btn">Back to plans</button>
       </div>
 
       <div class="sidebar">
@@ -84,17 +84,18 @@ mysqli_close($conn);
       <div class="plan">
         
       <div class="top-part">
-          <button class="bookmark-btn">
-            <img src="icons/white-bookmark.png" class="bookmark-icon">
+          <button class="bookmark-btn like-btn">
+            <img src="../icons/white-bookmark.png" class="bookmark-icon">
           </button>
 
 
           <div class="like-btns">
-          <button>
-            <img src="icons/like.png" class="bookmark-icon">
+          <button class="like-btn">
+            <img src="../icons/like.png" class="bookmark-icon">
           </button>
-          <button>
-          <img src="icons/unlike.png" class="bookmark-icon">
+          
+          <button class="unlike-btn">
+          <img src="../icons/unlike.png" class="bookmark-icon">
           </button>
           </div>
           
@@ -119,19 +120,19 @@ mysqli_close($conn);
         <div class="line"></div>
 
         <div class="circle-time" id='section1'>
-          <img src="icons/circletime.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Circle Time</p>
+          <img src="../icons/circletime.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Circle Time</p>
         </div>
 
         <div class='full_lesson'><?php echo $fullLesson ?></div>
 
         <div class="circle-time" id='section2'>
-          <img src="icons/movement.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Games</p>
+          <img src="../icons/movement.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Games</p>
         </div>
 
         <p class='games-section'><?php echo $Games?></p>
 
         <div class="circle-time" id='section3'>
-          <img src="icons/blue-book.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Books</p>
+          <img src="../icons/blue-book.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Books</p>
         </div>
 
        
@@ -140,7 +141,7 @@ mysqli_close($conn);
         </div>
 
         <div class="circle-time" style='margin-top: 20px;' id='section4'>
-          <img src="icons/music.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Songs</p>
+          <img src="../icons/music.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Songs</p>
         </div>
         
         <div class='book-link-container'>
@@ -148,7 +149,7 @@ mysqli_close($conn);
         </div>
         
         <div class="circle-time" style='margin-top: 20px;' id='section5'>
-          <img src="icons/science2.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Experiments</p>
+          <img src="../icons/science2.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Experiments</p>
         </div>
 
         <div class='book-link-container' >
@@ -156,7 +157,7 @@ mysqli_close($conn);
         </div>
 
         <div class="circle-time" style='margin-top: 20px;'id='section6'>
-          <img src="icons/projects.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Projects</p>
+          <img src="../icons/projects.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Projects</p>
         </div>
 
         <div class='book-link-container'>
@@ -164,7 +165,7 @@ mysqli_close($conn);
         </div>
 
         <div class="circle-time" style='margin-top: 20px;' id='section7'>
-          <img src="icons/art.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Arts & Crafts</p>
+          <img src="../icons/art.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Arts & Crafts</p>
         </div>
 
         <div class='book-link-container'>
@@ -172,7 +173,7 @@ mysqli_close($conn);
         </div>
 
         <div class="circle-time" style='margin-top: 20px;' id='section8'>
-          <img src="icons/trips.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Trips</p>
+          <img src="../icons/trips.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Trips</p>
         </div>
 
         <div class='book-link-container'>
@@ -180,7 +181,7 @@ mysqli_close($conn);
         </div>
 
         <div class="circle-time" style='margin-top: 20px;' id='section9'>
-          <img src="icons/otherideas.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Other Ideas</p>
+          <img src="../icons/otherideas.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Other Ideas</p>
         </div>
 
         <div class='book-link-container'>
@@ -188,7 +189,7 @@ mysqli_close($conn);
         </div>
 
         <div class="circle-time" style='margin-top: 20px;'id='section10'>
-          <img src="icons/worksheets.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Worksheets</p>
+          <img src="../icons/worksheets.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Worksheets</p>
         </div>
 
       </div>
@@ -198,7 +199,7 @@ mysqli_close($conn);
 
     <div style="display: flex; flex-direction: column; text-align: center;">
     <h1>Coming Soon!</h1>
-      <p style="font-size: 1.3rem;">We are hard at work preparing worksheets and materials for each lesson plan. </p>
+      <p style="font-size: 1.3rem;">I am hard at work preparing worksheets and materials for each lesson plan. </p>
     </div>
    
       <!-- <div class="worksheet">
@@ -242,7 +243,7 @@ mysqli_close($conn);
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="js/plan.js"></script>
+    <script src="../js/plan.js"></script>
   </body>
 </html>
 

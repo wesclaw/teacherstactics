@@ -7,18 +7,18 @@
     <title>lesson Plans</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="icons/lesson.png">
+    <link rel="icon" href="../icons/lesson.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles/lessonPlan.css">
+    <link rel="stylesheet" href="../styles/lessonPlan.css">
   </head>
   <body>
 
-  <?php include("includes/navbar.html") ?>
+  <?php include("../bars/navbar.php") ?>
   
  <div class="container lesson-wrapper">
     <?php /* include("includes/sidebar.html") */ ?>
     <div class="lesson-plan" id="lessonPlanContainer">
-        <?php include 'fetchLessonPlans.php';?>
+        <?php include '../includes/fetchLessonPlans.php';?>
     </div>  
 </div>
 
@@ -31,10 +31,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script>
 
-
-// making the pagnation
-
-
 var currentPage = 1;
 var lessonsPerPage = 8;
 var totalLessons = 0;
@@ -42,7 +38,8 @@ var totalPages = 0;
 
 function fetchTotalLessons() {
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'fetchLessonPlans.php?getTotal=true', true);
+    var params = 'getTotal=' + encodeURIComponent('true');
+    xhr.open('GET', '../includes/fetchLessonPlans.php?' + params, true);
     xhr.onload = function() {
         if (xhr.status === 200) {
             totalLessons = parseInt(xhr.responseText);
@@ -52,7 +49,6 @@ function fetchTotalLessons() {
     };
     xhr.send();
 }
-
 
 function loadMoreData(direction, page = null) {
     if (page !== null) {
@@ -64,7 +60,8 @@ function loadMoreData(direction, page = null) {
     }
 
     var offset = (currentPage - 1) * lessonsPerPage;
-    var url = 'fetchLessonPlans.php?offset=' + offset + '&limit=' + lessonsPerPage;
+    var params = 'offset=' + encodeURIComponent(offset) + '&limit=' + encodeURIComponent(lessonsPerPage);
+    var url = '../includes/fetchLessonPlans.php?' + params;
 
     var xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
@@ -82,7 +79,6 @@ function loadMoreData(direction, page = null) {
     };
     xhr.send();
 }
-
 
 function generatePaginationButtons() {
     var paginationContainer = document.getElementById('paginationContainer');

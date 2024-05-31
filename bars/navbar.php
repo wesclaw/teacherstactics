@@ -1,10 +1,10 @@
 
     <title>Lesson Plans</title>
-    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="../styles/navbar.css">
   
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container fluid">
-        <a href="index.php"><img src="icons/logo3.png" class="nav-logo"></a>
+        <a href="../pages/index.php"><img src="../icons/logo3.png" class="nav-logo"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -30,26 +30,26 @@
             <ul class="dropdown-menu">
             
               <li class="nav-item dropdown-item">
-                <img src="icons/note.png" class="nav-icon">
+                <img src="../icons/note.png" class="nav-icon">
                   <a class="nav-link dropdown-item" href="songs.php">Songs</a>
               </li>
               <li class="nav-item dropdown-item">
-                <img src="icons/book-icon.png" class="nav-icon">
+                <img src="../icons/book-icon.png" class="nav-icon">
                   <a class="nav-link dropdown-item" href="books.php">Books</a>
               </li>
 
               <li class="nav-item dropdown-item">
-                <img src="icons/paint.png" class="nav-icon">
+                <img src="../icons/paint.png" class="nav-icon">
                   <a class="nav-link dropdown-item" aria-current="page" href="arts-and-crafts.php">Arts & Crafts</a>
                 </li>
 
                 <li class="nav-item dropdown-item">
-                  <img src="icons/science.png" class="nav-icon">
+                  <img src="../icons/science.png" class="nav-icon">
                     <a class="nav-link dropdown-item" href="experiments.php">Experiments</a>
                 </li>
               
                 <li class="nav-item dropdown-item">
-                  <img src="icons/games.png" class="nav-icon">
+                  <img src="../icons/games.png" class="nav-icon">
                     <a class="nav-link dropdown-item" href="games.php">Games</a>
                 </li>
 
