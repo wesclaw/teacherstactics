@@ -4,7 +4,7 @@
   
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container fluid">
-        <a href="../pages/index.php"><img src="../icons/logo3.png" class="nav-logo"></a>
+        <a href="../index.php"><img src="../icons/logo3.png" class="nav-logo"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -12,13 +12,13 @@
         <ul class="navbar-nav ms-auto">
 
           <li class="nav-item">
-            <a class="" href="lessonPlans.php">
+            <a class="" href="../pages/lessonPlans.php">
               <button class="btn btn-success" type="button">Lesson Plans</button>
               </a>
           </li>
             
           <li class="nav-item">
-            <a class="" href="worksheets.php">
+            <a class="" href="../pages/worksheets.php">
               <button class="btn btn-danger" type="button">Worksheets</button>
               </a>
           </li>
