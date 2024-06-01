@@ -19,7 +19,7 @@ if (isset($_GET['getTotal'])) {
 }
 
 $offset = isset($_GET['offset']) ? intval($_GET['offset']) : 0;
-$limit = isset($_GET['limit']) ? intval($_GET['limit']) : 12;
+$limit = isset($_GET['limit']) ? intval($_GET['limit']) : 8;
 
 // Use prepared statements to prevent SQL injection
 $sql = "SELECT Id, Title, Description, CoverImage, Level FROM full_preschool_lesson_plans LIMIT ? OFFSET ?";
