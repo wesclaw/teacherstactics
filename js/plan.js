@@ -3,6 +3,17 @@ const go_back_btn = document.getElementById('go_back_btn').addEventListener('cli
   history.back()
 })
 
+function notAMemberModule(e){
+  const target = e.target.tagName;
+  if(target==='BUTTON' || target==='IMG'){
+    alert('Please create an account in order to like, dislike, or boomark a lesson.')
+  }
+}
+
+const topPart = document.querySelector('.top-part')
+
+topPart.addEventListener('click', notAMemberModule)
+
 
 // this code finds any sentence ending in ':' and then wrapping the whole sentence in <br> tags and then setting the sentences to a <b> tag.
 
