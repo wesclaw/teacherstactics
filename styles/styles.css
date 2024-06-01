@@ -5,6 +5,10 @@
 main{
   height: 100vh;
   background-color:var(--main-blue);
+  /* background-image: url('../otherImages/clouds.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
 }
 
 main .container{
@@ -16,14 +20,14 @@ main .container{
 }
 
 h1{
-  font-size: 5rem;
+  font-size: 5.1rem;
   font-weight: bold;
   text-align: center;
   color: rgb(70, 69, 69);
 }
 
 main .container p {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   text-align: center;
   color: rgba(0, 0, 0, .55);
 }
@@ -33,7 +37,6 @@ main .container p {
 }
 
 .member-btn{
-  /* background-color: #5774fc; */
   background-color: rgb(98, 76, 241);
   padding: 10px 50px;
   font-size: 1.2rem;

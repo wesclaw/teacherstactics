@@ -1,4 +1,6 @@
-<?php include '../includes/dbh.inc.php'?> 
+<?php
+require_once('../includes/dbh.inc.php');
+?>
 
 <?php 
 
