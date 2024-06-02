@@ -18,63 +18,9 @@
     <?php include("../bars/games_sidebar.php") ?>
 
     <div class="lesson-plan games-plan" id="lessonPlanContainer">
+      <!-- if videoLink.innerHTML==="" remove videoLink div-->
       
-      <!-- inlcudes game php here -->
-
-      <div class="game">
-        <div class="top-title">
-          <h4 class="title">Tallest To Shortest</h4>
-            <button>
-               <img src="../icons/star.png" class="star-icon">
-            </button>
-      </div>
-        <div class="line"></div>
-
-        <!-- iframe for youtibe game link -->
-
-        <!-- <div class="video-link">
-          <iframe src=""></iframe>
-        </div> -->
-
-
-        <!--  -->
-        <h5>Materials:</h5>
-        <ul>
-          <li>Music</li>
-        </ul>
-        <div class="line"></div>
-        <h5>Game:</h5>
-        <p>Play some music and let the students dance around the classroom. When the music pauses, challenge them to form a line from tallest to shortest, moving like a slithering snake. Then, switch it up and go from shortest to tallest. To add more fun, designate a student as the "captain" to organize everyone when the music stops, enhancing leadership skills in a playful setting.</p>
-      </div>
-      
-      <div class="game">
-        <div class="top-title">
-          <h4 class="title">Tallest To Shortest</h4>
-            <button>
-               <img src="../icons/star.png" class="star-icon">
-            </button>
-      </div>
-        <div class="line"></div>
-
-        <!-- iframe for youtibe game link -->
-
-        <!-- <div class="video-link">
-          <iframe src=""></iframe>
-        </div> -->
-
-
-        <!--  -->
-        <h5>Materials:</h5>
-        <ul>
-          <li>Music</li>
-        </ul>
-        <div class="line"></div>
-        <h5>Game:</h5>
-        <p>Play some music and let the students dance around the classroom. When the music pauses, challenge them to form a line from tallest to shortest, moving like a slithering snake. Then, switch it up and go from shortest to tallest. To add more fun, designate a student as the "captain" to organize everyone when the music stops, enhancing leadership skills in a playful setting.</p>
-      </div>
-      
-
-
+    <?php include("../includes/fetchPreschoolGames.php") ?>
 
     </div>    
 </div>
