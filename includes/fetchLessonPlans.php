@@ -23,8 +23,8 @@ if (isset($_GET['getTotal'])) {
 $offset = isset($_GET['offset']) ? intval($_GET['offset']) : 0;
 $limit = isset($_GET['limit']) ? intval($_GET['limit']) : 8;
 
-// Use prepared statements to prevent SQL injection
 $sql = "SELECT Id, Title, Description, CoverImage, Level FROM full_preschool_lesson_plans LIMIT ? OFFSET ?";
+
 $stmt = mysqli_prepare($conn, $sql);
 
 if ($stmt) {
@@ -34,10 +34,7 @@ if ($stmt) {
     $result = mysqli_stmt_get_result($stmt);
     
     if ($result) {
-        // Fetch results
         while ($row = mysqli_fetch_assoc($result)) {
-            // Process results
-            // For example, you can echo or manipulate $row data here
             echo '<a href="plan.php?id=' . $row['Id'] . '" class="lesson-link">';
             echo '<div class="plan">';
             echo '<img src="../' . htmlspecialchars($row['CoverImage']) . '" alt="Lesson Image" class="img-fluid coverImage" >';
