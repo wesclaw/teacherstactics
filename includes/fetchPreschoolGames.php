@@ -21,15 +21,14 @@ if ($result && mysqli_num_rows($result) > 0) {
         echo '<button>';
         echo '<img src="../icons/star.png" class="star-icon">';
         echo '</button>';
-        echo '</div>';
-        echo '<div class="line"></div>';
+        echo '</div>';       
         echo '<div class="video-link">';
         echo $videoLink; 
         echo '</div>';
         echo '<div class="line"></div>';
         echo '<h5>Materials:</h5>';
         echo '<ul>';
-        echo '<li>' . $gameMaterials . '</li>';
+        echo $row['game_materials'];
         echo '</ul>';
         echo '<div class="line"></div>';
         echo '<h5>Game:</h5>';
@@ -43,11 +42,10 @@ if ($result && mysqli_num_rows($result) > 0) {
 
 // Close database connection
 mysqli_close($conn);
-?>
 
 
 
 
 
 
-
+ 

@@ -33,7 +33,21 @@
           alert('Please create an account in order to favorite games')
         }
       })
+
+
+      function checkForVideo(){
+        const video_link = document.querySelector('.video-link')
+
+        if(video_link.innerHTML===''){
+          video_link.remove()
+        }
+      }
+      checkForVideo()
+
       
+
+      
+    
     </script>
   </body>
 </html>
