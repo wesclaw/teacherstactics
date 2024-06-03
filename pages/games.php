@@ -22,7 +22,7 @@
 
     <div class="sport-name">
     <img src="../icons/games.png" class="game-icon">
-    <h1 style="font-weight: bold; text-transform: uppercase; margin: 0px; text-decoration: underline;">Sports</h1>
+    <h1 style="font-weight: bold; text-transform: uppercase; margin: 0px; text-decoration: underline;">Games</h1>
     </div>
     
     <div class="lesson-plan games-plan" id="lessonPlanContainer">  
@@ -33,28 +33,35 @@
 </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script async defer>
-      const lessonPlanContainer = document.getElementById('lessonPlanContainer')
-      lessonPlanContainer.addEventListener('click',e=>{
-        const target = e.target.tagName
-        if(target==='IMG' || target==='BUTTON'){
-          alert('Please create an account in order to favorite games')
-        }
-      })
 
+      const lessonPlanContainer = document.getElementById('lessonPlanContainer')
+
+        lessonPlanContainer.addEventListener('click', e => {
+            const target = e.target.tagName;
+            if (target === 'IMG' || target === 'BUTTON') {
+                alert('Please create an account in order to favorite games');
+            }
+        });
 
       function checkForVideo(){
         const video_link = document.querySelector('.video-link')
-
         if(video_link.innerHTML===''){
           video_link.remove()
         }
       }
       checkForVideo()
 
-      
+      const lessonContainer = document.querySelector('.btn');
 
-      
-    
+      lessonContainer.addEventListener('mouseover', () => {
+          lessonContainer.querySelector('.hover-message').style.display = 'block';
+      });
+
+      lessonContainer.addEventListener('mouseout', () => {
+          lessonContainer.querySelector('.hover-message').style.display = 'none';
+      });
+
+          
     </script>
   </body>
 </html>

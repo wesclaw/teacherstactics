@@ -83,7 +83,7 @@
                   <input type="checkbox" name='li' id='grade12' class='checkbox'>
                 </li>
                 <li>
-                  <label for="adults" name='li'>Quiet Games</label>
+                  <label for="adults" name='li'>Silent Games</label>
                   <input type="checkbox" name='li' id='adults' class='checkbox'>
                 </li>
                 

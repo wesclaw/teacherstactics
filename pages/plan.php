@@ -131,18 +131,14 @@ mysqli_close($conn);
           <button class="bookmark-btn like-btn">
             <img src="../icons/white-bookmark.png" class="bookmark-icon">
           </button>
-
-
           <div class="like-btns">
           <button class="like-btn">
             <img src="../icons/like.png" class="bookmark-icon">
           </button>
-          
           <button class="unlike-btn">
           <img src="../icons/unlike.png" class="bookmark-icon">
           </button>
           </div>
-          
       </div>
           
           
