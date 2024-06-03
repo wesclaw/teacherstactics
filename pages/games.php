@@ -14,12 +14,19 @@
   <body>
   <?php include("../bars/navbar.php") ?>
 
+ 
+
   <div class="container lesson-wrapper">
+
     <?php include("../bars/games_sidebar.php") ?>
 
-    <div class="lesson-plan games-plan" id="lessonPlanContainer">
-      <!-- if videoLink.innerHTML==="" remove videoLink div-->
-      
+    <div class="sport-name">
+    <img src="../icons/games.png" class="game-icon">
+    <h1 style="font-weight: bold; text-transform: uppercase; margin: 0px; text-decoration: underline;">Sports</h1>
+    </div>
+    
+    <div class="lesson-plan games-plan" id="lessonPlanContainer">  
+         
     <?php include("../includes/fetchPreschoolGames.php") ?>
 
     </div>    
