@@ -70,7 +70,7 @@
 
 .top-title button:hover{
   background-color: rgba(231, 231, 140, 0.815);
-  outline: 1px solid rgba(0, 0, 0, 0.507);
+  outline: none;
 }
 
 iframe{
