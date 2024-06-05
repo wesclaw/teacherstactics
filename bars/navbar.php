@@ -40,7 +40,7 @@
 
               <li class="nav-item dropdown-item">
                 <img src="../icons/paint.png" class="nav-icon">
-                  <a class="nav-link dropdown-item" aria-current="page" href="arts-and-crafts.php">Arts & Crafts</a>
+                  <a class="nav-link dropdown-item" aria-current="page" href="../pages/arts_crafts.php">Arts & Crafts</a>
                 </li>
 
                 <li class="nav-item dropdown-item">
