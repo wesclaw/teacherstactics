@@ -55,7 +55,7 @@
                   <input type="checkbox" name='li' id='grade5' class='checkbox'>
                 </li>
                 <li>
-                  <label for="grade6" name='li'>Holiday and Seasonal Crafts</label>
+                  <label for="grade6" name='li'>Holiday and Seasonal</label>
                   <input type="checkbox" name='li' id='grade6' class='checkbox'>
                 </li>
                 <li>

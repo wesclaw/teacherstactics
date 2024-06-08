@@ -2,8 +2,6 @@
   --main-blue: rgb(226, 246, 253);
 }
 
-
-
 .main-section{
   display: flex;
   justify-content: center;
@@ -128,3 +126,14 @@ li{
 .btn:hover .hover-message {
   display: block;
 }
+
+
+
+
+
+
+
+
+
+
+

@@ -80,11 +80,7 @@ if (mysqli_stmt_num_rows($stmt) > 0) {
         echo '<h4 class="title">' . $gameName . '</h4>';
         echo '<button class="btn">';
         echo '<img src="../icons/star.png" class="star-icon">';
-
         echo '<span class="hover-message">Add to favorites</span>';
-
-        
-
         echo '</button>';
         echo '</div>';       
         echo '<div class="video-link">';
@@ -93,10 +89,7 @@ if (mysqli_stmt_num_rows($stmt) > 0) {
         echo '<div class="line"></div>';
         echo '<h5>Materials:</h5>';
         echo '<ul>';
-        
-        // Echo the materials directly as they are stored with HTML tags
         echo $game_materials;
-        
         echo '</ul>';
         echo '<div class="line"></div>';
         echo '<h5>Game:</h5>';
