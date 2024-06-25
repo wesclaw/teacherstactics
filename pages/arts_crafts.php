@@ -25,12 +25,35 @@
     </div>
     
     <div class="lesson-plan games-plan" id="lessonPlanContainer">  
-
+    <?php include("../includes/fetchPreschoolArts.php") ?>
     </div>    
   </div>
 
   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="" async defer></script>
+    <script>
+
+    const lessonPlanContainer = document.getElementById('lessonPlanContainer')
+
+    lessonPlanContainer.addEventListener('click', e => {
+        const target = e.target.tagName;
+        if (target === 'IMG' || target === 'BUTTON') {
+            alert('Please create an account in order to favorite arts and crafts');
+        }
+    });
+      
+      
+      const lessonContainer = document.querySelector('.btn');
+
+      lessonContainer.addEventListener('mouseover', () => {
+          lessonContainer.querySelector('.hover-message').style.display = 'block';
+      });
+
+      lessonContainer.addEventListener('mouseout', () => {
+          lessonContainer.querySelector('.hover-message').style.display = 'none';
+      });
+
+     
+    </script>
   </body>
 </html>
