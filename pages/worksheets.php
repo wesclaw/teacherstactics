@@ -14,8 +14,11 @@
   <body>
   <?php include("../bars/navbar.php") ?>
   
-  <div class="container main-section">
-  <h1 class="coming_soon_text">Coming Soon!</h1>
+  <div class="main-section">
+  <?php include("../bars/worksheet_sidebar.php") ?>
+  <div class="worksheet-wrapper">
+      <?php include("../includes/fetchWorksheets.php")?>
+  </div>
   </div>
   
  

@@ -1,51 +1,11 @@
 <?php  
- /*
-
-require_once('../includes/dbh.inc.php');
-
-
-$lessonTitle = "Lesson Not Found"; 
-
-if (isset($_GET['id'])) {
-    $lessonID = $_GET['id'];
-    $sql = "SELECT Title, Description, CoverImage, Level, Full_lesson, Games, time, Books, Songs, Experiments, Projects, Arts_and_crafts, School_trips, Other_ideas FROM full_preschool_lesson_plans WHERE Id = $lessonID"; 
-
-    $result = mysqli_query($conn, $sql);
-
-    if ($result && mysqli_num_rows($result) > 0) {
-        $row = mysqli_fetch_assoc($result);
-        $lessonTitle = $row['Title'];
-        $Description = $row['Description'];
-        $CoverImage = $row['CoverImage'];
-        $Level = $row['Level'];
-        $fullLesson = $row['Full_lesson'];
-        $Games = $row['Games'];
-        $time = $row['time'];
-        $Books = $row['Books'];
-        $Songs = $row['Songs'];
-        $Experiments = $row['Experiments'];
-        $Projects = $row['Projects'];
-        $Arts_and_crafts = $row['Arts_and_crafts'];
-        $School_trips = $row['School_trips'];
-        $Other_ideas = $row['Other_ideas'];
-    }
-  }
-
-mysqli_close($conn);  
-
-*/
-
-
-
-
-
-
+ 
 require_once('../includes/dbh.inc.php');
 
 $lessonTitle = "Lesson Not Found"; 
 
 if (isset($_GET['id'])) {
-    $lessonID = intval($_GET['id']);  // Ensure $lessonID is an integer to prevent SQL injection
+    $lessonID = intval($_GET['id']);  
     $sql = "SELECT Title, Description, CoverImage, Level, Full_lesson, Games, time, Books, Songs, Experiments, Projects, Arts_and_crafts, School_trips, Other_ideas FROM full_preschool_lesson_plans WHERE Id = ?"; 
 
     // Prepare the statement
@@ -61,7 +21,7 @@ if (isset($_GET['id'])) {
         
         // Fetch the result
         if (mysqli_stmt_fetch($stmt)) {
-            // The variables $lessonTitle, $Description, $CoverImage, etc. are automatically populated
+            
         } else {
             $lessonTitle = "Lesson Not Found"; 
         }
@@ -242,7 +202,11 @@ mysqli_close($conn);
       <p style="font-size: 1.3rem;">I am hard at work preparing worksheets and materials for each lesson plan. </p>
     </div>
 
-
+      <!-- 
+        SELECT * FROM preschool_worksheets
+        WHERE worksheet_lesson_title LIKE '%$lessonTitle%';
+    
+      -->
 
     <!-- I WILL HAVE A FETCH WORKSHEETS BASED ON TOPIC -->
    
