@@ -16,7 +16,7 @@
 
  
 
-  <div class="container lesson-wrapper">
+  <div class="lesson-wrapper">
 
     <?php include("../bars/games_sidebar.php") ?>
 

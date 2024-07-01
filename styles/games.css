@@ -19,7 +19,7 @@
   /* i added this instead of the padding tag because of the btn pagation. i removed the bottom padding. */
   padding-top: 180px;
   padding-bottom: 30px;
-  gap: 30px;
+  gap: 20px;
 }
 
 .line{

@@ -14,7 +14,7 @@
   <body>
   <?php include("../bars//navbar.php") ?>
   
-  <div class="container lesson-wrapper">
+  <div class="lesson-wrapper">
 
     <?php include("../bars/experiment_sidebar.php") ?>
 
