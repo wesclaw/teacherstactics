@@ -48,7 +48,7 @@ main .container p {
   font-weight: 600;
   border: none;
   box-shadow: 0px 0px 3px rgba(20, 18, 18, 0.514);
-  border-radius: 5px;
+  border-radius: 3px;
 }
 
 .member-btn:hover{
@@ -69,7 +69,7 @@ main .container p {
   border: none;
   background-color: ghostwhite;
   margin-right: 20px;
-  border-radius: 5px;
+  border-radius: 3px;
   /* remove margin-right on mobile */
 }
 

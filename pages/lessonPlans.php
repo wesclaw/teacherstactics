@@ -115,8 +115,6 @@ function applyLoadingEffects() {
             const parent = img.closest('.plan');
             parent.classList.remove('linkLoad');
             img.classList.remove('worksheetLoad');
-
-            // Remove loading skeletons for text elements
             removeTextLoadingSkeletons(parent);
         });
     });

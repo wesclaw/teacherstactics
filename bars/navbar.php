@@ -29,7 +29,7 @@
             </button>
             <ul class="dropdown-menu">
             
-              <li class="nav-item dropdown-item">
+              <!-- <li class="nav-item dropdown-item">
                 <img src="../icons/note.png" class="nav-icon">
                   <a class="nav-link dropdown-item" href="songs.php">Songs</a>
               </li>
@@ -39,7 +39,7 @@
               <li class="nav-item dropdown-item">
                 <img src="../icons/book-icon.png" class="nav-icon">
                   <a class="nav-link dropdown-item" href="books.php">Books</a>
-              </li>
+              </li> -->
 
               <li class="nav-item dropdown-item">
                 <img src="../icons/paint.png" class="nav-icon">
