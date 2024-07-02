@@ -11,7 +11,7 @@
 
         <form id="searchForm" action="your_search_endpoint.php" method="GET">
           <div class="holder-for-input">
-              <input type="text" class="search-lesson" name="search" placeholder="Search by topic...">
+              <input type="text" class="search-lesson" name="search" placeholder="Search...">
               <img src="/icons/search.png" class="search-icon" id="searchButton">
           </div>
       </form>

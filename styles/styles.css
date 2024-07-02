@@ -1,15 +1,20 @@
 :root{
   --main-blue: rgb(226, 246, 253);
+  --main-lightblue: rgba(248, 204, 197, 0.973);
+  --lightblue: rgb(207, 230, 238);
+  --lightyellow: rgb(212, 212, 137);
 }
 
 main{
   height: 100vh;
-  background-color:var(--main-blue);
-  /* background-image: url('../otherImages/clouds.jpeg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; */
+ 
+
+  /* background-image: linear-gradient(180deg, var(--lightblue), var(--main-lightblue), var(--lightyellow)); */
+
+  background-color: var(--main-blue);
+ 
 }
+
 
 main .container{
   height: 100vh;
@@ -43,10 +48,11 @@ main .container p {
   font-weight: 600;
   border: none;
   box-shadow: 0px 0px 3px rgba(20, 18, 18, 0.514);
+  border-radius: 5px;
 }
 
 .member-btn:hover{
-  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.925);
+  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.486);
 }
 
 .member-btn p{
@@ -63,6 +69,7 @@ main .container p {
   border: none;
   background-color: ghostwhite;
   margin-right: 20px;
+  border-radius: 5px;
   /* remove margin-right on mobile */
 }
 
