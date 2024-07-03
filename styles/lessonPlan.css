@@ -197,7 +197,7 @@ body{
 
 .linkLoad{
   border: none;
-  box-shadow: none;
+  /* box-shadow: none; */
 }
 
 .icon-parent{
