@@ -62,6 +62,10 @@
                   <label for="grade7" name='li'>Astronomy</label>
                   <input type="checkbox" name='li' id='grade7' class='checkbox'>
                 </li>
+                <li>
+                  <label for="grade8" name='li'>Measuring Distance</label>
+                  <input type="checkbox" name='li' id='grade8' class='checkbox'>
+                </li>
                 
                 
                </ul>

@@ -57,6 +57,19 @@
     lessonContainer.addEventListener('mouseout', () => {
       lessonContainer.querySelector('.hover-message').style.display = 'none';
     });
+
+    const text_des =document.querySelectorAll('.text-des')
+
+      text_des.forEach(des => {
+        const textContent = des.innerHTML;
+        const regex = /([^.!?:]*?:)/g;
+        let modifiedContent = textContent.replace(regex, '<br><b>$1</b><br>');
+        if (modifiedContent.startsWith('<br>')) {
+          modifiedContent = modifiedContent.slice(4); 
+        }
+        des.innerHTML = modifiedContent;
+      });
+
     </script>
   </body>
 </html>

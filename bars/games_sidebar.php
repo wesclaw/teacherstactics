@@ -86,6 +86,10 @@
                   <label for="adults" name='li'>Silent Games</label>
                   <input type="checkbox" name='li' id='adults' class='checkbox'>
                 </li>
+                <li>
+                  <label for="build" name='li'>Building/making</label>
+                  <input type="checkbox" name='li' id='build' class='checkbox'>
+                </li>
                 
                </ul>
               </div>

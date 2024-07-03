@@ -43,7 +43,9 @@ if ($stmt) {
             echo '<p class="description">' . htmlspecialchars($row['Description']) . '</p>';
             echo '<div class="btn-holder">';
             echo '<button class="plan-btn">Show</button>';
-            echo '<img src="../icons/unlock.png" class="img-fluid plan-lock">';
+            echo '<div class="icon-parent">';
+            echo '<img src="../icons/unlock.png" class="img-fluid plan-lock hide-icon">';
+            echo '</div>';
             echo '</div>';
             echo '</div>';
             echo '</a>';

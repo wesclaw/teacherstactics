@@ -156,7 +156,6 @@ body{
 
 /* loading animation */
 
-
 .worksheetLoad{
   background: linear-gradient(0.25turn, transparent, #fff, transparent),
     linear-gradient(#eee, #eee),
@@ -199,4 +198,40 @@ body{
 .linkLoad{
   border: none;
   box-shadow: none;
+}
+
+.icon-parent{
+  min-width: 20px;
+}
+
+
+.plan-lock{
+  width: 20px;
+  object-fit: contain;
+}
+
+.hide-icon{
+  display: none;
+}
+
+.iconLoad {
+  background: linear-gradient(0.25turn, transparent, #fff, transparent),
+    linear-gradient(#eee, #eee),
+    radial-gradient(38px circle at 19px 19px, #eee 50%, transparent 51%),
+    linear-gradient(#eee, #eee);
+  background-repeat: no-repeat;
+  background-position: -315px 0, 0 0, 0px 190px, 50px 195px;
+  animation: iconLoad 1.5s infinite;
+  display: inline-block; 
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  margin-top: 0px;
+}
+
+
+@keyframes iconLoad {
+  to {
+    background-position: 315px 0, 0 0, 0 190px, 50px 195px;
+  }
 }
