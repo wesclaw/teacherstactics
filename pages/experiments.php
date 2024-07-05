@@ -31,7 +31,8 @@
    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script>
-       const lessonPlanContainer = document.getElementById('lessonPlanContainer')
+    
+    const lessonPlanContainer = document.getElementById('lessonPlanContainer')
 
     lessonPlanContainer.addEventListener('click', e => {
         const targetClass = e.target.className
@@ -39,6 +40,48 @@
           alert('Please create an account in order to favorite games');
         }
     });
+
+    ///setting an event to the experiment container to get the seemore btn to appear
+
+    document.addEventListener('DOMContentLoaded', () => {
+  const lessonPlanContainer = document.getElementById('lessonPlanContainer');
+
+  lessonPlanContainer.addEventListener('mouseover', (e) => {
+    const gameElement = e.target.closest('.game');
+    if (gameElement) {
+      const btn = gameElement.querySelector('.seemorebtn');
+      if (btn) {
+        btn.classList.add('addtext');
+      }
+    }
+  });
+
+  lessonPlanContainer.addEventListener('mouseout', (e) => {
+    const gameElement = e.target.closest('.game');
+    if (gameElement) {
+      const btn = gameElement.querySelector('.seemorebtn');
+      if (btn) {
+        btn.classList.remove('addtext');
+      }
+    }
+  });
+
+  lessonPlanContainer.addEventListener('click', (e) => {
+    if (e.target.matches('.seemorebtn')) {
+      const btn = e.target;
+      const gameElement = btn.closest('.game');
+      if (gameElement) {
+        const btn = gameElement.querySelector('.seemorebtn');
+        gameElement.style.overflow = 'auto';
+        btn.style.display = 'none'
+        gameElement.classList.add('hide-overlay');
+      }
+    }
+  });
+});
+  
+
+    // 
 
     function checkForVideo(){
     const video_link = document.querySelector('.video-link')
@@ -72,26 +115,7 @@
 
       
 
-      const plans =document.querySelectorAll('.game')
-      const seemorebtn =document.querySelectorAll('.seemorebtn')
-
-
-      plans.forEach((plan, index)=>{
-
-        const btn = seemorebtn[index]
       
-        plan.addEventListener('mouseover', e=>{
-          // btn.style.display = 'block'
-          btn.classList.add('addtext')
-          
-        })
-
-        plan.addEventListener('mouseout',e=>{
-          // btn.style.display = 'none'
-          btn.classList.remove('addtext')
-        })
-
-      })
    
     </script>
   </body>
