@@ -79,19 +79,20 @@
       plans.forEach((plan, index)=>{
 
         const btn = seemorebtn[index]
-        
-
+      
         plan.addEventListener('mouseover', e=>{
-          btn.style.display = 'block'
+          // btn.style.display = 'block'
+          btn.classList.add('addtext')
+          
         })
 
         plan.addEventListener('mouseout',e=>{
-          btn.style.display = 'none'
+          // btn.style.display = 'none'
+          btn.classList.remove('addtext')
         })
 
       })
-
-     
+   
     </script>
   </body>
 </html>

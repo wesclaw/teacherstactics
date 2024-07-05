@@ -44,6 +44,24 @@
   overflow-y: hidden;
   position: relative;
   cursor: pointer;
+  transform: scale(1);
+  transition: .5s;
+}
+
+.game:hover{
+ transform: scale(103%);
+ transition: .5s;
+}
+
+.game::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%; /* Adjust the height as needed */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+  pointer-events: none; /* Allow interactions through the gradient overlay */
 }
 
 .top-title{
@@ -128,18 +146,37 @@ li{
 
 .seemorebtn{
   position: absolute;
-  bottom: 0;
-  width: 100%;
-  font-size: 1.1rem;
-  transition: 1s;
+  bottom: 45%;
+  width: 50%;
+  font-size: 1.5rem;
   display: none;
+  border-radius: 50px;
+  background-color: rgb(32, 32, 32);
+  color: ghostwhite;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.addtext{
+  animation-name: textUp;
+  animation-duration: .2s;
+  animation-timing-function: linear;
+  animation-fill-mode:forwards;
+  display: block;
+}
+
+@keyframes textUp {
+  from{
+    bottom: 45%;
+  }to{
+    bottom: 50%;
+  }
 }
 
 .btn-wrap{
   display: flex;
   justify-content: center;
   width: 100%;
-
 }
 
 
