@@ -34,9 +34,9 @@
        const lessonPlanContainer = document.getElementById('lessonPlanContainer')
 
     lessonPlanContainer.addEventListener('click', e => {
-        const target = e.target.tagName;
-        if (target === 'IMG' || target === 'BUTTON') {
-            alert('Please create an account in order to favorite games');
+        const targetClass = e.target.className
+        if(targetClass==='star-icon' || targetClass==='btn') {
+          alert('Please create an account in order to favorite games');
         }
     });
 
@@ -70,6 +70,28 @@
         des.innerHTML = modifiedContent;
       });
 
+      
+
+      const plans =document.querySelectorAll('.game')
+      const seemorebtn =document.querySelectorAll('.seemorebtn')
+
+
+      plans.forEach((plan, index)=>{
+
+        const btn = seemorebtn[index]
+        
+
+        plan.addEventListener('mouseover', e=>{
+          btn.style.display = 'block'
+        })
+
+        plan.addEventListener('mouseout',e=>{
+          btn.style.display = 'none'
+        })
+
+      })
+
+     
     </script>
   </body>
 </html>

@@ -28,8 +28,6 @@ full_lesson.innerHTML = modifiedText;
 const games_sections = document.querySelectorAll('.games-section');
 
 games_sections.forEach(games_section => {
-    // const games = games_section.textContent;
-    ///get the inner html instead of the textContent that way i can get the tags and not just the text.
     const games = games_section.innerHTML
     const regex_games = /([^.!?:]*?:)(?=\s|$)/g;
     const modifiedText_games = games.replace(regex_games, '<div style="text-align: center;"><b>$1</b></div>');
