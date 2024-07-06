@@ -1,4 +1,4 @@
-<?php  
+<?php  /*
  
 require_once('../includes/dbh.inc.php');
 
@@ -36,12 +36,59 @@ if (isset($_GET['id'])) {
 
 // Close the database connection
 mysqli_close($conn);
+*/
+?>
 
+
+<?php  
+require_once('../includes/dbh.inc.php');
+
+$lessonTitle = "Lesson Not Found"; 
+$Description = "";
+$CoverImage = "";
+$Level = "";
+$fullLesson = "";
+$Games = "";
+$time = "";
+$Books = "";
+$Songs = "";
+$Experiments = "";
+$Projects = "";
+$Arts_and_crafts = "";
+$School_trips = "";
+$Other_ideas = "";
+
+if (isset($_GET['id'])) {
+    $lessonID = intval($_GET['id']);  
+    
+    if ($lessonID > 0) {
+        $sql = "SELECT Title, Description, CoverImage, Level, Full_lesson, Games, time, Books, Songs, Experiments, Projects, Arts_and_crafts, School_trips, Other_ideas FROM full_preschool_lesson_plans WHERE Id = ?"; 
+
+        if ($stmt = mysqli_prepare($conn, $sql)) {
+            mysqli_stmt_bind_param($stmt, "i", $lessonID);
+            mysqli_stmt_execute($stmt);
+            mysqli_stmt_bind_result($stmt, $lessonTitle, $Description, $CoverImage, $Level, $fullLesson, $Games, $time, $Books, $Songs, $Experiments, $Projects, $Arts_and_crafts, $School_trips, $Other_ideas);
+            if (!mysqli_stmt_fetch($stmt)) {
+                $lessonTitle = "Lesson Not Found"; 
+            }
+            mysqli_stmt_close($stmt);
+        } else {
+            error_log("Database prepare statement error: " . mysqli_error($conn));
+            echo "An error occurred. Please try again later.";
+        }
+    } else {
+        error_log("Invalid lesson ID: " . $_GET['id']);
+        echo "Invalid lesson ID.";
+    }
+}
+
+mysqli_close($conn); 
 ?>
 
 <!DOCTYPE html>
 
 <html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -108,10 +155,20 @@ mysqli_close($conn);
           <b>Topic:</b>
         </p>
         <h1 class='lesson-title'>
-          <?php echo $lessonTitle ?>
+          
+          <?php echo htmlspecialchars($lessonTitle)?>
         </h1>
-        <p class='time-text'><b>Circle Time:</b> <?php echo $time?></p>
-        <p class='lesson-level'><b>Level:</b> <?php echo $Level ?></p>
+        <p class='time-text'>
+          <b>Circle Time:</b> 
+          
+          <?php echo htmlspecialchars($time)?>
+        </p>
+        <p class='lesson-level'>
+          <b>Level:</b> 
+         
+
+          <?php echo htmlspecialchars($Level)?>
+        </p>
 
         <div>
         <p class='materials-used'><b>Materials:</b> <a href="#materials" class='link-for-materials'>See here</a></p>
@@ -123,7 +180,10 @@ mysqli_close($conn);
           <img src="../icons/circletime.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Circle Time</p>
         </div>
 
-        <div class='full_lesson'><?php echo $fullLesson ?></div>
+        <div class='full_lesson'>
+          <?php echo $fullLesson ?>
+          
+        </div>
 
         <div class="circle-time" id='section2'>
           <img src="../icons/movement.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Games</p>
@@ -135,10 +195,14 @@ mysqli_close($conn);
           <img src="../icons/blue-book.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Books</p>
         </div>
 
+        <!--  -->
        
         <div class='book-link-container'>
           <div class='flex'><?php echo $Books?></div>
         </div>
+
+
+        <!--  -->
 
         <div class="circle-time" style='margin-top: 20px;' id='section4'>
           <img src="../icons/music.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Songs</p>
@@ -194,21 +258,16 @@ mysqli_close($conn);
 
       </div>
     </div>
+
+
+
     <!-- WORKSHEETS -->
     <section class='worksheets' id="materials">
 
-    <div style="display: flex; flex-direction: column; text-align: center;">
+    <!-- <div style="display: flex; flex-direction: column; text-align: center;">
     <h1>Coming Soon!</h1>
       <p style="font-size: 1.3rem;">I am hard at work preparing worksheets and materials for each lesson plan. </p>
-    </div>
-
-      <!-- 
-        SELECT * FROM preschool_worksheets
-        WHERE worksheet_lesson_title LIKE '%$lessonTitle%';
-    
-      -->
-
-    <!-- I WILL HAVE A FETCH WORKSHEETS BASED ON TOPIC -->
+    </div> -->
    
       <!-- <div class="worksheet">
         <a href="preschool-worksheets/vet-pdfs/VETLettersWithS.pdf" class='a-tag-link' target="_blank">

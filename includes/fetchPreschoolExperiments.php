@@ -24,7 +24,7 @@ if (mysqli_stmt_num_rows($stmt) > 0) {
     while (mysqli_stmt_fetch($stmt)) {
         $title = htmlspecialchars($title);
         $description = htmlspecialchars($description);
-        
+        ////need the materials htmlspecialchars here. IMPORTANT
         $video_link = htmlspecialchars($video_link);
 
         // Output HTML markup for each experiment

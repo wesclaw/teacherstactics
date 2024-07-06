@@ -43,6 +43,8 @@
 
     ///setting an event to the experiment container to get the seemore btn to appear
 
+    // I will need to remove this effect on mobile and just add the more btn under at the bottom . no hover on mobile
+
     document.addEventListener('DOMContentLoaded', () => {
   const lessonPlanContainer = document.getElementById('lessonPlanContainer');
 

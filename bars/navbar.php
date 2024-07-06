@@ -16,6 +16,8 @@
               <button class="btn btn-success" type="button">Lesson Plans</button>
               </a>
           </li>
+
+         
             
           <li class="nav-item">
             <a class="" href="../pages/worksheets.php">
@@ -41,20 +43,30 @@
                   <a class="nav-link dropdown-item" href="books.php">Books</a>
               </li> -->
 
-              <li class="nav-item dropdown-item">
-                <img src="../icons/paint.png" class="nav-icon">
-                  <a class="nav-link dropdown-item" aria-current="page" href="../pages/arts_crafts.php">Arts & Crafts</a>
-                </li>
-
-                <li class="nav-item dropdown-item">
-                  <img src="../icons/science.png" class="nav-icon">
-                    <a class="nav-link dropdown-item" href="experiments.php">Experiments</a>
-                </li>
               
+                
+
+                <a class="nav-link dropdown-item" aria-current="page" href="../pages/arts_crafts.php">
                 <li class="nav-item dropdown-item">
-                  <img src="../icons/games.png" class="nav-icon">
-                    <a class="nav-link dropdown-item" href="games.php">Games</a>
-                </li>
+                <img src="../icons/paint.png" class="nav-icon">
+                 Arts & Crafts
+                </li> 
+                </a>
+
+                <a class="nav-link dropdown-item" href="experiments.php">
+                <li class="nav-item dropdown-item">
+                <img src="../icons/science.png" class="nav-icon">
+                Experiments
+                </li></a>
+
+
+                <a class="nav-link dropdown-item" href="games.php">
+                <li class="nav-item dropdown-item">
+                <img src="../icons/games.png" class="nav-icon">Games
+                </li></a>
+
+                
+                    
 
             </ul>
           </div>

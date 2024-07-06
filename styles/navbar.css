@@ -12,10 +12,7 @@
 }
 
 .nav-item{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 20px;
+  margin-right: 10px;
   /* remove the margin on mobile */
 }
 
@@ -30,6 +27,17 @@
 
 .dropdown{
   text-align: center;
+}
+
+.dropdown-item{
+  display: flex;
+  gap: 10px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, .55);
+  font-family: Arial, Helvetica, sans-serif;
+  
+  /* justify-content: start; */
+
 }
 
 .dropdown .btn{
@@ -47,10 +55,6 @@
 
 @media(max-width: 1200px){
   .nav-item{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 10px;
-    /* remove the margin on mobile */
+    text-align: center;
   }
 }  

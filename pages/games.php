@@ -34,14 +34,55 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script async defer>
 
-      const lessonPlanContainer = document.getElementById('lessonPlanContainer')
 
-        lessonPlanContainer.addEventListener('click', e => {
-            const target = e.target.tagName;
-            if (target === 'IMG' || target === 'BUTTON') {
-                alert('Please create an account in order to favorite games');
-            }
-        });
+const lessonPlanContainer = document.getElementById('lessonPlanContainer')
+
+lessonPlanContainer.addEventListener('click', e => {
+    const targetClass = e.target.className
+    if(targetClass==='star-icon' || targetClass==='btn') {
+      alert('Please create an account in order to favorite games');
+    }
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const lessonPlanContainer = document.getElementById('lessonPlanContainer');
+
+  lessonPlanContainer.addEventListener('mouseover', (e) => {
+    const gameElement = e.target.closest('.game');
+    if (gameElement) {
+      const btn = gameElement.querySelector('.seemorebtn');
+      if (btn) {
+        btn.classList.add('addtext');
+      }
+    }
+  });
+
+  lessonPlanContainer.addEventListener('mouseout', (e) => {
+    const gameElement = e.target.closest('.game');
+    if (gameElement) {
+      const btn = gameElement.querySelector('.seemorebtn');
+      if (btn) {
+        btn.classList.remove('addtext');
+      }
+    }
+  });
+
+  lessonPlanContainer.addEventListener('click', (e) => {
+    if (e.target.matches('.seemorebtn')) {
+      const btn = e.target;
+      const gameElement = btn.closest('.game');
+      if (gameElement) {
+        const btn = gameElement.querySelector('.seemorebtn');
+        gameElement.style.overflow = 'auto';
+        btn.style.display = 'none'
+        gameElement.classList.add('hide-overlay');
+      }
+    }
+  });
+});
+
+  
 
       function checkForVideo(){
         const video_link = document.querySelector('.video-link')
@@ -49,19 +90,7 @@
           video_link.remove()
         }
       }
-      checkForVideo()
-
-      const lessonContainer = document.querySelector('.btn');
-
-      lessonContainer.addEventListener('mouseover', () => {
-          lessonContainer.querySelector('.hover-message').style.display = 'block';
-      });
-
-      lessonContainer.addEventListener('mouseout', () => {
-          lessonContainer.querySelector('.hover-message').style.display = 'none';
-      });
-
-          
+      checkForVideo()          
     </script>
   </body>
 </html>
