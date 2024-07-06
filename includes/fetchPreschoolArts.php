@@ -27,6 +27,7 @@ if (mysqli_stmt_num_rows($stmt) > 0) {
       $title = htmlspecialchars($title);
       $description = htmlspecialchars($description);
       $instructions = htmlspecialchars($instructions);
+      //////need to make the whitelist to allow a tags. I MUST USE HTMLSPECIALCHARS ON ALL THE FETCH FILES
 
       // Output HTML markup for each game
       echo '<div class="game">';
@@ -45,6 +46,9 @@ if (mysqli_stmt_num_rows($stmt) > 0) {
       echo '<div class="line"></div>';  
       echo '<h5>Description:</h5>';
       echo '<p>' . $description . '</p>';
+      echo '<div class="btn-wrap">';
+      echo '<button class="seemorebtn">see more</button>';
+      echo '</div>';
       echo '</div>';
   }
 } else {

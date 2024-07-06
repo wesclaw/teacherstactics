@@ -1,3 +1,7 @@
+/////create a function that checks to see if a youtube video no longer exists, if not, then remove the iframe
+
+
+
 
 const go_back_btn = document.getElementById('go_back_btn').addEventListener('click',()=>{
   history.back()
@@ -17,13 +21,24 @@ topPart.addEventListener('click', notAMemberModule)
 
 // this code finds any sentence ending in ':' and then wrapping the whole sentence in <br> tags and then setting the sentences to a <b> tag.
 
-const full_lesson = document.querySelector('.full_lesson');
-const lessonText = full_lesson.innerHTML
-const regex = /([^.!?:]*?:)(?=\s|$)/g;
-const modifiedText = lessonText.replace(regex, '<br><b>$1</b><br>');
-full_lesson.innerHTML = modifiedText;
+/////im not sure why this code stopped working so i made the other one that rmeove the first br tag
 
-///////////////////////////////////
+// const full_lesson = document.querySelector('.full_lesson');
+// const lessonText = full_lesson.innerHTML
+// const regex = /([^.!?:]*?:)(?=\s|$)/g;
+// const modifiedText = lessonText.replace(regex, '<br><b>$1</b><br>');
+// lessonText.innerHTML = modifiedText;
+
+
+const fullLesson = document.querySelector('.full_lesson');
+let lessonText = fullLesson.innerHTML;
+const regex = /([^.!?:]*?:)(?=\s|$)/g;
+let modifiedText = lessonText.replace(regex, '<br><b>$1</b><br>');
+if (modifiedText.startsWith('<br>')) {
+  modifiedText = modifiedText.slice(4); 
+}
+fullLesson.innerHTML = modifiedText;
+
 
 const games_sections = document.querySelectorAll('.games-section');
 
@@ -58,7 +73,7 @@ const otherIdeas = document.querySelector('.otherIdeas')
 const link_for_other_ideas = document.querySelector('.link_for_other_ideas')
 
 function checkForOtherIdeas(){
-  if(otherIdeas.textContent===""){
+  if(otherIdeas.innerText===""){
     link_for_other_ideas.remove()
     section9.remove()  
   }
@@ -73,7 +88,8 @@ const section6 = document.getElementById('section6')
 const project_text = document.querySelector('.project_text')
 
 function checkForProjects() {
-  if(project_text.textContent===''){
+  ///need to use innerText becuase im using htmlspecialchars on my fetch
+  if(project_text.innerText===''){
     link_for_projects.remove()
     section6.remove()
   }
@@ -88,7 +104,7 @@ const link_for_experiments = document.querySelector('.link_for_experiments')
 const section5 = document.getElementById('section5')
 
 function check_for_experiments(){
-  if(experiments_text.textContent===''){
+  if(experiments_text.innerText===''){
     link_for_experiments.remove()
     section5.remove()
   }
@@ -103,7 +119,7 @@ const trip_text = document.querySelector('.trip_text')
 const school_trips_text = document.querySelector('.school_trips_text')
 
 function check_for_trips(){
-  if(school_trips_text.textContent===''){
+  if(school_trips_text.innerText===''){
     trip_text.remove()
     section8.remove()
   }

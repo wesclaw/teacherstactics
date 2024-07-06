@@ -47,12 +47,9 @@ if (mysqli_stmt_num_rows($stmt) > 0) {
         echo '<div class="line"></div>';
         echo '<h5>Game:</h5>';
         echo '<p class="text-des">' . $description . '</p>';
-
-
         echo '<div class="btn-wrap">';
         echo '<button class="seemorebtn">see more</button>';
         echo '</div>';
-
         echo '</div>';
     }
 } else {

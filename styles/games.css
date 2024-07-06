@@ -24,14 +24,11 @@
 
 .game{
   border: 2px dashed rgba(0, 0, 0, 0.315);
-  min-height: 350px;
-  /* width: 400px; */
-  
+  min-height: 350px;  
   padding: 10px;
   font-family: Arial, Helvetica, sans-serif;
   min-height: 400px;
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.267);
-
   /*  */
   height: 500px;
   width: 400px;
@@ -63,8 +60,6 @@
   pointer-events: none; 
 }
 
-
-
 .text-des{
   max-height: 100px;
 }
@@ -78,13 +73,12 @@
   border-radius: 50px;
   font-weight: bold;
   text-transform: uppercase;
-  background-color: #5FBF39;;
-  border: 2px solid #2C2A3D;
-  box-shadow: 0px 0px 3px #2D95B5;
+  background-color: rgb(44, 44, 44);
+  color: ghostwhite;
 }
 
 .seemorebtn:hover{
-  background-color: #45D4D9;
+  background-color: black;
 }
 
 .addtext{

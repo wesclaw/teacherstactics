@@ -24,8 +24,6 @@ html{
   overflow-x: hidden !important;
   font-size: 1.3rem;
   margin-bottom: 0px !important;
-
-
   position: relative;
 }
 
@@ -45,6 +43,10 @@ html{
 .bookmark-icon{
   width: 32px;
   height: 32px;
+}
+
+#section1{
+  margin-bottom: 10px;
 }
 
 .top-part{
@@ -154,6 +156,8 @@ html{
   font-weight: 400;
   font-style: normal;
   font-size: 2.1rem;
+  max-width: 60%;
+  margin: 0 auto;
 }
 
 .lesson-level{

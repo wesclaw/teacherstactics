@@ -1,23 +1,188 @@
-:root{
-  --main-blue: rgb(226, 246, 253);
-}
-
-body{
-  background-color: var(--main-blue);
-}
-
 .main-section{
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   height: 100vh;
-  width: calc(100% - 285px) !important;
 }
 
-.coming_soon_text{
-  font-size: 7rem;
+.games-plan{
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 275px;
+  justify-content: center;
+  padding-top: 180px;
+  padding-bottom: 30px;
+  gap: 20px;
+}
+
+.line{
+  width: 100%;
+  background-color: black;
+  margin-bottom: 10px;
+}
+
+.game{
+  border: 2px dashed rgba(0, 0, 0, 0.315);
+  min-height: 350px;  
+  padding: 10px;
   font-family: Arial, Helvetica, sans-serif;
+  min-height: 400px;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.267);
+  /*  */
+  height: 500px;
+  width: 400px;
+  overflow-y: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: .5s;
+}
+
+/*  */
+.gameAdd{
+  overflow-y: auto;
+}
+
+.game:hover{
+ transform: scale(1.01);
+ transition: .5s;
+}
+
+.game::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%; 
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+  pointer-events: none; 
+}
+
+.text-des{
+  max-height: 100px;
+}
+
+.seemorebtn{
+  position: absolute;
+  bottom: 45%;
+  width: 50%;
+  font-size: 1.5rem;
+  display: none;
+  border-radius: 50px;
   font-weight: bold;
-  color: rgba(48, 47, 47, 0.966);
+  text-transform: uppercase;
+  /* background-color: rgb(44, 44, 44);
+  color: ghostwhite; */
+
+  background-color: #6EC4A7;
+  color: black;
+}
+
+.seemorebtn:hover{
+  background-color: #a2dfca;
+}
+
+.addtext{
+  animation-name: textUp;
+  animation-duration: .2s;
+  animation-timing-function: linear;
+  animation-fill-mode:forwards;
+  display: block;
+}
+
+@keyframes textUp {
+  from{
+    bottom: 45%;
+  }to{
+    bottom: 50%;
+  }
+}
+
+.btn-wrap{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.game.hide-overlay::after {
+  opacity: 0; /* Hide the overlay */
+}
+
+
+/*  */
+
+.top-title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.star-icon{
+  width: 30px;
+  height: 30px;
+}
+
+.title{
+  font-weight: bold;
+  text-decoration: underline;
+  margin: 0;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.top-title button{
+  border-radius: 50%;
+  padding: 7px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+.top-title button:hover{
+  background-color: rgba(231, 231, 140, 0.815);
+  outline: none;
+}
+
+iframe{
+  border: 1px solid black;
+  width: 100%;
+  height: 200px;
+}
+
+.game p{
+  font-size: 1.1rem;
+}
+
+li{
+  font-size: 1.1rem;
+  color: black;
+}
+
+.sport-name{
+  justify-content: center;
+  align-items: center;
+  padding-top: 110px;
+  display: flex;
+  width: calc(100% - 260px);
+  position: absolute;
+  right: 0;
+}
+
+.game-icon {
+  width: 50px;
+}
+
+.hover-message {
+  display: none;
+  position: absolute;
+  transform: translate(-50%, 20%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.btn:hover .hover-message {
+  display: block;
 }

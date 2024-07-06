@@ -180,16 +180,51 @@ mysqli_close($conn);
           <img src="../icons/circletime.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Circle Time</p>
         </div>
 
-        <div class='full_lesson'>
-          <?php echo $fullLesson ?>
+
+        <?php 
+            function sanitizeContent($content) {
+              
+              $pattern = '/<a\s+(?:[^>]*?\s+)?href="(?:https?:\/\/(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)|\/watch\?v=)[^"]*"[^>]*>(.*?)<\/a>/i';
           
+              $sanitized_content = preg_replace_callback($pattern, function($match) {
+                
+                  return $match[0];
+              }, $content);
+              $sanitized_content = strip_tags($sanitized_content, '<a>');
+              $sanitized_content = htmlspecialchars_decode($sanitized_content);
+          
+              return $sanitized_content;
+          }
+          $fullLesson = sanitizeContent($fullLesson);
+        ?>
+        <div class='full_lesson'>
+        <?php echo $fullLesson; ?>
         </div>
 
         <div class="circle-time" id='section2'>
           <img src="../icons/movement.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Games</p>
         </div>
 
-        <p class='games-section'><?php echo $Games?></p>
+        <?php 
+            function sanitizeGames($content) {
+              
+              $pattern = '/<a\s+(?:[^>]*?\s+)?href="(?:https?:\/\/(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)|\/watch\?v=)[^"]*"[^>]*>(.*?)<\/a>/i';
+          
+              $sanitized_content = preg_replace_callback($pattern, function($match) {
+                
+                  return $match[0];
+              }, $content);
+              $sanitized_content = strip_tags($sanitized_content, '<a>');
+              $sanitized_content = htmlspecialchars_decode($sanitized_content);
+          
+              return $sanitized_content;
+          }
+          $Games = sanitizeGames($Games);
+        ?>
+
+        <p class='games-section'>
+          <?php echo $Games?>
+        </p>
 
         <div class="circle-time" id='section3'>
           <img src="../icons/blue-book.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Books</p>
@@ -198,7 +233,21 @@ mysqli_close($conn);
         <!--  -->
        
         <div class='book-link-container'>
-          <div class='flex'><?php echo $Books?></div>
+          <div class='flex'>
+            
+
+            <?php 
+            $allowed_iframe_pattern = '/<iframe[^>]*src=["\']https?:\/\/(www\.youtube\.com\/embed\/|www\.youtube-nocookie\.com\/embed\/|www\.youtube\.com\/watch\?v=)[^"\']*["\'][^>]*><\/iframe>/i';
+
+            if (preg_match($allowed_iframe_pattern, $Books)) {
+              // Safe to render the iframe content
+              echo $Books;
+          } else {
+              // Handle invalid or potentially unsafe content
+              echo 'Invalid video link.';  
+          }?>
+
+          </div>
         </div>
 
 
@@ -209,7 +258,21 @@ mysqli_close($conn);
         </div>
         
         <div class='book-link-container'>
-          <div class='flex'><?php echo $Songs?></div>
+          <div class='flex'>
+            
+
+            <?php 
+            $allowed_iframe_pattern = '/<iframe[^>]*src=["\']https?:\/\/(www\.youtube\.com\/embed\/|www\.youtube-nocookie\.com\/embed\/|www\.youtube\.com\/watch\?v=)[^"\']*["\'][^>]*><\/iframe>/i';
+
+            if (preg_match($allowed_iframe_pattern, $Songs)) {
+              // Safe to render the iframe content
+              echo $Songs;
+          } else {
+              // Handle invalid or potentially unsafe content
+              echo 'Invalid video link.';  
+          }?>
+
+          </div>
         </div>
         
         <div class="circle-time" style='margin-top: 20px;' id='section5'>
@@ -217,7 +280,9 @@ mysqli_close($conn);
         </div>
 
         <div class='book-link-container' >
-          <p class='games-section experiments_text'><?php echo $Experiments?></p>
+          <p class='games-section experiments_text'> 
+            <?php echo htmlspecialchars($Experiments)?>
+          </p>
         </div>
 
         <div class="circle-time" style='margin-top: 20px;'id='section6'>
@@ -225,7 +290,12 @@ mysqli_close($conn);
         </div>
 
         <div class='book-link-container'>
-          <p class='games-section project_text'><?php echo $Projects?></p>
+          <p class='games-section project_text'>
+            
+
+            <?php echo htmlspecialchars($Projects)?>
+            
+          </p>
         </div>
 
         <div class="circle-time" style='margin-top: 20px;' id='section7'>
@@ -233,7 +303,9 @@ mysqli_close($conn);
         </div>
 
         <div class='book-link-container'>
-          <p class='games-section'><?php echo $Arts_and_crafts?></p>
+          <p class='games-section'>
+            <?php echo htmlspecialchars($Arts_and_crafts)?>
+          </p>
         </div>
 
         <div class="circle-time" style='margin-top: 20px;' id='section8'>
@@ -241,7 +313,9 @@ mysqli_close($conn);
         </div>
 
         <div class='book-link-container'>
-          <p class='games-section school_trips_text'><?php echo $School_trips?></p>
+          <p class='games-section school_trips_text'>
+            <?php echo htmlspecialchars($School_trips)?>
+          </p>
         </div>
 
         <div class="circle-time" style='margin-top: 20px;' id='section9'>
@@ -249,7 +323,9 @@ mysqli_close($conn);
         </div>
 
         <div class='book-link-container'>
-          <p class='games-section otherIdeas'><?php echo $Other_ideas?></p>
+          <p class='games-section otherIdeas'>
+            <?php echo htmlspecialchars($Other_ideas)?>
+          </p>
         </div>
 
         <div class="circle-time" style='margin-top: 20px;'id='section10'>
@@ -264,10 +340,7 @@ mysqli_close($conn);
     <!-- WORKSHEETS -->
     <section class='worksheets' id="materials">
 
-    <!-- <div style="display: flex; flex-direction: column; text-align: center;">
-    <h1>Coming Soon!</h1>
-      <p style="font-size: 1.3rem;">I am hard at work preparing worksheets and materials for each lesson plan. </p>
-    </div> -->
+    <!-- make sure to use htmlspecialchars -->
    
       <!-- <div class="worksheet">
         <a href="preschool-worksheets/vet-pdfs/VETLettersWithS.pdf" class='a-tag-link' target="_blank">
