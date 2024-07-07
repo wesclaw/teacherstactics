@@ -82,15 +82,19 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-  
+         
+const text_des =document.querySelectorAll('.text-des')
 
-      function checkForVideo(){
-        const video_link = document.querySelector('.video-link')
-        if(video_link.innerHTML===''){
-          video_link.remove()
-        }
-      }
-      checkForVideo()          
+text_des.forEach(des => {
+  const textContent = des.innerHTML;
+  const regex = /([^.!?:]*?:)/g;
+  let modifiedContent = textContent.replace(regex, '<br><b>$1</b><br>');
+  if (modifiedContent.startsWith('<br>')) {
+    modifiedContent = modifiedContent.slice(4); 
+  }
+  des.innerHTML = modifiedContent;
+});
+
 
      
     </script>

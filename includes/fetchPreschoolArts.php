@@ -70,8 +70,7 @@ if (mysqli_stmt_num_rows($stmt) > 0) {
       echo $materials;
       echo '</ul>';
       echo '<div class="line"></div>';  
-      echo '<h5>Description:</h5>';
-      echo '<p>' . $description . '</p>';
+      echo '<p class="text-des">' . $description . '</p>';
       echo '<div class="btn-wrap">';
       echo '<button class="seemorebtn">see more</button>';
       echo '</div>';
