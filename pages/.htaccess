@@ -1,0 +1,17 @@
+RewriteEngine On
+
+# Disable directory listing
+Options -Indexes
+
+# Remove .php extension for files in the /pages directory
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [L]
+
+# Redirect /pages/plan.php?id=1 to /pages/plan/1
+RewriteCond %{REQUEST_URI} ^/pages/plan\.php$
+RewriteCond %{QUERY_STRING} ^id=([0-9]+)$
+RewriteRule ^ /pages/plan/%1? [R=301,L]
+
+# Internally rewrite /pages/plan/1 to /pages/plan.php?id=1
+RewriteRule ^pages/plan/([0-9]+)$ /pages/plan.php?id=$1 [L]

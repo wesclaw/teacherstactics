@@ -1,3 +1,24 @@
+<?php
+// worksheets.php
+
+// Define a valid request path
+$validPath = '/pages/worksheets.php';
+
+// Get the current request path
+$requestPath = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
+// Check if the request path is valid
+if ($requestPath !== $validPath) {
+    // If the request path is not valid, return a 404 response
+    header("HTTP/1.1 404 Not Found");
+    echo "404 Not Found";
+    exit();
+}
+
+// Your normal script processing goes here
+?>
+
+
 <!DOCTYPE html>
 
 <html>

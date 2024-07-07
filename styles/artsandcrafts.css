@@ -72,15 +72,12 @@
   border-radius: 50px;
   font-weight: bold;
   text-transform: uppercase;
-  /* background-color: rgb(44, 44, 44);
-  color: ghostwhite; */
-
-  background-color: #6EC4A7;
+  background-color:  #a2dfca;
   color: black;
 }
 
 .seemorebtn:hover{
-  background-color: #a2dfca;
+  background-color: #6EC4A7;
 }
 
 .addtext{
