@@ -16,6 +16,35 @@ mysqli_stmt_bind_result($stmt, $game_id, $game_name, $game_type, $game_topic, $d
 // Store result to get the number of rows
 mysqli_stmt_store_result($stmt);
 
+function sanitizeContent($content) {
+    // Define the pattern for allowed <a> tags pointing to the specific folder containing PDFs
+    $link_pattern = '/<a\s+(?:[^>]*?\s+)?href="\/preschool_games_pdfs\/[^"]*\.pdf"[^>]*>(.*?)<\/a>/i';
+
+    // Define the pattern for <li> tags containing allowed <a> tags
+    $li_pattern = '/<li>(?:[^<]*<a\s+(?:[^>]*?\s+)?href="\/preschool_games_pdfs\/[^"]*\.pdf"[^<]*)<\/a>[^<]*<\/li>/i';
+
+    // Sanitize <li> tags containing allowed <a> tags
+    $sanitized_content = preg_replace_callback($li_pattern, function($match) {
+        return $match[0];
+    }, $content);
+
+    // Remove any tags other than <a> and <li>
+    $sanitized_content = strip_tags($sanitized_content, '<a><li>');
+
+    // Ensure <a> tags have target="_blank"
+    $sanitized_content = preg_replace_callback($link_pattern, function($match) {
+        // Ensure that target="_blank" is included in the link
+        if (strpos($match[0], 'target="_blank"') === false) {
+            $match[0] = str_replace('<a ', '<a target="_blank" ', $match[0]);
+        }
+        return $match[0];
+    }, $sanitized_content);
+
+    return $sanitized_content;
+}
+
+
+
 // Check if any rows are returned
 if (mysqli_stmt_num_rows($stmt) > 0) {
     // Fetch values and display them
@@ -26,6 +55,7 @@ if (mysqli_stmt_num_rows($stmt) > 0) {
         $description = htmlspecialchars($description);
         $videoLink = htmlspecialchars($video_link);
         $level = htmlspecialchars($level);
+        $game_materials= sanitizeContent($game_materials);
 
         // Output HTML markup for each game
         echo '<div class="game">';

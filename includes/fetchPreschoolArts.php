@@ -1,8 +1,5 @@
 <?php
 
-
-
-
 require_once('../includes/dbh.inc.php');
 
 $sql = "SELECT craft_id, title, description, category_type, materials, instructions, age_group FROM preschool_arts_and_crafts";
@@ -20,6 +17,35 @@ mysqli_stmt_bind_result($stmt, $craft_id, $title, $description, $category_type, 
 // Store result to get the number of rows
 mysqli_stmt_store_result($stmt);
 
+
+function sanitizeContent($content) {
+  // Define the pattern for allowed <a> tags pointing to the specific folder containing PDFs
+  $link_pattern = '/<a\s+(?:[^>]*?\s+)?href="\/preschool_art_pdfs\/[^"]*\.pdf"[^>]*>(.*?)<\/a>/i';
+  
+  // Define the pattern for <li> tags containing allowed <a> tags
+  $li_pattern = '/<li>(?:[^<]*<a\s+(?:[^>]*?\s+)?href="\/preschool_art_pdfs\/[^"]*\.pdf"[^<]*)<\/a>[^<]*<\/li>/i';
+
+  // Find all <li> tags with allowed <a> tags
+  $sanitized_content = preg_replace_callback($li_pattern, function($match) {
+      return $match[0];
+  }, $content);
+
+  // Remove any tags other than <a> and <li>
+  $sanitized_content = strip_tags($sanitized_content, '<a><li>');
+  
+  // Ensure <a> tags have target="_blank"
+  $sanitized_content = preg_replace_callback($link_pattern, function($match) {
+      // Ensure that target="_blank" is included in the link
+      if (strpos($match[0], 'target="_blank"') === false) {
+          $match[0] = str_replace('<a ', '<a target="_blank" ', $match[0]);
+      }
+      return $match[0];
+  }, $sanitized_content);
+
+  return $sanitized_content;
+}
+
+
 // Check if any rows are returned
 if (mysqli_stmt_num_rows($stmt) > 0) {
     // Fetch values and display them
@@ -27,8 +53,8 @@ if (mysqli_stmt_num_rows($stmt) > 0) {
       $title = htmlspecialchars($title);
       $description = htmlspecialchars($description);
       $instructions = htmlspecialchars($instructions);
-      //////need to make the whitelist to allow a tags. I MUST USE HTMLSPECIALCHARS ON ALL THE FETCH FILES
-
+      $materials = sanitizeContent($materials);
+    
       // Output HTML markup for each game
       echo '<div class="game">';
       echo '<div class="top-title">';
