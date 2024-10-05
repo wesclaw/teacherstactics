@@ -204,7 +204,8 @@ mysqli_close($conn);
               echo $Books;
           } else {
               // Handle invalid or potentially unsafe content
-              echo 'Invalid video link.';  
+              // echo 'Invalid video link.'; 
+              echo ''; 
           }?>
 
           </div>
@@ -213,7 +214,7 @@ mysqli_close($conn);
 
         <!--  -->
 
-        <div class="circle-time" style='margin-top: 20px;' id='section4'>
+        <div class="circle-time song-link-container" style='margin-top: 20px;' id='section4'>
           <img src="../icons/music.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Songs</p>
         </div>
         
@@ -229,7 +230,9 @@ mysqli_close($conn);
               echo $Songs;
           } else {
               // Handle invalid or potentially unsafe content
-              echo 'Invalid video link.';  
+              // echo 'Invalid video link.';  
+              
+              echo '';
           }?>
 
           </div>

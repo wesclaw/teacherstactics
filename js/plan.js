@@ -127,4 +127,3 @@ function check_for_trips(){
 
 check_for_trips()
 
-
