@@ -77,8 +77,8 @@ mysqli_close($conn);
         <ul>
             <li><a href="#section1">Circle Time</a></li>
             <li><a href="#section2">Games</a></li>
-            <li><a href="#section3">Books</a></li>
-            <li><a href="#section4">Songs</a></li>
+            <li class="checkBooks"><a href="#section3">Books</a></li>
+            <li class="checkSongs"><a href="#section4">Songs</a></li>
             <li class='link_for_experiments'><a href="#section5">Experiments</a></li>
             <li class='link_for_projects'><a href="#section6">Projects</a></li>
             <li><a href="#section7">Arts & Crafts</a></li>
@@ -192,7 +192,7 @@ mysqli_close($conn);
 
         <!--  -->
        
-        <div class='book-link-container'>
+        <div class='book-link-container isBooks'>
           <div class='flex'>
             
 
@@ -204,8 +204,8 @@ mysqli_close($conn);
               echo $Books;
           } else {
               // Handle invalid or potentially unsafe content
-              // echo 'Invalid video link.'; 
-              echo ''; 
+              echo 'Invalid video link.'; 
+              // echo ''; 
           }?>
 
           </div>
@@ -218,7 +218,7 @@ mysqli_close($conn);
           <img src="../icons/music.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Songs</p>
         </div>
         
-        <div class='book-link-container'>
+        <div class='book-link-container isSongs'>
           <div class='flex'>
             
 
@@ -230,9 +230,9 @@ mysqli_close($conn);
               echo $Songs;
           } else {
               // Handle invalid or potentially unsafe content
-              // echo 'Invalid video link.';  
+              echo 'Invalid video link.';  
               
-              echo '';
+              // echo '';
           }?>
 
           </div>

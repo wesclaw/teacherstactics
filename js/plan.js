@@ -127,3 +127,33 @@ function check_for_trips(){
 
 check_for_trips()
 
+const isBooks = document.querySelector('.isBooks')
+const bookLinkContainer = document.querySelector('.book-link-container')
+const section3 = document.getElementById('section3')
+const checkBooks = document.querySelector('.checkBooks')
+
+function removeBooks(){
+  if(isBooks.innerText==='Invalid video link.'){
+    section3.remove()
+    bookLinkContainer.remove()
+    checkBooks.remove()
+  }
+}
+
+removeBooks()
+
+
+const section4 = document.getElementById('section4')
+const isSongs = document.querySelector('.isSongs')
+const checkSongs = document.querySelector('.checkSongs')
+
+function removeSongs(){
+  if(isSongs.innerText==='Invalid video link.'){
+    section4.remove()
+    isSongs.remove()
+    checkSongs.remove()
+  }
+}
+
+removeSongs()
+
