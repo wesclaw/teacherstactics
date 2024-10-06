@@ -21,18 +21,16 @@
 
    <div class="container main-section">
 
-   <?php
-    
-   ?>
+   
      
     <h1>Sign Up</h1>
     
-    <form action="registration.php">
+    <form action="registration.php" method="POST">
       <div class="form-group">
-        <input type="text" name="first_name" placeholder="Name" class="input_style">
+        <input type="text" name="first_name" placeholder="Name" class="input_style" required>
       </div>
       <div class="form-group">
-        <input type="email" name="email" placeholder="Email" class="input_style">
+        <input type="email" name="email" placeholder="Email" class="input_style" required>
       </div>
       <div class="form-group">
         <input type="password" name="password" placeholder="Password" class="input_style">
