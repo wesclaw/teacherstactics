@@ -1,3 +1,9 @@
+<?php 
+
+require_once('../includes/form-handler.php');
+
+?>
+
 <!DOCTYPE html>
 
 <html>
@@ -27,7 +33,7 @@
     
     <form action="registration.php" method="POST">
       <div class="form-group">
-        <input type="text" name="first_name" placeholder="Name" class="input_style" required>
+        <input type="text" name="name" placeholder="Name" class="input_style" required>
       </div>
       <div class="form-group">
         <input type="email" name="email" placeholder="Email" class="input_style" required>

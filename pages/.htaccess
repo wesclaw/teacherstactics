@@ -15,3 +15,5 @@ RewriteRule ^ /pages/plan/%1? [R=301,L]
 
 # Internally rewrite /pages/plan/1 to /pages/plan.php?id=1
 RewriteRule ^pages/plan/([0-9]+)$ /pages/plan.php?id=$1 [L]
+
+
