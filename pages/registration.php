@@ -1,9 +1,3 @@
-<?php 
-
-require_once('../includes/form-handler.php');
-
-?>
-
 <!DOCTYPE html>
 
 <html>
@@ -31,7 +25,7 @@ require_once('../includes/form-handler.php');
      
     <h1>Sign Up</h1>
     
-    <form action="registration.php" method="POST">
+    <form action="../includes/form-handler.php" method="post" novalidate>
       <div class="form-group">
         <input type="text" name="name" placeholder="Name" class="input_style" required>
       </div>
@@ -42,7 +36,7 @@ require_once('../includes/form-handler.php');
         <input type="password" name="password" placeholder="Password" class="input_style">
       </div>
       <div class="form-group">
-        <input type="password" name="repeat_password" placeholder="Repeat Password" class="input_style">
+        <input type="password" name="repeat_password" placeholder="Repeat Password" class="input_style"> 
       </div>
       <div class="form-group">
         <input type="submit" name="submit" placeholder="Repeat Password" value="Create Account" class="create-account-btn">

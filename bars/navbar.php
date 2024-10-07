@@ -4,7 +4,11 @@
   
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container fluid">
-        <a href="./index.php"><img src="../icons/logo3.png" class="nav-logo"></a>
+      
+
+        
+      <a href="../pages/index.php"><img src="../icons/logo3.png" class="nav-logo"></a>
+       
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -70,6 +74,55 @@
 
             </ul>
           </div>
+
+         
+          <!-- <div class="dropdown">
+          <button class="btn userBtn dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="../icons/user.png" class="user-image">
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <li><button class="dropdown-item" type="button">Profile</button></li>
+            <li><button class="dropdown-item" type="button">Settings</button></li>
+            <li><button class="dropdown-item" type="button">Sign out</button></li>
+          </ul>
+        </div> -->
+
+
+
+        <!--  -->
+
+        
+        <?php 
+        // Check if user is signed in by checking session
+        if (isset($_SESSION['user_id'])) { 
+        ?>
+          <!-- User is signed in, display the profile section -->
+          <div class="dropdown">
+            <button class="btn userBtn dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="../icons/user.png" class="user-image" alt="User Image">
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+              <li><button class="dropdown-item" type="button">Profile</button></li>
+              <li><button class="dropdown-item" type="button">Settings</button></li>
+              <!-- <li><button class="dropdown-item" type="button" href='../includes/logout.php'>Sign out</button></li> -->
+
+              <li><a class="dropdown-item" href="../includes/logout.php">Sign out</a></li>
+            </ul>
+          </div>
+        <?php 
+        } else { 
+        ?>
+          <!-- User is not signed in, display the Sign Up and Login options -->
+          <li class="signInTab"><a href="../pages/registration.php">Sign Up</a></li>
+          
+        <?php 
+        } 
+        ?>
+  
+        <!--  -->
+        
+          
+          
 
         </ul>
       </div>

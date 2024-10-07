@@ -1,3 +1,13 @@
+<?php
+session_start(); // Start the session to store user info
+
+// Check if the user is already logged in
+if (isset($_SESSION['user_id'])) {
+    header("Location: /user/main.php"); // Redirect to the main page if logged in
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 
 <html>
@@ -21,13 +31,10 @@
 
    <div class="container main-section">
 
-   <?php
-    
-   ?>
      
     <h1>Login</h1>
     
-    <form action="login.php">
+    <form action="../includes/login-handler.php" method="post">
       
       <div class="form-group">
         <input type="email" name="email" placeholder="Email" class="input_style">
