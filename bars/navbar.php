@@ -1,13 +1,19 @@
 
-    <title>Lesson Plans</title>
     <link rel="stylesheet" href="../styles/navbar.css">
   
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container fluid">
       
-
-        
-      <a href="../pages/index.php"><img src="../icons/logo3.png" class="nav-logo"></a>
+      <a href="<?php 
+        // Check if user is logged in
+        if (isset($_SESSION['user_id'])) { 
+            echo '../user/main.php'; // Redirect to user dashboard if logged in
+        } else { 
+            echo '../pages/index.php'; // Redirect to homepage if not logged in
+        } 
+        ?>">
+        <img src="../icons/logo3.png" class="nav-logo">
+      </a>
        
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -57,7 +63,7 @@
                 </li> 
                 </a>
 
-                <a class="nav-link dropdown-item" href="experiments.php">
+                <a class="nav-link dropdown-item" href="../pages/experiments.php">
                 <li class="nav-item dropdown-item">
                 <img src="../icons/science.png" class="nav-icon">
                 Experiments
@@ -99,13 +105,12 @@
           <!-- User is signed in, display the profile section -->
           <div class="dropdown">
             <button class="btn userBtn dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="../icons/user.png" class="user-image" alt="User Image">
+              <img src="../icons/user2.png" class="user-image" alt="User Image">
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
               <li><button class="dropdown-item" type="button">Profile</button></li>
+              
               <li><button class="dropdown-item" type="button">Settings</button></li>
-              <!-- <li><button class="dropdown-item" type="button" href='../includes/logout.php'>Sign out</button></li> -->
-
               <li><a class="dropdown-item" href="../includes/logout.php">Sign out</a></li>
             </ul>
           </div>
@@ -113,7 +118,7 @@
         } else { 
         ?>
           <!-- User is not signed in, display the Sign Up and Login options -->
-          <li class="signInTab"><a href="../pages/registration.php">Sign Up</a></li>
+          <li class="signInTab"><a href="../pages/registration.php">Create Account</a></li>
           
         <?php 
         } 

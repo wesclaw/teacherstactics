@@ -7,6 +7,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
+    // Check if email or password is empty
+    if (empty($email) || empty($password)) {
+        $_SESSION['login_error'] = "Please enter both email and password.";
+        header("Location: /pages/login.php");
+        exit;
+    }
+
     // Prepare SQL statement
     $sql = "SELECT * FROM users WHERE email = ?";
     $stmt = $conn->stmt_init();
@@ -33,14 +40,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit;
         } else {
             // Password is incorrect
+            $_SESSION['login_error'] = "The password is incorrect.";
             header("Location: /pages/login.php");
-            echo "this password is incorrect";
-            exit; /// Use an alert for feedback
+            exit;
         }
     } else {
-      header("Location: /pages/login.php");
-      echo "this email does not exist";
-      exit; 
+        // Email does not exist
+        $_SESSION['login_error'] = "This email does not exist.";
+        header("Location: /pages/login.php");
+        exit;
     }
 
     // Close the statement and connection

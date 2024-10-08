@@ -15,9 +15,10 @@ if (!isset($_SESSION['user_id'])) {
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
+    <title>Home</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../icons/logo-pencil.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../styles/userHome.css">
   </head>
@@ -26,7 +27,7 @@ if (!isset($_SESSION['user_id'])) {
   <?php include('../bars/navbar.php')?>;
 
   <div class="container main">
-        <h1>Welcome to Your Dashboard</h1>
+        <h1>Welcome to Your Profile</h1>
         <?php 
         // Display the personalized greeting
         if (isset($_SESSION['name'])) { 
