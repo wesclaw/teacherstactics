@@ -28,13 +28,13 @@
     
     <form action="../includes/form-handler.php" method="post" novalidate>
       <div class="form-group">
-        <input type="text" name="name" placeholder="Name" class="input_style" required>
+        <input type="text" name="name" placeholder="Name" class="input_style" required="true">
       </div>
       <div class="form-group">
-        <input type="email" name="email" placeholder="Email" class="input_style" required>
+        <input type="email" name="email" placeholder="Email" class="input_style" required="true">
       </div>
       <div class="form-group">
-        <input type="password" name="password" placeholder="Password" class="input_style">
+        <input type="password" name="password" placeholder="Password" class="input_style" required="true">
       </div>
       <div class="form-group">
         <input type="password" name="repeat_password" placeholder="Repeat Password" class="input_style"> 
@@ -42,6 +42,9 @@
       <div class="form-group">
         <input type="submit" name="submit" placeholder="Repeat Password" value="Create Account" class="create-account-btn">
       </div>
+      <!--  -->
+      
+      <!--  -->
     </form>
     <!--  -->
    

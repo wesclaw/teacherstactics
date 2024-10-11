@@ -2,31 +2,33 @@
 
 require_once('../includes/dbh.inc.php');
 
+$error = '';
+
 
 if(empty($_POST["name"])){
-  die('Name is required');
+  $error = 'Please enter in all the fields:)';
 }
 
 if( ! filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)){
-  die("Valid email required");
+  $error = 'Please enter in all the fields:)';
 }
 
 if(strlen($_POST["password"]) < 8) {
-  die("Password must be at least 8 characters");
+  $error = 'Please enter in all the fields:)';
 }
 
 if(!preg_match("/[a-z]/i", $_POST["password"]))
 {
-  die("Password must contain at least one letter");
+  $error = 'Please enter in all the fields:)';
 }
 
 if(!preg_match("/[0-9]/i", $_POST["password"]))
 {
-  die("Password must contain at least one letter");
+  $error = 'Please enter in all the fields:)';
 }
 
 if($_POST["password"] !== $_POST["repeat_password"]) {
-  die("Passwords must match");
+  $error = 'Your password does not match:)';
 }
 
 $password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
