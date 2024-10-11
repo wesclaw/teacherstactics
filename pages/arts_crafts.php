@@ -26,7 +26,7 @@ if (!isset($_SESSION['user_id'])) {
   </head>
   <body>
   
-  <?php include("../bars//navbar.php") ?>
+  <?php include("../bars/navbar.php") ?>
   
   <div class="lesson-wrapper">
 

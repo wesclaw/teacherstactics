@@ -28,14 +28,40 @@ if (!isset($_SESSION['user_id'])) {
 
   <div class="container main">
         <?php 
-        // Display the personalized greeting
-        if (isset($_SESSION['name'])) { 
-            echo "<h2>Hey, " . htmlspecialchars($_SESSION['name']) . ":)</h2>";
-        } else {
-            echo "<h2>Hey there!</h2>";
-        }
+       ///this is where i get the name and email from the user. redesign the UI
         ?>
-  </div>
+
+        <div class="user">
+
+          <div class="wrapper">
+            <div class="hold-for-image">
+              <img src="../icons/user2.png" class="img">
+            </div>
+            <button class="changeImageBtn">Change</button>
+          </div>
+
+          <div class="holder">
+            <div class="name-set">
+                <label for="name-set">NAME:</label>
+                <input type="input" readonly>
+            </div>
+            <div class="name-set name-set-email">
+                <label for="name-set">EMAIL:</label>
+                <input type="input" readonly>
+            </div>
+            <div class="name-set name-set-password">
+                <label for="name-set">PASSWORD:</label>
+                <input type="input" readonly>
+            </div>
+          </div>
+          
+          <button class="editBtn">Edit</button>
+          
+        </div>
+
+
+
+    </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="" async defer></script>

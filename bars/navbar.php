@@ -104,11 +104,15 @@
         ?>
           <!-- User is signed in, display the profile section -->
           <div class="dropdown">
+            
             <button class="btn userBtn dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
               <img src="../icons/user2.png" class="user-image" alt="User Image">
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-              <li><button class="dropdown-item" type="button">Profile</button></li>
+
+            <li><a class="dropdown-item" type="button" href="../user/main.php">Home</a></li>
+
+              <li><a class="dropdown-item" type="button" href="../user/profile.php">Profile</a></li>
               
               <li><button class="dropdown-item" type="button">Settings</button></li>
               <li><a class="dropdown-item" href="../includes/logout.php">Sign out</a></li>

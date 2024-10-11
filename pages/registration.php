@@ -1,3 +1,9 @@
+<?php 
+  
+  $error = isset($_SESSION['error']) ? $_SESSION['error'] : '';
+
+  unset($_SESSION['error']); 
+?>
 <!DOCTYPE html>
 
 <html>
@@ -26,7 +32,7 @@
      
     <h1>Sign Up</h1>
     
-    <form action="../includes/form-handler.php" method="post" novalidate>
+    <form action="../includes/form-handler.php" method="POST" novalidate>
       <div class="form-group">
         <input type="text" name="name" placeholder="Name" class="input_style" required="true">
       </div>
@@ -43,6 +49,9 @@
         <input type="submit" name="submit" placeholder="Repeat Password" value="Create Account" class="create-account-btn">
       </div>
       <!--  -->
+      <?php if ($error): ?>
+    <h6 class="error-message"><?php echo $error; ?></h6>
+      <?php endif; ?>
       
       <!--  -->
     </form>
