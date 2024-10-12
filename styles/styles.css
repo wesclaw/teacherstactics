@@ -25,10 +25,17 @@ main .container{
 }
 
 h1{
-  font-size: 5.1rem;
+  font-size: 4.6rem;
   font-weight: bold;
   text-align: center;
   color: rgb(70, 69, 69);
+
+  
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  
+  
 }
 
 main .container p {

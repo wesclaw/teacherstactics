@@ -1,5 +1,5 @@
 body{
-  background-color: antiquewhite;
+  background-color: ghostwhite;
 }
 
 .main{
@@ -7,10 +7,17 @@ body{
 }
 
 .user{
-  border: 1px solid black;
   display: flex;
-  padding: 10px;
-  /* flex-direction: column; */
+  padding: 20px;
+}
+
+.deleteAccountBtn{
+  background-color: transparent !important;
+  color: rgb(226, 69, 69) !important;
+}
+
+.deleteAccountBtn:hover {
+  text-decoration: underline;
 }
 
 .image-edit{
@@ -22,9 +29,17 @@ body{
   margin-bottom: 10px;
 }
 
+.image-edit button{
+  border-radius: 20px;
+  background-color: transparent;
+  border: 1px solid black;
+  font-style: italic;
+}
+
 .account-top-tag{
   text-align: center;
   font-size: 2rem;
+  text-decoration: underline;
 }
 
 .wrapper{
@@ -53,10 +68,25 @@ body{
   /* box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.863); */
 }
 
+.wrap h6{
+  font-size: 1.4rem;
+  text-decoration: underline;
+}
+
 .wrap button{
   margin-top: 20px;
   margin-bottom: 20px;
-  max-width: 200px;
+  max-width: 130px;
+  border-radius: 20px;
+  background-color: lightcoral;
+  color: ghostwhite;
+  font-weight: bold;
+  border: none;
+  padding: 7px;
 }
 
+.submitBtn{
+  padding: 7px !important;
+  width: 138px !important;
+}
 
