@@ -1,10 +1,150 @@
 body{
   background-color: ghostwhite;
-  background-image: url('../otherImages/clouds.jpeg');
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 .main{
-  margin-top: 90px;
+  margin-top: 80px;
+}
+
+.top-name{
+  font-family: sans-serif;
+  /* background: rgba(97, 233, 217, 0.28);
+  border-radius: 5px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border: 1px solid rgba(97, 233, 217, 0.83);
+  text-align: center; */
+}
+
+.new-lessons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.lesson-plan{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 150px;
+  padding-bottom: 30px;
+  gap: 30px;
+}
+
+.plan{
+  max-width: 290px;
+  min-height: 500px;
+  background-color: ghostwhite;
+  border: 1px solid rgba(0, 0, 0, 0.445);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 15px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  position: relative;
+}
+
+.plan:hover{
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.288);
+  transition: .1s ease;
+}
+
+.coverImage{
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.title{
+  text-align: center;
+  font-weight: bold;
+}
+
+.level{
+  font-weight: 800;
+  padding: 5px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.795);
+  background-color: rgba(235, 61, 61, 0.288);
+  letter-spacing: .03em;
+  /* font-family: sans-serif; */
+}
+
+.plan-lock{
+  width: 20px;
+  object-fit: contain;
+}
+
+.btn-holder{
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 260px;
+  position: absolute;
+  bottom: 15px;
+  align-items: center;
+}
+
+.plan-btn{
+  border: none;
+  background-color: ghostwhite;
+  border-radius: 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.733);
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.233);
+  padding: 4px 20px;
+}
+
+.plan-btn:hover{
+  background-color: rgb(240, 238, 238);
+}
+
+.lesson-link{
+  text-decoration: none;
+  color: black;
+}
+
+/* worksheets */
+
+.new-worksheets{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.worksheet{
+  width: 290px;
+  height: 180px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.349);
+  margin-bottom: 40px;  
+  border-radius: 4px;
+}
+
+.worksheet-image{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+}
+
+
+.h3{
+  /* font-family: sans-serif;
+  background: rgba(97, 233, 217, 0.28);
+  border-radius: 5px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border: 1px solid rgba(97, 233, 217, 0.83); */
+  text-align: center;
 }
