@@ -112,9 +112,10 @@
 
             <li><a class="dropdown-item" type="button" href="../user/main.php">Home</a></li>
 
-              <li><a class="dropdown-item" type="button" href="../user/profile.php">Profile</a></li>
+              <li><a class="dropdown-item" type="button" href="../user/profile.php">Account</a></li>
               
               <li><button class="dropdown-item" type="button">Settings</button></li>
+              <li><button class="dropdown-item" type="button">Saved Materials</button></li>
               <li><a class="dropdown-item" href="../includes/logout.php">Sign out</a></li>
             </ul>
           </div>

@@ -27,39 +27,32 @@ if (!isset($_SESSION['user_id'])) {
   <?php include('../bars/navbar.php')?>;
 
   <div class="container main">
-        <?php 
-       ///this is where i get the name and email from the user. redesign the UI
-        ?>
+        <p class="account-top-tag">My account</p>
 
         <div class="user">
+            <div class="image-edit">
+              <img src="../icons/user2.png" class="image-edit">
+              <button>Change</button>
+            </div>
+            <div class="wrapper-for-both-input-blocks">
+            <div class="wrap personal-data">
+             <h6>Personal Data</h6> 
+              <input type="text" placeholder="Your name">
+              <input type="Your email" placeholder="Your email">
+              <button>Save Changes</button>
+             </div>
 
-          <div class="wrapper">
-            <div class="hold-for-image">
-              <img src="../icons/user2.png" class="img">
+             <div class="wrap password-change">
+             <h6>Password Change</h6> 
+              <input type="text" placeholder="Current password">
+              <input type="text" placeholder="New password">
+              <input type="text" placeholder="Confirm new password">
+              <button>Save Changes</button>
+             </div>
             </div>
-            <button class="changeImageBtn">Change</button>
-          </div>
+            
 
-          <div class="holder">
-            <div class="name-set">
-                <label for="name-set">NAME:</label>
-                <input type="input" readonly>
-            </div>
-            <div class="name-set name-set-email">
-                <label for="name-set">EMAIL:</label>
-                <input type="input" readonly>
-            </div>
-            <div class="name-set name-set-password">
-                <label for="name-set">PASSWORD:</label>
-                <input type="input" readonly>
-            </div>
-          </div>
-          
-          <button class="editBtn">Edit</button>
-          
         </div>
-
-
 
     </div>
 
