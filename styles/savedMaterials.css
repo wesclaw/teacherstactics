@@ -1,6 +1,7 @@
 .main{
   margin-top: 70px;
-  border: 1px solid black;
+  background-color: ghostwhite;
+  min-height: 50vh;
 }
 
 .material-top-tag{
@@ -20,6 +21,7 @@
 .wrapper-for-materials{
   display: flex;
   padding: 10px;
+  
 }
 
 .left-side button{
@@ -29,18 +31,19 @@
 }
 
 .right-side{
-  /* background-color: lime; */
   width: 100%;
-  box-shadow: inset 0px 0px 3px rgba(36, 35, 35, 0.582);
-}
-
-.noMaterialsClass{
+  box-shadow: inset 0px 0px 3px rgba(36, 35, 35, 0.26);
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.noMaterialsClass{
   text-align: center;
+  
 }
 
 .active{
-  outline: 2px dashed black;
+  background-color: rgb(236, 232, 232);
+  outline: 2px dashed black !important;
 }
