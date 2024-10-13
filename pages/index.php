@@ -1,3 +1,10 @@
+
+<?php 
+session_start();  // Start the session
+// Fetch and display lessons and worksheets regardless of login status
+
+?>
+
 <!DOCTYPE html>
 
 <html>

@@ -1,0 +1,46 @@
+.main{
+  margin-top: 70px;
+  border: 1px solid black;
+}
+
+.material-top-tag{
+  text-align: center;
+  font-size: 2rem;
+  text-decoration: underline;
+}
+
+.left-side{
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  min-width: 250px;
+  gap: 20px;
+}
+
+.wrapper-for-materials{
+  display: flex;
+  padding: 10px;
+}
+
+.left-side button{
+  padding: 10px;
+  font-size: 1.2rem;
+  border: none;
+}
+
+.right-side{
+  /* background-color: lime; */
+  width: 100%;
+  box-shadow: inset 0px 0px 3px rgba(36, 35, 35, 0.582);
+}
+
+.noMaterialsClass{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.active{
+  outline: 2px dashed black;
+}

@@ -114,8 +114,8 @@
 
               <li><a class="dropdown-item" type="button" href="../user/profile.php">Account</a></li>
               
-              <li><button class="dropdown-item" type="button">Settings</button></li>
-              <li><button class="dropdown-item" type="button">Saved Materials</button></li>
+              
+              <li><a class="dropdown-item" type="button" href="../user/savedMaterials.php">Saved Materials</a></li>
               <li><a class="dropdown-item" href="../includes/logout.php">Sign out</a></li>
             </ul>
           </div>

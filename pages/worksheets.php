@@ -2,12 +2,6 @@
 
 session_start(); 
 
-
-if (!isset($_SESSION['user_id'])) {
-    // Redirect to login page if user is not logged in
-    header("Location: registration.php");
-    exit;
-}
 ?>
 
 <?php
@@ -57,6 +51,10 @@ if ($requestPath !== $validPath) {
  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script>
+
+    if (performance.navigation.type === performance.navigation.TYPE_BACK_FORWARD) {
+            window.location.reload();
+    }
         document.addEventListener('DOMContentLoaded', function() {
 
         const images = document.querySelectorAll('.worksheet-image');
@@ -77,7 +75,7 @@ if ($requestPath !== $validPath) {
               p_el.classList.remove('textLoad')
             })
           })
-        })
+        }) 
     });
 
 

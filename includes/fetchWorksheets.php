@@ -23,7 +23,19 @@ if (mysqli_stmt_num_rows($stmt) > 0) {
         $pdf_link = htmlspecialchars($pdf_link);
 
         echo '<div class="worksheet worksheetLoad">';
-        echo '<a href="' . $pdf_path . $pdf_link . '" target="_blank">'; 
+
+        // 
+        if (isset($_SESSION['user_id'])) {
+            // User is logged in, create a direct link to the PDF
+            echo '<a href="' . $pdf_path . $pdf_link . '" target="_blank">'; 
+        } else {
+            // User is not logged in, link to registration.php
+            echo '<a href="../pages/registration.php">'; 
+        }
+
+        // echo '<a href="' . $pdf_path . $pdf_link . '" target="_blank">'; 
+
+        
         echo '<img loading="lazy" src="' . $image_link . $image_path . '" class="worksheet-image">';
         echo '<p class="worksheet-title">' . $title . '</p>';
         echo '</a>';

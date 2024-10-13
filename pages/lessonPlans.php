@@ -2,12 +2,13 @@
 
 session_start(); 
 
-
+/*  this is the code that redirected to registration when user was not signed up
 if (!isset($_SESSION['user_id'])) {
     // Redirect to login page if user is not logged in
     header("Location: registration.php");
     exit;
 }
+    */
 ?>
 
 
