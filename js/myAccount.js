@@ -18,8 +18,16 @@ changeBtn.addEventListener('click',e=>{
 
   const profileImages = ["../user/userImages/man1.png", "../user/userImages/man2.png", "../user/userImages/girl1.png", "../user/userImages/girl2.png", "../user/userImages/girl3.png"]
 
-  for(let i=0;i<5;i++){
-    
+  function selectImage(){
+    const img_els = document.querySelectorAll('.img_el')
+
+    img_els.forEach((img)=>{
+      console.log(img)
+    })
+    /////need to remove the class when another is clicked
+  }
+
+  for(let i=0;i<5;i++){ 
     const btn = document.createElement('button')
     btn.classList.add('btn-for-images-holder')
     const img_el = document.createElement('img')
@@ -28,13 +36,14 @@ changeBtn.addEventListener('click',e=>{
     img_el.src = profileImages[i]
     btn.append(img_el)
     popUp.append(wrapper)
+
+    img_el.addEventListener('click', selectImage)
   }
 
     const inputBtn = document.createElement('button')
     inputBtn.classList.add('btn-for-images-holder')
     const chooseImage = document.createElement('button')
-    chooseImage.classList.add('img_el')
-    chooseImage.style.border = '3px dashed #6563ff'
+    chooseImage.classList.add('last-image-el')
   
     chooseImage.innerHTML = 
     `<img src="../icons/uploadImage.png" class="img">
@@ -45,6 +54,8 @@ changeBtn.addEventListener('click',e=>{
     wrapper.append(inputBtn)
     popUpContainer.append(popUp)
     body.append(popUpContainer)
+
+    
 })
 
 window.addEventListener('click',e=>{
@@ -52,3 +63,4 @@ window.addEventListener('click',e=>{
     e.target.remove()
   }
 })
+
