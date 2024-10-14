@@ -35,7 +35,7 @@ if (!isset($_SESSION['user_id'])) {
           <!-- ////make this a form  -->
             <div class="image-edit">
               <img src="../icons/user2.png" class="image-edit">
-              <button>Change</button>
+              <button class='change_btn'>Change</button>
             </div>
             <div class="wrapper-for-both-input-blocks">
             <div class="wrap personal-data">
@@ -70,6 +70,6 @@ if (!isset($_SESSION['user_id'])) {
     </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="" async defer></script>
+    <script src="../js/myAccount.js" async defer></script>
   </body>
 </html>

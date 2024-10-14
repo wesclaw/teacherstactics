@@ -1,11 +1,3 @@
-// function checkForMaterials(){
-//   const rightSide = document.querySelector('.right-side')
-//   if(rightSide.innerHTML===""){
-//     rightSide.classList.add('noMaterialsClass')
-//     rightSide.innerHTML = `<h4>You currently don't have any saved lessons</h4>`
-//   }
-// }
-
 const rightSide = document.querySelector('.right-side')
 
 function checkForMaterials(btn){
@@ -40,4 +32,3 @@ savedBtns.forEach((btn)=>{
   })
 })
 
-// window.addEventListener('load', checkForMaterials)
