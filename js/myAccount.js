@@ -18,13 +18,16 @@ changeBtn.addEventListener('click',e=>{
 
   const profileImages = ["../user/userImages/man1.png", "../user/userImages/man2.png", "../user/userImages/girl1.png", "../user/userImages/girl2.png", "../user/userImages/girl3.png"]
 
-  function selectImage(){
+  function selectImage(e){
     const img_els = document.querySelectorAll('.img_el')
-
     img_els.forEach((img)=>{
-      console.log(img)
+      img.style.border = '2px solid black'
     })
-    /////need to remove the class when another is clicked
+    e.currentTarget.style.border = '4px dashed black'
+    saveImageBtn.disabled = false;
+    if(saveImageBtn.disabled===false){
+      saveImageBtn.classList.add('saveImageBtn')
+    }
   }
 
   for(let i=0;i<5;i++){ 
@@ -44,7 +47,17 @@ changeBtn.addEventListener('click',e=>{
     inputBtn.classList.add('btn-for-images-holder')
     const chooseImage = document.createElement('button')
     chooseImage.classList.add('last-image-el')
-  
+
+    // save image btn at the bottom of the popup
+    const saveImageBtn = document.createElement('button')
+    saveImageBtn.disabled = true
+
+    if(saveImageBtn.disabled===true){
+      saveImageBtn.classList.add('imageBtnDisabled')
+    }
+    
+    saveImageBtn.textContent = 'Save'
+    
     chooseImage.innerHTML = 
     `<img src="../icons/uploadImage.png" class="img">
     Upload
@@ -52,10 +65,9 @@ changeBtn.addEventListener('click',e=>{
 
     inputBtn.append(chooseImage)
     wrapper.append(inputBtn)
+    wrapper.append(saveImageBtn)
     popUpContainer.append(popUp)
-    body.append(popUpContainer)
-
-    
+    body.append(popUpContainer)  
 })
 
 window.addEventListener('click',e=>{
