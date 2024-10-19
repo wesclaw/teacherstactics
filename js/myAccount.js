@@ -74,7 +74,8 @@ changeBtn.addEventListener('click',e=>{
       fileInput.addEventListener('change', (event) => {
           const selectedFile = event.target.files[0];
           if (selectedFile) {
-              console.log(`File selected: ${selectedFile.name}`);
+           console.log(selectedFile)
+          //  cant even upload  a fucking iamge
           }
       });
       fileInput.click();
