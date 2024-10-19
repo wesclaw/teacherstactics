@@ -63,6 +63,23 @@ changeBtn.addEventListener('click',e=>{
     Upload
     </img>`
 
+
+    chooseImage.addEventListener('click', ()=> {
+      // Create a hidden file input dynamically
+      const fileInput = document.createElement('input');
+      fileInput.type = 'file';
+      fileInput.style.display = 'none';
+
+  
+      fileInput.addEventListener('change', (event) => {
+          const selectedFile = event.target.files[0];
+          if (selectedFile) {
+              console.log(`File selected: ${selectedFile.name}`);
+          }
+      });
+      fileInput.click();
+  });
+
     inputBtn.append(chooseImage)
     wrapper.append(inputBtn)
     wrapper.append(saveImageBtn)
