@@ -11,6 +11,8 @@ function saveImageToDb(e){
   
  })
  console.log(lastImageEl)
+
+ ////i will find the border with 4px dashed black and that image will be saved into the db.
 }
 
 changeBtn.addEventListener('click',e=>{
@@ -34,8 +36,8 @@ changeBtn.addEventListener('click',e=>{
     const lastImage = document.querySelector('.last-image-el')
     img_els.forEach((img)=>{
       img.style.border = '2px solid black'
-      // lastImage.style.border = '4px dashed #6563ff'
-      lastImage.style.border = '2px solid black'
+      lastImage.style.border = '4px dashed #6563ff'
+      // lastImage.style.border = '2px solid black'
     })
     e.currentTarget.style.border = '4px dashed black'
     saveImageBtn.disabled = false;
