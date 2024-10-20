@@ -2,6 +2,17 @@ const changeBtn = document.querySelector('.change_btn')
 const user = document.querySelector('.user')
 const body = document.querySelector('body')
 
+function saveImageToDb(e){
+  const img_els = document.querySelectorAll('.img_el')
+  const lastImageEl = document.querySelector('.last-image-el')
+
+ img_els.forEach((img)=>{
+  console.log(img)
+  
+ })
+ console.log(lastImageEl)
+}
+
 changeBtn.addEventListener('click',e=>{
   const popUpContainer = document.createElement('div')
   popUpContainer.classList.add('pop-up-container')
@@ -20,8 +31,11 @@ changeBtn.addEventListener('click',e=>{
 
   function selectImage(e){
     const img_els = document.querySelectorAll('.img_el')
+    const lastImage = document.querySelector('.last-image-el')
     img_els.forEach((img)=>{
       img.style.border = '2px solid black'
+      // lastImage.style.border = '4px dashed #6563ff'
+      lastImage.style.border = '2px solid black'
     })
     e.currentTarget.style.border = '4px dashed black'
     saveImageBtn.disabled = false;
@@ -57,25 +71,32 @@ changeBtn.addEventListener('click',e=>{
     }
     
     saveImageBtn.textContent = 'Save'
+
+    saveImageBtn.addEventListener('click', saveImageToDb) 
     
     chooseImage.innerHTML = 
     `<img src="../icons/uploadImage.png" class="img">
-    Upload
-    </img>`
-
+    Upload`
 
     chooseImage.addEventListener('click', ()=> {
-      // Create a hidden file input dynamically
       const fileInput = document.createElement('input');
       fileInput.type = 'file';
+      fileInput.accept = '.NEF, .jpg, .jpeg, .png, image/*';
       fileInput.style.display = 'none';
 
-  
       fileInput.addEventListener('change', (event) => {
           const selectedFile = event.target.files[0];
+          const lastImageEl = document.querySelector('.last-image-el')
           if (selectedFile) {
-           console.log(selectedFile)
-          //  cant even upload  a fucking iamge
+           const imageURL = URL.createObjectURL(selectedFile);
+           lastImageEl.innerHTML = `<img src="${imageURL}" alt='Need .png file' class="newImage">`
+           const img_els = document.querySelectorAll('.img_el')
+           img_els.forEach((img)=>{
+            img.style.border = '2px solid black'
+           })
+           lastImageEl.style.border = '4px dashed black'
+           saveImageBtn.disabled = false;
+           saveImageBtn.classList.add('saveImageBtn')
           }
       });
       fileInput.click();
