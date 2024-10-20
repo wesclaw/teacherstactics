@@ -52,7 +52,7 @@ if (isset($_GET['id'])) {
     }
 }
 
-mysqli_close($conn); 
+
 ?>
 
 <!DOCTYPE html>
@@ -302,7 +302,7 @@ mysqli_close($conn);
         </div>
 
         <div class="circle-time" style='margin-top: 20px;'id='section10'>
-          <img src="../icons/worksheets.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Worksheets</p>
+          <img src="../icons/worksheets.png" class="img-fluid plan-icon"> <p class='circle-time-text'>Materials</p>
         </div>
 
       </div>

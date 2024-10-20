@@ -118,7 +118,7 @@ body{
   padding: 7px 40px;
   border-radius: 5px;
   font-weight: bold;
-  background-image: linear-gradient(90deg, rgb(209, 236, 236), rgb(163, 163, 163));
+  background-image: linear-gradient(90deg, rgb(209, 236, 236), rgb(219, 218, 218));
   color: rgba(0, 0, 0, 0.253);
   font-family: Arial, Helvetica, sans-serif;
   cursor: pointer !important;
@@ -152,7 +152,7 @@ body{
 }
 
 .saveImageBtn:hover{
-  border: 1px solid rgba(0, 0, 0, 0.685);
+  border: 1px solid rgba(0, 0, 0, 0.377);
 }
 
 .h4{
@@ -173,8 +173,8 @@ body{
 }
 
 .img_el:hover{
-  border: 4px dashed black;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.445);
+  border: 4px dashed black !important;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.37);
 }
 
 .wrapper{
@@ -242,3 +242,4 @@ body{
   object-fit: cover;
   border: 4px dashed black;
 }
+

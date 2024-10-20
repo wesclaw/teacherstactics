@@ -30,7 +30,7 @@ session_start();  // Start the session
 
 <!-- PYP, MONTESSORI, BRITISH CIRRCULUM AND MATERIALS... -->
     
-    <!-- need more info about problem solving . what does this website offer? what problem does it solve? it solves the time consumming method of finding teaching lesson plans adn worksheets, songs, and books, researching ideas, etc -->
+    <!-- need more info about problem solving . what does this website offer? what problem does it solve? it solves the time consumming routine of finding teaching materials, etc -->
 
     <div style="display: flex; align-items: center; justify-content: center;"> 
     <!-- i added these classes to the div. before it was just an empty div but changed the btn to an a tag -->

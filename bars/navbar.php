@@ -1,3 +1,4 @@
+ <?php require_once('../includes/getProfileImage.php'); ?>
 
     <link rel="stylesheet" href="../styles/navbar.css">
   
@@ -106,7 +107,14 @@
           <div class="dropdown">
             
             <button class="btn userBtn dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="../icons/user2.png" class="user-image" alt="User Image">
+
+
+              <!-- <img src="../icons/user2.png" class="user-image" alt="User Image"> -->
+
+              
+              <img src="<?php echo htmlspecialchars($profileImageUrl); ?>" class='user-image'>   
+              
+              
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
 

@@ -2,17 +2,54 @@ const changeBtn = document.querySelector('.change_btn')
 const user = document.querySelector('.user')
 const body = document.querySelector('body')
 
+function updateProfileImage() {
+  fetch('../includes/getProfileImage.php')
+      .then(response => response.json())
+      .then(data => {
+          if (data.success) {
+              const profileImageElement = document.querySelector('.image-edit');
+              profileImageElement.src = data.profileImageUrl; // Update the image source
+          } else {
+              console.error('Error fetching profile image:', data.error);
+          }
+      })
+      .catch(error => console.error('Fetch error:', error));
+}
+
 function saveImageToDb(e){
   const img_els = document.querySelectorAll('.img_el')
   const lastImageEl = document.querySelector('.last-image-el')
+  let selectedImageSrc = null;
 
- img_els.forEach((img)=>{
-  console.log(img)
-  
- })
- console.log(lastImageEl)
+  img_els.forEach((img)=>{
+    if(img.style.border === '4px dashed black'){
+      selectedImageSrc = img.src;
+      console.log(selectedImageSrc)
+    }
+  })
 
- ////i will find the border with 4px dashed black and that image will be saved into the db.
+  if(selectedImageSrc) {
+    fetch('../includes/uploadImage.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ imagePath: selectedImageSrc }), 
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        console.log('Image saved to database');
+
+        updateProfileImage(); 
+
+      } else {
+        console.error('Error saving image:', data.error);
+      }
+    })
+    .catch(error => console.error('Fetch error:', error));
+  } else {
+    console.log('No image selected');
+  }
+  window.location.reload()
 }
 
 changeBtn.addEventListener('click',e=>{
@@ -37,7 +74,6 @@ changeBtn.addEventListener('click',e=>{
     img_els.forEach((img)=>{
       img.style.border = '2px solid black'
       lastImage.style.border = '4px dashed #6563ff'
-      // lastImage.style.border = '2px solid black'
     })
     e.currentTarget.style.border = '4px dashed black'
     saveImageBtn.disabled = false;
@@ -50,12 +86,13 @@ changeBtn.addEventListener('click',e=>{
     const btn = document.createElement('button')
     btn.classList.add('btn-for-images-holder')
     const img_el = document.createElement('img')
-    wrapper.append(btn)
+
+    wrapper.append(btn) 
+
     img_el.classList.add('img_el')
     img_el.src = profileImages[i]
     btn.append(img_el)
-    popUp.append(wrapper)
-
+    popUp.append(wrapper) 
     img_el.addEventListener('click', selectImage)
   }
 
@@ -64,7 +101,6 @@ changeBtn.addEventListener('click',e=>{
     const chooseImage = document.createElement('button')
     chooseImage.classList.add('last-image-el')
 
-    // save image btn at the bottom of the popup
     const saveImageBtn = document.createElement('button')
     saveImageBtn.disabled = true
 
@@ -84,6 +120,7 @@ changeBtn.addEventListener('click',e=>{
       const fileInput = document.createElement('input');
       fileInput.type = 'file';
       fileInput.accept = '.NEF, .jpg, .jpeg, .png, image/*';
+      
       fileInput.style.display = 'none';
 
       fileInput.addEventListener('change', (event) => {

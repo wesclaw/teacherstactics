@@ -1,4 +1,7 @@
 <?php
+
+
+
 session_start();
 
 // Check if the user is signed up (by verifying if the session is active)
@@ -27,16 +30,26 @@ if (!isset($_SESSION['user_id'])) {
   <?php include('../bars/navbar.php')?>;
 
 
-
   <div class="container main">
         <p class="account-top-tag">My account</p>
 
         <div class="user">
+
+
           <!-- ////make this a form  -->
-            <div class="image-edit">
+            <!-- <div class="image-edit">
               <img src="../icons/user2.png" class="image-edit">
               <button class='change_btn'>Change</button>
+            </div> -->
+
+            <!-- -->
+            <div class="image-edit">
+                <img src="<?php echo htmlspecialchars($profileImageUrl); ?>" alt="Profile Image" class="image-edit"> 
+                <button class='change_btn'>Change</button>
             </div>
+
+            <!--  -->
+
             <div class="wrapper-for-both-input-blocks">
             <div class="wrap personal-data">
              <h6>Personal Data</h6> 
