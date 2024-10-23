@@ -1,4 +1,4 @@
-<?php require_once('dbh.inc.php');
+<?php require_once('../includes/dbh.inc.php');
 
 session_start();
 
@@ -25,4 +25,3 @@ if (isset($_SESSION['user_id']) && $imagePath) {
     echo json_encode(['success' => false, 'error' => 'No image path provided or user not logged in']);
 }
 
-$conn->close();

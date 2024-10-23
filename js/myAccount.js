@@ -2,6 +2,8 @@ const changeBtn = document.querySelector('.change_btn')
 const user = document.querySelector('.user')
 const body = document.querySelector('body')
 
+let selectedImageSrc = null;
+
 function updateProfileImage() {
   fetch('../includes/getProfileImage.php')
       .then(response => response.json())
@@ -16,15 +18,56 @@ function updateProfileImage() {
       .catch(error => console.error('Fetch error:', error));
 }
 
+function sendFileUploadToDb(){
+  const saveImageBtn = document.querySelector('.saveImageBtn')
+
+  if (!selectedImageSrc) {
+    console.error("No image selected to upload.");
+    return;
+  }
+  console.log('Sending file to server:', selectedImageSrc);
+
+  fetch(selectedImageSrc)
+    .then(res => res.blob())
+    .then(blob => {
+      const file = new File([blob], "profile_image.jpg", { type: blob.type });
+      const formData = new FormData();
+      formData.append('image', file);
+
+      saveImageBtn.textContent = "Saving...";
+
+      fetch('../includes/uploadFileDb.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      // .then(result => console.log('Success:', result))
+
+      .then(result=>{
+        if(result.status==='success'){
+          window.location.reload();
+        }
+      })
+     
+      .catch(error => console.error('Error:', error));
+    });
+}
+
 function saveImageToDb(e){
   const img_els = document.querySelectorAll('.img_el')
   const lastImageEl = document.querySelector('.last-image-el')
-  let selectedImageSrc = null;
+
+  if(lastImageEl.style.border === '4px dashed black'){
+    const urlBlob = lastImageEl.firstChild.src;
+    selectedImageSrc = urlBlob;
+    sendFileUploadToDb()
+    return 
+    // THIS RETURN IS HOW THE IMAGE IS FETCHED BACK FROM SERVER. I DONT KNOW HOW BUT IT IS.
+  }
 
   img_els.forEach((img)=>{
     if(img.style.border === '4px dashed black'){
       selectedImageSrc = img.src;
-      console.log(selectedImageSrc)
     }
   })
 
@@ -136,7 +179,6 @@ changeBtn.addEventListener('click',e=>{
            lastImageEl.style.border = '4px dashed black'
            saveImageBtn.disabled = false;
            saveImageBtn.classList.add('saveImageBtn')
-           console.log(imageURL)
           }
       });
       fileInput.click();
