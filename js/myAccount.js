@@ -8,7 +8,7 @@ function updateProfileImage() {
       .then(data => {
           if (data.success) {
               const profileImageElement = document.querySelector('.image-edit');
-              profileImageElement.src = data.profileImageUrl; // Update the image source
+              profileImageElement.src = data.profileImageUrl; 
           } else {
               console.error('Error fetching profile image:', data.error);
           }
@@ -136,6 +136,7 @@ changeBtn.addEventListener('click',e=>{
            lastImageEl.style.border = '4px dashed black'
            saveImageBtn.disabled = false;
            saveImageBtn.classList.add('saveImageBtn')
+           console.log(imageURL)
           }
       });
       fileInput.click();
