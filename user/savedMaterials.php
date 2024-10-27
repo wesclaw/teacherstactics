@@ -32,11 +32,23 @@ if (!isset($_SESSION['user_id'])) {
     <p class="material-top-tag">Saved materials</p>
     <div class="wrapper-for-materials">
       <div class="left-side">
-          <button class="active">Saved Lessons</button>
-          <button>Saved Worksheets</button>
-          <button>Saved Games</button>
-          <button>Saved Crafts</button>
-          <button>Saved Experiments</button>
+          <button class="active">
+            <img src="../icons/saved_lessons.png" class="save_icon">
+          Lessons
+        </button>
+          <button>
+          <img src="../icons/saved_worksheets.png" class="save_icon">
+          Worksheets
+        </button>
+          <button>
+          <img src="../icons/saved_games.png" class="save_icon">
+           Games</button>
+          <button>
+          <img src="../icons/saved_arts.png" class="save_icon">  
+          Arts & Crafts</button>
+          <button>
+          <img src="../icons/saved_experiments.png" class="save_icon">  
+          Experiments</button>
       </div>
 
       <div class="right-side">

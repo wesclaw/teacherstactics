@@ -1,20 +1,21 @@
 const rightSide = document.querySelector('.right-side')
 
 function checkForMaterials(btn){
-  const getText = btn.textContent
-  if(getText==='Saved Lessons'){
+  const getText = btn.textContent.trim()
+  console.log(getText)
+  if(getText==='Lessons'){
     rightSide.classList.add('noMaterialsClass')
     rightSide.innerHTML = `<h4>You currently don't have any saved lessons</h4>`
-  }else if(getText==='Saved Worksheets'){
+  }else if(getText==='Worksheets'){
     rightSide.classList.add('noMaterialsClass')
     rightSide.innerHTML = `<h4>You currently don't have any saved worksheets</h4>`
-  }else if(getText==='Saved Games'){
+  }else if(getText==='Games'){
     rightSide.classList.add('noMaterialsClass')
     rightSide.innerHTML = `<h4>You currently don't have any saved games</h4>`
-  }else if(getText==='Saved Crafts'){
+  }else if(getText==='Arts & Crafts'){
     rightSide.classList.add('noMaterialsClass')
     rightSide.innerHTML = `<h4>You currently don't have any saved crafts</h4>`
-  }else if(getText==='Saved Experiments'){
+  }else if(getText==='Experiments'){
     rightSide.classList.add('noMaterialsClass')
     rightSide.innerHTML = `<h4>You currently don't have any saved experiments</h4>`
   }

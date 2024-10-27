@@ -71,7 +71,7 @@
                 </li></a>
 
 
-                <a class="nav-link dropdown-item" href="games.php">
+                <a class="nav-link dropdown-item" href="../pages/games.php">
                 <li class="nav-item dropdown-item">
                 <img src="../icons/games.png" class="nav-icon">Games
                 </li></a>
@@ -131,7 +131,7 @@
         } else { 
         ?>
           <!-- User is not signed in, display the Sign Up and Login options -->
-          <li class="signInTab"><a href="../pages/registration.php">Create Account</a></li>
+          <li class="signInTab"><a href="../pages/registration.php" class="signATag">Sign Up Free</a></li>
           
         <?php 
         } 

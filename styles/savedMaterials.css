@@ -1,7 +1,7 @@
 .main{
   margin-top: 70px;
   background-color: ghostwhite;
-  min-height: 60vh;
+  min-height: 90vh;
 }
 
 .material-top-tag{
@@ -27,6 +27,9 @@
   padding: 10px;
   font-size: 1.2rem;
   border: none;
+  display: flex;
+  justify-content: start;
+  gap: 20px;
 }
 
 .right-side{
@@ -35,7 +38,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60vh;
+  height: 80vh;
 }
 
 .noMaterialsClass{
@@ -46,4 +49,9 @@
 .active{
   background-color: rgb(236, 232, 232);
   outline: 2px dashed black !important;
+  font-weight: bold;
+}
+
+.save_icon{
+  width: 30px;
 }
