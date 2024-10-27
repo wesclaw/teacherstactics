@@ -27,8 +27,9 @@ session_start();  // Start the session
   <div class="container">
     <h1>Innovate Your English Classroom</h1>
     <p>We provide all the <strong>resources</strong> you need for your classroom and school. Let us do the planning <strong>while you focus on the teaching.</strong></p>
+    
 
-<!-- PYP, MONTESSORI, BRITISH CIRRCULUM AND MATERIALS... -->
+    <!-- PYP, MONTESSORI, BRITISH CIRRCULUM AND MATERIALS... -->
     
     <!-- need more info about problem solving . what does this website offer? what problem does it solve? it solves the time consumming routine of finding teaching materials, etc -->
 

@@ -54,25 +54,26 @@ if (!isset($_SESSION['user_id'])) {
             <div class="wrap personal-data">
              <h6>Personal Data</h6> 
              <!--  -->
-             <form action="" method="POST" class="wrap">
-               <input type="text" placeholder="Your name" value="<?php echo htmlspecialchars($_SESSION['name'] ?? ''); ?>">
-              <input type="Your email" placeholder="Your email" value="<?php echo htmlspecialchars($_SESSION['email'] ?? ''); ?>">
-              <button>Save Changes</button>
+             <form action="../includes/changeNameAndEmail.php" method="POST" class="wrap" id="nameAndEmailForm">
+               <input type="text" placeholder="Your name" value="<?php echo htmlspecialchars($_SESSION['name'] ?? ''); ?>" id="nameInput" name="first_name">
+              <input type="Your email" placeholder="Your email" value="<?php echo htmlspecialchars($_SESSION['email'] ?? ''); ?>" id="emailInput" name="email">
+              <button id="changeNameAndEmailBtn">Save Changes</button>
              </form>
              </div>
 
              <div class="wrap password-change">
              <h6>Password Change</h6> 
-             <form action="" method="POST" class="wrap">
-             <input type="password" placeholder="Current password">
-              <input type="password" placeholder="New password">
-              <input type="password" placeholder="Confirm new password">
+             <form action="../includes/changePassword.php" method="POST" class="wrap">
+             <input type="password" placeholder="Current password" name="current_password">
+              <input type="password" placeholder="New password" name="new_password">
+              <input type="password" placeholder="Confirm new password" name="confirm_password">
               <div style="display: flex; justify-content: space-between;">
               <button class="submitBtn">Save Changes</button>
-              <button class="deleteAccountBtn">Delete account</button>
+              <form action="../includes/deleteAccount.php" method="POST">
+              <button type="button" class="deleteAccountBtn" onclick="confirmDelete()">Delete account</button>
+              </form>
+              
               </div>
-              
-              
              </form>
              
              </div>

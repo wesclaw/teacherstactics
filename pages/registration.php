@@ -1,4 +1,6 @@
 <?php 
+
+  session_start();
   
   $error = isset($_SESSION['error']) ? $_SESSION['error'] : '';
 
