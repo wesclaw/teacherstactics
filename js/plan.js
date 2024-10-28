@@ -1,7 +1,27 @@
 /////create a function that checks to see if a youtube video no longer exists, if not, then remove the iframe
 
 
-
+function sendPlanToDb(getTitle){
+  console.log(getTitle)
+  fetch('../includes/saveLessonPlan.php',{
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ title: getTitle })
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.success) {
+      alert('Lesson plan saved successfully!');
+    } else {
+      alert('Error saving lesson plan: ' + data.error);
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+}
 
 const go_back_btn = document.getElementById('go_back_btn').addEventListener('click',()=>{
   history.back()
@@ -10,7 +30,10 @@ const go_back_btn = document.getElementById('go_back_btn').addEventListener('cli
 function notAMemberModule(e){
   const target = e.target.tagName;
   if(target==='BUTTON' || target==='IMG'){
-    alert('Please create an account in order to like, dislike, or boomark a lesson.')
+    const lessonTitle = document.querySelector('.lesson-title')
+    const getTitle = lessonTitle.textContent.trim();
+    
+    sendPlanToDb(getTitle)
   }
 }
 

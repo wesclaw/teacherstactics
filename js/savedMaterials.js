@@ -2,10 +2,10 @@ const rightSide = document.querySelector('.right-side')
 
 function checkForMaterials(btn){
   const getText = btn.textContent.trim()
-  console.log(getText)
   if(getText==='Lessons'){
     rightSide.classList.add('noMaterialsClass')
     rightSide.innerHTML = `<h4>You currently don't have any saved lessons</h4>`
+
   }else if(getText==='Worksheets'){
     rightSide.classList.add('noMaterialsClass')
     rightSide.innerHTML = `<h4>You currently don't have any saved worksheets</h4>`
