@@ -35,15 +35,93 @@
 .right-side{
   width: 100%;
   box-shadow: inset 0px 0px 3px rgba(36, 35, 35, 0.26);
+  min-height: 80vh;
   display: flex;
   justify-content: center;
-  align-items: center;
-  min-height: 80vh;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding-top: 20px;
 }
 
-.noMaterialsClass{
+.plan{
+  /* max-width: 290px;
+  height: 400px; */
+  background-color: ghostwhite;
+  border: 1px solid rgba(0, 0, 0, 0.445);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 15px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  position: relative;
+}
+
+.plan:hover{
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.288);
+  transition: .1s ease;
+}
+
+.coverImage{
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.title{
   text-align: center;
-  
+  /* font-weight: bold; */
+  /* width: 100%; */
+}
+
+.level{
+  font-weight: 800;
+  padding: 5px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.795);
+  background-color: rgba(235, 61, 61, 0.288) !important;
+  letter-spacing: .03em;
+}
+
+.plan-lock{
+  width: 20px;
+  object-fit: contain;
+}
+
+.btn-holder{
+  display: flex;
+  justify-content: space-between;
+  /* width: 90%;
+  max-width: 260px;
+  position: absolute;
+  bottom: 15px;
+  align-items: center; */
+}
+
+.plan-btn{
+  border: none;
+  background-color: ghostwhite;
+  border-radius: 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.733);
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.233);
+  padding: 4px 20px;
+}
+
+.plan-btn:hover{
+  background-color: rgb(240, 238, 238);
+}
+
+.lesson-link{
+  text-decoration: none;
+  color: black;
+  width: 300px !important;
+  height: 350px !important;
+  /* box-shadow: 0px 0px 10px black; */
 }
 
 .active{
@@ -55,3 +133,4 @@
 .save_icon{
   width: 30px;
 }
+
