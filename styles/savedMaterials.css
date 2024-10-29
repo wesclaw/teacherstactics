@@ -41,21 +41,24 @@
   gap: 20px;
   flex-wrap: wrap;
   padding-top: 20px;
+  overflow-y: auto;
 }
 
 .plan{
-  /* max-width: 290px;
-  height: 400px; */
+  /* max-width: 290px; */
+  /* height: 400px; */
+  height: 100%;
   background-color: ghostwhite;
   border: 1px solid rgba(0, 0, 0, 0.445);
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  margin: 0;
-  padding: 15px;
+  /* column-gap: 20px; */
+  /* padding: 15px; */
   box-sizing: border-box;
   border-radius: 4px;
   position: relative;
+  
 }
 
 .plan:hover{
@@ -94,11 +97,7 @@
 .btn-holder{
   display: flex;
   justify-content: space-between;
-  /* width: 90%;
-  max-width: 260px;
-  position: absolute;
-  bottom: 15px;
-  align-items: center; */
+  padding: 10px;
 }
 
 .plan-btn{

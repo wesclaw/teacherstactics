@@ -1,4 +1,24 @@
-// const rightSide = document.querySelector('.right-side')
+
+const savedBtns = document.querySelectorAll(".left-side button")
+
+
+
+// function checkForMaterials(btn){
+  
+ 
+// }
+
+savedBtns.forEach((btn)=>{
+  btn.addEventListener('click',e=>{
+    savedBtns.forEach((b)=>{
+      b.classList.remove('active')
+    })
+    btn.classList.add('active')
+    // checkForMaterials(btn)
+  })
+})
+
+
 
 // function checkForMaterials(btn){
 //   const getText = btn.textContent.trim()
@@ -20,8 +40,6 @@
 //     rightSide.innerHTML = `<h4>You currently don't have any saved experiments</h4>`
 //   }
 // }
-
-// const savedBtns = document.querySelectorAll(".left-side button")
 
 // savedBtns.forEach((btn)=>{
 //   btn.addEventListener('click',e=>{

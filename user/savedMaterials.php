@@ -107,7 +107,7 @@ if (!empty($savedPlans)) {
       </div>
 
       <div class="right-side">
-        <!-- <h4 class="noMaterialsClass">You currently don't have any saved lessons</h4> -->
+        <!-- maybe here we shud have a new right-side for each btn. then call the fetch for each section on click. so right-side-lessons, right-side-worksheets, etc -->
         <?php if (!empty($plans)): ?>
     
           <?php foreach ($plans as $plan): ?>
