@@ -124,16 +124,42 @@ if (!empty($savedPlans)) {
                     <img src="../icons/unlock.png" class="img-fluid plan-lock hide-icon">
                 </div>
             </div>
-        </div>
-    </a>  
+          </div>
+          </a>  
             
         <?php endforeach; ?>
     
-    <?php else: ?>
-        <p>No saved materials found.</p>
-    <?php endif; ?>
-      </div>
+        <?php else: ?>
+            <p>No saved lessons found.</p>
+        <?php endif; ?>
 
+
+
+
+        
+        </div>
+
+        <!-- right side worksheets -->
+
+        <div class="right-side saved-worksheets">
+        <?php if (!empty($plans)): ?>
+    
+    <?php foreach ($plans as $plan): ?>
+    
+          <a href="" class="">
+          <div class="worksheet">
+            <!-- use fetch here using php to displauy the worlsheet saved by user then add the -->
+            
+          </div>
+          </a>  
+      
+          <?php endforeach; ?>
+
+          <?php else: ?>
+              <p>No saved materials found.</p>
+          <?php endif; ?>
+        </div>
+          <!--  -->
       </div>
     </div>
 

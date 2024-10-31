@@ -45,20 +45,16 @@
 }
 
 .plan{
-  /* max-width: 290px; */
-  /* height: 400px; */
   height: 100%;
   background-color: ghostwhite;
   border: 1px solid rgba(0, 0, 0, 0.445);
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  /* column-gap: 20px; */
-  /* padding: 15px; */
   box-sizing: border-box;
   border-radius: 4px;
   position: relative;
-  
+  justify-content: space-between;
 }
 
 .plan:hover{
@@ -133,3 +129,7 @@
   width: 30px;
 }
 
+/* making one of 5 display none and hidding all but the active one triggered by the class */
+.saved-worksheets{
+  display: none;
+}
