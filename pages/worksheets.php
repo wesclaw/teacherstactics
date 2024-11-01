@@ -80,8 +80,27 @@ if ($requestPath !== $validPath) {
 
 
     function sendWorksheetId(getParent){
-      console.log(getParent)
-      // add a fetch here with new php file sending 
+      const sendData = getParent.firstElementChild.href;
+      
+      fetch('../includes/saveWorksheets.php', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ title: sendData })
+        }
+      )
+      .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            alert('Lesson plan saved successfully!');
+          } else {
+            alert('Error saving lesson plan: ' + data.error);
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        }); 
     }
 
 
@@ -117,7 +136,7 @@ worksheets.forEach((worksheet) => {
 
             // Add click event to the icon
             icon.addEventListener('click', () => {
-                alert('Added to saved materials');
+                // alert('Added to saved materials');
                 // add here to saved 
                 sendWorksheetId(getParent)
             });
