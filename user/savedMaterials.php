@@ -5,7 +5,7 @@ require_once('../includes/dbh.inc.php');
 
 require_once('../includes/displayPlans.php');
 
-require_once('../includes/saveWorksheets.php');
+require_once('../includes/displayWorksheets.php');
 
 ?>
 
@@ -93,18 +93,18 @@ require_once('../includes/saveWorksheets.php');
 
         <div class="right-side saved-worksheets">
        
-          <?php if (!empty($savedWorksheets)): ?>
-              <?php foreach ($savedWorksheets as $worksheet): ?>
-                <a href="<?php echo htmlspecialchars($worksheet['pdf_link']); ?>" target="_blank">Download Worksheet
-                  <div class="worksheet">
-                      <h3><?php echo htmlspecialchars($worksheet['title']); ?></h3>
-                      <img src="<?php echo htmlspecialchars($worksheet['image_path']); ?>" alt="Worksheet Image">
-                </a>
-                  </div>
+        <?php if (!empty($worksheets)): ?>
+        <?php foreach ($worksheets as $worksheet): ?>
+            <a href="../worksheet-pdfs/<?php echo htmlspecialchars($worksheet['pdf_link']); ?>" target="_blank" class="a_tag_worksheet">
+                <div class="worksheet">
+                    <img src="../worksheet-images/<?php echo $worksheet['image_path']; ?>" alt="Worksheet Image" class="worksheet-image img-fluid">
+                    <p><?php echo htmlspecialchars($worksheet['title']); ?></p>
+                </div>
+            </a>
         <?php endforeach; ?>
-        <?php else: ?>
-            <p>No saved worksheets found.</p>
-        <?php endif; ?>
+    <?php else: ?>
+        <p>No saved worksheets found.</p>
+    <?php endif; ?>
           
         </div>
           <!--  -->

@@ -2,7 +2,6 @@
 
 
 function sendPlanToDb(getTitle){
-  console.log(getTitle)
   fetch('../includes/saveLessonPlan.php',{
     method: 'POST',
     headers: {

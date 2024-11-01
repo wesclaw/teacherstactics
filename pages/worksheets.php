@@ -81,21 +81,21 @@ if ($requestPath !== $validPath) {
 
     function sendWorksheetId(getParent){
       const sendData = getParent.firstElementChild.href;
-      
+      const filename = sendData.split('/').pop();
       fetch('../includes/saveWorksheets.php', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify({ title: sendData })
+          body: JSON.stringify({ url: filename })
         }
       )
       .then(response => response.json())
         .then(data => {
           if (data.success) {
-            alert('Lesson plan saved successfully!');
+            alert('worksheet saved successfully!');
           } else {
-            alert('Error saving lesson plan: ' + data.error);
+            alert('Error saving worksheet: ' + data.error);
           }
         })
         .catch(error => {

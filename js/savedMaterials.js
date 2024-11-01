@@ -7,7 +7,7 @@ const saved_worksheets = document.querySelector('.saved-worksheets')
 function checkForMaterials(btn){
   const getText = btn.textContent.trim()
   if(getText==='Lessons'){
-   rightSide.style.display = 'flex'
+    rightSide.style.display = 'flex'
     saved_worksheets.style.display = 'none'
   }else if(getText==='Worksheets'){
     rightSide.style.display = 'none'
