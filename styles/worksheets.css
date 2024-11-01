@@ -19,6 +19,7 @@
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.349);
   margin-bottom: 20px;  
   border-radius: 4px;
+  position: relative;
 }
 
 .worksheet-image{
@@ -42,6 +43,16 @@
   height: 220px;
   margin-bottom: 20px;
   box-shadow: none;
+}
+
+.add-icon{
+  width: 30px;
+}
+
+.icon-hover{
+  background-color: gold;
+  padding: 2px;
+  border-radius: 50%;
 }
 
 a{

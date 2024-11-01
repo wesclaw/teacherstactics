@@ -79,9 +79,58 @@ if ($requestPath !== $validPath) {
     });
 
 
+    function sendWorksheetId(getParent){
+      console.log(getParent)
+      // add a fetch here with new php file sending 
+    }
 
+
+    const worksheets = document.querySelectorAll('.worksheet-image');
+
+worksheets.forEach((worksheet) => {
+    worksheet.addEventListener('mouseover', () => {
+        const getParent = worksheet.parentElement.parentElement;
+
+        // Prevent duplicates
+        if (!getParent.querySelector('.add-icon')) {
+            const icon = document.createElement('img');
+            icon.src = '../icons/star.png';
+            icon.classList.add('add-icon');
+
+            // Style the icon as needed
+            icon.style.position = 'absolute';
+            icon.style.top = '10px';
+            icon.style.right = '10px';
+            icon.style.cursor = 'pointer';
+
+            getParent.appendChild(icon);
+
+            // Prevent icon from disappearing when hovered
+            icon.addEventListener('mouseover', () => {
+                icon.style.opacity = '1';
+                icon.classList.add('icon-hover')
+            });
+
+            icon.addEventListener('mouseleave',e=>{
+              icon.classList.remove('icon-hover')
+            })
+
+            // Add click event to the icon
+            icon.addEventListener('click', () => {
+                alert('Added to saved materials');
+                // add here to saved 
+                sendWorksheetId(getParent)
+            });
+
+            // Add a mouseleave event to the parent to remove the icon when leaving the parent div
+            getParent.addEventListener('mouseleave', () => {
+                icon.remove();
+            });
+        }
+    });
+});
     
-  
+
     </script>
   </body>
 </html>

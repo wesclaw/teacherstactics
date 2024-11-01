@@ -23,8 +23,7 @@ if (mysqli_stmt_num_rows($stmt) > 0) {
         $pdf_link = htmlspecialchars($pdf_link);
 
         echo '<div class="worksheet worksheetLoad">';
-
-        // 
+        
         if (isset($_SESSION['user_id'])) {
             // User is logged in, create a direct link to the PDF
             echo '<a href="' . $pdf_path . $pdf_link . '" target="_blank">'; 
