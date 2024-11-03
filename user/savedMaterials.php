@@ -68,6 +68,9 @@ require_once('../includes/displayPlans.php');
           
           <a href="../pages/plan.php?id=<?php echo $plan['Id']; ?>" class="lesson-link">
           <div class="plan">
+            <button class="deletePlan">
+              <img src="../icons/delete2.png" class="icon-delete">
+            </button>
             <img src="../<?php echo $plan['CoverImage']; ?>" alt="Cover Image" class="coverImage">
             <h2 class="title"><?php echo htmlspecialchars($plan['Title']); ?></h2>
             
@@ -96,9 +99,7 @@ require_once('../includes/displayPlans.php');
         <!-- right side worksheets -->
 
         <div class="right-side saved-worksheets">
-       
-      
-          
+          <!-- using fetch to get the includes file -->
         </div>
           <!--  -->
       </div>

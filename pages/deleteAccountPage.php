@@ -15,7 +15,7 @@
       <a href="../user/profile.php" class="a_tag">BACK</a>
       <div class="container delete_ui">
         
-      <p>We are sad to see you go</p>
+      
       <form action="../includes/deleteAccount.php" method="POST">
       <button class="button">Delete Account</button>
       </form>
