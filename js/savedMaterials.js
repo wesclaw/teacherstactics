@@ -9,13 +9,32 @@ const deletePlanBtn = document.querySelectorAll('.deletePlan')
 
 
 deletePlanBtn.forEach((btn)=>{
-  btn.addEventListener('click', async (e) => {
+  btn.addEventListener('click', (e) => {
     e.preventDefault();
     const getPlan = e.currentTarget.parentElement;
     const getTitle = getPlan.querySelector('.title').textContent.trim(); 
 
-   console.log(getTitle)
-  //  use fetch here and send
+    console.log(getTitle)
+
+    fetch('../includes/removePlan.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ title: getTitle }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === 'success') {
+          console.log(data.message);
+          
+      } else {
+          console.error(data.message);
+      }
+    })
+    .catch(err=>{
+      console.log(err)
+    })
   });
 })
 
