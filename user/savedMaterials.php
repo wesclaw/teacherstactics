@@ -5,7 +5,11 @@ require_once('../includes/dbh.inc.php');
 
 require_once('../includes/displayPlans.php');
 
-require_once('../includes/displayWorksheets.php');
+
+
+////load dynamically here with js on click. when the worksheet btn is clicked, we fetch this file and display using ajax
+
+// require_once('../includes/displayWorksheets.php');
 
 ?>
 
@@ -93,18 +97,7 @@ require_once('../includes/displayWorksheets.php');
 
         <div class="right-side saved-worksheets">
        
-        <?php if (!empty($worksheets)): ?>
-        <?php foreach ($worksheets as $worksheet): ?>
-            <a href="../worksheet-pdfs/<?php echo htmlspecialchars($worksheet['pdf_link']); ?>" target="_blank" class="a_tag_worksheet">
-                <div class="worksheet">
-                    <img src="../worksheet-images/<?php echo $worksheet['image_path']; ?>" alt="Worksheet Image" class="worksheet-image img-fluid">
-                    <p><?php echo htmlspecialchars($worksheet['title']); ?></p>
-                </div>
-            </a>
-        <?php endforeach; ?>
-    <?php else: ?>
-        <p>No saved worksheets found.</p>
-    <?php endif; ?>
+      
           
         </div>
           <!--  -->

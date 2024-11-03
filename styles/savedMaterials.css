@@ -35,12 +35,13 @@
 .right-side{
   width: 100%;
   box-shadow: inset 0px 0px 3px rgba(36, 35, 35, 0.26);
-  min-height: 80vh;
+  max-height: 80vh;
   display: flex;
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
   padding-top: 20px;
+  padding-bottom: 20px;
   overflow-y: auto;
 }
 
@@ -132,5 +133,77 @@
 /* making one of 5 display none and hidding all but the active one triggered by the class */
 .saved-worksheets{
   display: none;
+  max-height: 80vh;
+  overflow-y: auto;
 }
 
+.worksheet{
+  width: 300px;
+  height: 200px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.349);
+  margin-bottom: 20px;  
+  border-radius: 4px;
+  position: relative;
+}
+
+.worksheet-image{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+}
+
+
+a{
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration:underline;
+}
+
+
+/* load effect */
+
+.worksheetLoad{
+  background: linear-gradient(0.25turn, transparent, #fff, transparent),
+    linear-gradient(#eee, #eee),
+    radial-gradient(38px circle at 19px 19px, #eee 50%, transparent 51%),
+    linear-gradient(#eee, #eee);
+  background-repeat: no-repeat;
+  background-position: -315px 0, 0 0, 0px 190px, 50px 195px;
+  animation: loading 1.5s infinite;
+  /* width: 360px;
+  height: 220px; */
+  margin-bottom: 20px;
+  box-shadow: none;
+}
+
+@keyframes loading {
+  to {
+    background-position: 315px 0, 0 0, 0 190px, 50px 195px;
+  }
+}
+
+.textLoad {
+  background: linear-gradient(0.25turn, transparent, #fff, transparent),
+    linear-gradient(#eee, #eee),
+    radial-gradient(38px circle at 19px 19px, #eee 50%, transparent 51%),
+    linear-gradient(#eee, #eee);
+  background-repeat: no-repeat;
+  background-position: -315px 0, 0 0, 0px 190px, 50px 195px;
+  animation: textLoad 1.5s infinite;
+  color: transparent;
+  display: inline-block; 
+  border-radius: 4px;
+  padding: 3px;
+  margin-top: 5px;
+}
+
+@keyframes textLoad {
+  to {
+    background-position: 315px 0, 0 0, 0 190px, 50px 195px;
+  }
+}
