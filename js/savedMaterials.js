@@ -19,22 +19,24 @@ deletePlanBtn.forEach((btn)=>{
     fetch('../includes/removePlan.php', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ title: getTitle }),
+      body: JSON.stringify({ title: getTitle })
     })
-    .then(response => response.json())
-    .then(data => {
-        if (data.status === 'success') {
-          console.log(data.message);
-          
-      } else {
-          console.error(data.message);
+    .then(response => {
+      if (response.ok) {
+        return response.json(); // Assuming your PHP file returns a JSON response
       }
+      throw new Error('Network response was not ok.');
     })
-    .catch(err=>{
-      console.log(err)
+    .then(data => {
+      console.log('Success:', data);
+      // Optionally, you could remove the item from the DOM after deletion
+      getPlan.parentElement.remove();
     })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
   });
 })
 
