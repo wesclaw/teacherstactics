@@ -254,7 +254,7 @@ if (isset($_GET['id'])) {
 
         <div class='book-link-container' >
           <p class='games-section experiments_text'> 
-            <?php echo htmlspecialchars($Experiments)?>
+            <?php echo $Experiments?>
           </p>
         </div>
 
