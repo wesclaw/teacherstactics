@@ -231,4 +231,8 @@ a .worksheet:hover{
   width: 30px;
 }
 
+.delete_worksheet_btn{
+  position: absolute;
+  right: 0;
+}
 

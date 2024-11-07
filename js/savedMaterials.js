@@ -1,20 +1,16 @@
 const savedBtns = document.querySelectorAll(".left-side button");
 const rightSide = document.querySelector('.right-side');
 const saved_worksheets = document.querySelector('.saved-worksheets');
-
-// remove lessons from savedmatreials
-
 const deletePlanBtn = document.querySelectorAll('.deletePlan')
 
-
+/////how to prevent the default for the deleteworksheet btn
+// const delete_worksheet_btn = document.querySelectorAll('.delete_worksheet_btn')
 
 deletePlanBtn.forEach((btn)=>{
   btn.addEventListener('click', (e) => {
     e.preventDefault();
     const getPlan = e.currentTarget.parentElement;
     const getTitle = getPlan.querySelector('.title').textContent.trim(); 
-
-    console.log(getTitle)
 
     fetch('../includes/removePlan.php', {
       method: 'POST',
@@ -30,8 +26,6 @@ deletePlanBtn.forEach((btn)=>{
       throw new Error('Network response was not ok.');
     })
     .then(data => {
-      console.log('Success:', data);
-      // Optionally, you could remove the item from the DOM after deletion
       getPlan.parentElement.remove();
     })
     .catch((error) => {
@@ -71,6 +65,7 @@ function fetchWorksheets() {
           const worksheetHTML = `
               <a href="${worksheet.pdf_link}" target="_blank" class="a_tag_worksheet">
                   <div class="worksheet worksheetLoad">
+                   <button class='delete_worksheet_btn'>X</button>
                       <img src="${worksheet.image_path}" alt="Worksheet Image" class="worksheet-image img-fluid">
                       <p class='worksheet-title textLoad'>${worksheet.title}</p>
                   </div>
@@ -101,8 +96,6 @@ function fetchWorksheets() {
   })
   .catch(error => console.error('Error loading worksheets:', error));
 }
-
-
 
 savedBtns.forEach((btn) => {
   btn.addEventListener('click', e => {
