@@ -86,20 +86,20 @@ function fetchWorksheets() {
 
         // trying to add the unpinned animation on hover
         btn.addEventListener('mouseenter',e=>{
-          // const getPinImg = btn.children[0]
-          // // console.log(getPinImg)
-          // // getPinImg.classList.add('unpinned')
-          // getPinImg.src = '../icons/'
-          // getPinImg.classList.add('unpinned')
+         
+          const getImg = btn.children[0]
+          getImg.classList.add('animatePin')
+          getImg.src = '../icons/pin.png'
+          console.log(getImg)
          
         })
 
-        // btn.addEventListener('mouseleave',e=>{
-        //   const getPinImg = btn.children[0]
-        //   console.log(getPinImg)
-        //   getPinImg.classList.remove('unpinned')
-        //   getPinImg.src = '../icons/pinned-icon.png'
-        // })
+        btn.addEventListener('mouseleave',e=>{
+          const getPinImg = btn.children[0]
+          console.log(getPinImg)
+          getPinImg.classList.remove('animatePin')
+          getPinImg.src = '../icons/pinned-icon.png'
+        })
         
         btn.addEventListener('click',e=>{
           e.preventDefault()
