@@ -3,9 +3,6 @@ const rightSide = document.querySelector('.right-side');
 const saved_worksheets = document.querySelector('.saved-worksheets');
 const deletePlanBtn = document.querySelectorAll('.deletePlan')
 
-/////how to prevent the default for the deleteworksheet btn
-// const delete_worksheet_btn = document.querySelectorAll('.delete_worksheet_btn')
-
 deletePlanBtn.forEach((btn)=>{
   btn.addEventListener('click', (e) => {
     e.preventDefault();
@@ -65,7 +62,9 @@ function fetchWorksheets() {
           const worksheetHTML = `
               <a href="${worksheet.pdf_link}" target="_blank" class="a_tag_worksheet">
                   <div class="worksheet worksheetLoad">
-                   <button class='delete_worksheet_btn'>X</button>
+                   <button class='delete_worksheet_btn'>
+                   <img src="../icons/pinned-icon.png" class='delete-icon'>
+                   </button>
                       <img src="${worksheet.image_path}" alt="Worksheet Image" class="worksheet-image img-fluid">
                       <p class='worksheet-title textLoad'>${worksheet.title}</p>
                   </div>
@@ -83,7 +82,54 @@ function fetchWorksheets() {
         })
       })
 
-      
+      const worksheet_btns = document.querySelectorAll('.delete_worksheet_btn').forEach((btn)=>{
+
+        // trying to add the unpinned animation on hover
+        btn.addEventListener('mouseenter',e=>{
+          // const getPinImg = btn.children[0]
+          // // console.log(getPinImg)
+          // // getPinImg.classList.add('unpinned')
+          // getPinImg.src = '../icons/'
+          // getPinImg.classList.add('unpinned')
+         
+        })
+
+        // btn.addEventListener('mouseleave',e=>{
+        //   const getPinImg = btn.children[0]
+        //   console.log(getPinImg)
+        //   getPinImg.classList.remove('unpinned')
+        //   getPinImg.src = '../icons/pinned-icon.png'
+        // })
+        
+        btn.addEventListener('click',e=>{
+          e.preventDefault()
+          const getFullDiv = e.currentTarget.parentElement
+          const getFullTag = getFullDiv.parentElement
+          const getATag = getFullDiv.parentElement.href;
+          const getFile = getATag.split('/').pop();
+
+          fetch('../includes/removeWorksheet.php', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ title: getFile })
+          })
+          .then(response => {
+            if (response.ok) {
+              return response.json(); 
+            }
+            throw new Error('Network response was not ok.');
+          })
+          .then(data => {
+            getFullTag.remove()
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+          });
+          
+        })
+      })
 
       titles.forEach((tit)=>{
         worksheet_images.forEach((img)=>{
@@ -104,5 +150,10 @@ savedBtns.forEach((btn) => {
     checkForMaterials(btn);
   });
 });
+
+
+
+
+
 
 
