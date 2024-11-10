@@ -308,9 +308,10 @@ a .worksheet:hover{
   pointer-events: none; 
 }
 
-.text-des{
+/* what the fuck even is this */
+/* .text-des{
   max-height: 100px;
-}
+} */
 
 .seemorebtn{
   position: absolute;

@@ -148,6 +148,17 @@ function fetchGames(){
         const games = data.games;  
 
         games.forEach(game => {
+          // we had to add it before we rendered the html to prevent dupilciate renders
+          let isFirstMatch = true;
+
+            const formattedDescription = game.description.replace(/(\b[\w\s]+:)/g, (match) => {
+              if (isFirstMatch) {
+                isFirstMatch = false;
+                return `<b>${match}</b></br>`;
+              } else {
+                return `<br><b>${match}</b></br>`;
+              }
+            });
           const gameHTML = `
             <div class="game">
               <div class="top-title">
@@ -162,22 +173,14 @@ function fetchGames(){
                 ${game.game_materials}
               </ul>
               <div class="line"></div>
-              <p class="text-des">${game.description}</p>
+              <p class="text-des">${formattedDescription}</p>
               <div class="btn-wrap">
                 <button class="seemorebtn">See More</button>
               </div>
             </div>`;
-
-         
-                
+    
           saved_games.insertAdjacentHTML('beforeend', gameHTML);
 
-          // style the game text descripotion making br tags around : symbols
-          const textDes = document.querySelector('.text-des')
-
-          console.log(textDes)
-          
-          
           const savedGamesContainer = document.querySelector('.saved-games');
 
           savedGamesContainer.addEventListener('mouseover', (e) => {
@@ -216,11 +219,11 @@ function fetchGames(){
 
         });
       } else {
-        console.error('Error fetching games:', data.error);  // Log error if fetching fails
+        console.error('Error fetching games:', data.error);  
       }
     })
     .catch(error => {
-      console.error('Error fetching data:', error);  // Log any network errors
+      console.error('Error fetching data:', error);  
     });
 
 }
