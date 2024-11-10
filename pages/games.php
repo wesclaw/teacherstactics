@@ -42,15 +42,43 @@ session_start();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script async defer>
 
+      const save_game_btn =document.querySelectorAll('.save-game-btn').forEach((btn)=>{
+        btn.addEventListener('click',e=>{
+          const getParent = e.target.parentElement.parentElement
+          const getTitle = getParent.firstChild.textContent.trim()
 
-const lessonPlanContainer = document.getElementById('lessonPlanContainer')
+          fetch('../includes/saveGames.php', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ url: getTitle })
+            }
+          )
+        .then(response => response.json())
+          .then(data => {
+            if (data.success) {
+              alert('worksheet saved successfully!');
+            } else {
+              alert('Error saving worksheet: ' + data.error);
+            }
+          })
+          .catch(error => {
+            console.error('Error:', error);
+          }); 
 
-lessonPlanContainer.addEventListener('click', e => {
-    const targetClass = e.target.className
-    if(targetClass==='star-icon' || targetClass==='btn') {
-      alert('Please create an account in order to favorite games');
-    }
-});
+        })
+      })
+
+
+// const lessonPlanContainer = document.getElementById('lessonPlanContainer')
+
+// lessonPlanContainer.addEventListener('click', e => {
+//     const targetClass = e.target.className
+//     if(targetClass==='star-icon' || targetClass==='btn') {
+//       alert('Please create an account in order to favorite games');
+//     }
+// });
 
 
 document.addEventListener('DOMContentLoaded', () => {

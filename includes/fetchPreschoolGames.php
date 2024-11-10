@@ -61,7 +61,7 @@ if (mysqli_stmt_num_rows($stmt) > 0) {
         echo '<div class="game">';
         echo '<div class="top-title">';
         echo '<h4 class="title">' . $gameName . '</h4>';
-        echo '<button class="btn">';
+        echo '<button class="btn save-game-btn">';
         echo '<img src="../icons/star.png" class="star-icon">';
         echo '<span class="hover-message">Add to favorites</span>';
         echo '</button>';

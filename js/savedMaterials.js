@@ -1,7 +1,10 @@
+
+
 const savedBtns = document.querySelectorAll(".left-side button");
 const rightSide = document.querySelector('.right-side');
 const saved_worksheets = document.querySelector('.saved-worksheets');
 const deletePlanBtn = document.querySelectorAll('.deletePlan')
+const saved_games = document.querySelector('.saved-games')
 
 deletePlanBtn.forEach((btn)=>{
   btn.addEventListener('click', (e) => {
@@ -37,11 +40,21 @@ function checkForMaterials(btn){
   if(getText==='Lessons'){
     rightSide.style.display = 'flex';
     saved_worksheets.style.display = 'none';
+    saved_games.style.display = 'none'
   } else if(getText==='Worksheets'){
     rightSide.style.display = 'none';
     saved_worksheets.style.display = 'flex';
+    saved_games.style.display = 'none'
     if (!saved_worksheets.hasAttribute('data-loaded')) {
       fetchWorksheets();
+    }
+  }else if(getText==='Games'){
+    rightSide.style.display = 'none';
+    saved_worksheets.style.display = 'none';
+    saved_games.style.display = 'flex'
+    if (!saved_games.hasAttribute('data-loaded')) {
+      fetchGames();
+      saved_games.setAttribute('data-loaded', 'true');
     }
   }
 }
@@ -83,24 +96,7 @@ function fetchWorksheets() {
       })
 
       const worksheet_btns = document.querySelectorAll('.delete_worksheet_btn').forEach((btn)=>{
-
-        // trying to add the unpinned animation on hover
-        btn.addEventListener('mouseenter',e=>{
-         
-          const getImg = btn.children[0]
-          getImg.classList.add('animatePin')
-          getImg.src = '../icons/pin.png'
-          console.log(getImg)
-         
-        })
-
-        btn.addEventListener('mouseleave',e=>{
-          const getPinImg = btn.children[0]
-          console.log(getPinImg)
-          getPinImg.classList.remove('animatePin')
-          getPinImg.src = '../icons/pinned-icon.png'
-        })
-        
+  
         btn.addEventListener('click',e=>{
           e.preventDefault()
           const getFullDiv = e.currentTarget.parentElement
@@ -143,6 +139,93 @@ function fetchWorksheets() {
   .catch(error => console.error('Error loading worksheets:', error));
 }
 
+
+function fetchGames(){
+  fetch('../includes/displayGames.php')  // Fetching game data from the server
+    .then(response => response.json())  // Parse the response as JSON
+    .then(data => {
+      if (data.success) {  // Check if the response is successful
+        const games = data.games;  
+
+        games.forEach(game => {
+          const gameHTML = `
+            <div class="game">
+              <div class="top-title">
+                <h4 class="title">${game.game_name}</h4>
+                <button class="delete-game-btn btn">
+                  <img src="../icons/pin.png" class="delete-icon">
+                </button>
+              </div>          
+              <div class="line"></div>
+              <h5>Materials:</h5>
+              <ul>
+                ${game.game_materials}
+              </ul>
+              <div class="line"></div>
+              <p class="text-des">${game.description}</p>
+              <div class="btn-wrap">
+                <button class="seemorebtn">See More</button>
+              </div>
+            </div>`;
+
+         
+                
+          saved_games.insertAdjacentHTML('beforeend', gameHTML);
+
+          // style the game text descripotion making br tags around : symbols
+          const textDes = document.querySelector('.text-des')
+
+          console.log(textDes)
+          
+          
+          const savedGamesContainer = document.querySelector('.saved-games');
+
+          savedGamesContainer.addEventListener('mouseover', (e) => {
+            const gameElement = e.target.closest('.game');
+            if (gameElement) {
+              const btn = gameElement.querySelector('.seemorebtn');
+              if (btn) {
+                btn.classList.add('addtext');
+              }
+            }
+          });
+        
+          savedGamesContainer.addEventListener('mouseout', (e) => {
+            const gameElement = e.target.closest('.game');
+            if (gameElement) {
+              const btn = gameElement.querySelector('.seemorebtn');
+              if (btn) {
+                btn.classList.remove('addtext');
+              }
+            }
+          });
+        
+          savedGamesContainer.addEventListener('click', (e) => {
+            if (e.target.matches('.seemorebtn')) {
+              const btn = e.target;
+              const gameElement = btn.closest('.game');
+              if (gameElement) {
+                const btn = gameElement.querySelector('.seemorebtn');
+                gameElement.style.overflow = 'auto';
+                btn.style.display = 'none'
+                gameElement.classList.add('hide-overlay');
+              }
+            }
+          });
+
+
+        });
+      } else {
+        console.error('Error fetching games:', data.error);  // Log error if fetching fails
+      }
+    })
+    .catch(error => {
+      console.error('Error fetching data:', error);  // Log any network errors
+    });
+
+}
+
+
 savedBtns.forEach((btn) => {
   btn.addEventListener('click', e => {
     savedBtns.forEach(b => b.classList.remove('active'));
@@ -150,9 +233,6 @@ savedBtns.forEach((btn) => {
     checkForMaterials(btn);
   });
 });
-
-
-
 
 
 
