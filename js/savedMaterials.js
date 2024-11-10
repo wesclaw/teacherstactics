@@ -183,6 +183,7 @@ function fetchGames(){
 
           const savedGamesContainer = document.querySelector('.saved-games');
 
+        
           savedGamesContainer.addEventListener('mouseover', (e) => {
             const gameElement = e.target.closest('.game');
             if (gameElement) {
@@ -216,7 +217,6 @@ function fetchGames(){
             }
           });
 
-
         });
       } else {
         console.error('Error fetching games:', data.error);  
@@ -228,6 +228,14 @@ function fetchGames(){
 
 }
 
+document.addEventListener('click',e=>{
+  if(e.target.className==='delete-icon'){
+     const getParent = e.target.parentElement.parentElement
+     const getTitle = getParent.firstElementChild.textContent.trim()
+     console.log(getTitle)
+    //  now sedn the getTtiel to fetch
+  } 
+})
 
 savedBtns.forEach((btn) => {
   btn.addEventListener('click', e => {
