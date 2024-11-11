@@ -5,6 +5,7 @@ const rightSide = document.querySelector('.right-side');
 const saved_worksheets = document.querySelector('.saved-worksheets');
 const deletePlanBtn = document.querySelectorAll('.deletePlan')
 const saved_games = document.querySelector('.saved-games')
+const saved_arts = document.querySelector('.saved-arts')
 
 deletePlanBtn.forEach((btn)=>{
   btn.addEventListener('click', (e) => {
@@ -41,10 +42,12 @@ function checkForMaterials(btn){
     rightSide.style.display = 'flex';
     saved_worksheets.style.display = 'none';
     saved_games.style.display = 'none'
+    saved_arts.style.display = 'none'
   } else if(getText==='Worksheets'){
     rightSide.style.display = 'none';
     saved_worksheets.style.display = 'flex';
     saved_games.style.display = 'none'
+    saved_arts.style.display = 'none'
     if (!saved_worksheets.hasAttribute('data-loaded')) {
       fetchWorksheets();
     }
@@ -52,9 +55,19 @@ function checkForMaterials(btn){
     rightSide.style.display = 'none';
     saved_worksheets.style.display = 'none';
     saved_games.style.display = 'flex'
+    saved_arts.style.display = 'none'
     if (!saved_games.hasAttribute('data-loaded')) {
       fetchGames();
       saved_games.setAttribute('data-loaded', 'true');
+    }
+  }else if(getText==='Arts & Crafts'){
+    rightSide.style.display = 'none';
+    saved_worksheets.style.display = 'none';
+    saved_games.style.display = 'none'
+    saved_arts.style.display = 'flex'
+    if (!saved_arts.hasAttribute('data-loaded')) {
+      fetchArts();
+      saved_arts.setAttribute('data-loaded', 'true');
     }
   }
 }
@@ -183,6 +196,7 @@ function fetchGames(){
 
           const savedGamesContainer = document.querySelector('.saved-games');
 
+          console.log(savedGamesContainer)
         
           savedGamesContainer.addEventListener('mouseover', (e) => {
             const gameElement = e.target.closest('.game');
@@ -228,13 +242,146 @@ function fetchGames(){
 
 }
 
-document.addEventListener('click',e=>{
+saved_games.addEventListener('click',e=>{
   if(e.target.className==='delete-icon'){
      const getParent = e.target.parentElement.parentElement
      const getTitle = getParent.firstElementChild.textContent.trim()
-     console.log(getTitle)
-    //  now sedn the getTtiel to fetch
+     const getFullGame = getParent.parentElement
+     
+     fetch('../includes/removeGame.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ title: getTitle })
+    })
+    .then(response => {
+      if (response.ok) {
+        return response.json(); 
+      }
+      throw new Error('Network response was not ok.');
+    })
+    .then(data => {
+      getFullGame.remove()
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
   } 
+})
+
+
+
+function fetchArts(){
+  fetch('../includes/displayArts.php')  
+  .then(response => response.json())  
+  .then(data => {
+    if (data.success) {  
+      const arts = data.arts;  
+
+      arts.forEach(art => {
+        let isFirstMatch = true;
+
+        const formattedDescription = art.description.replace(/(\b[\w\s]+:)/g, (match) => {
+          if (isFirstMatch) {
+            isFirstMatch = false;
+            return `<b>${match}</b></br>`;  
+          } else {
+            return `<br><b>${match}</b></br>`;  
+          }
+        });
+
+        const artHTML = `
+          <div class="game">
+            <div class="top-title">
+              <h4 class="title">${art.title}</h4>
+              <button class="delete-game-btn btn">
+                  <img src="../icons/pin.png" class="delete-icon">
+                </button>
+            </div>       
+            <div class="line"></div>
+            <h5>Materials:</h5>
+            <ul>
+              ${art.materials}
+            </ul>
+            <div class="line"></div>  
+            <p class="text-des">${formattedDescription}</p>
+            <div class="btn-wrap">
+              <button class="seemorebtn">see more</button>
+            </div>
+          </div>`;
+
+        saved_arts.insertAdjacentHTML('beforeend', artHTML); 
+      });
+    } else {
+      console.error('Error fetching arts:', data.error);  
+    }
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);  
+  });
+
+  // add hover here for see more btn
+  const savedArtsContainer = document.querySelector('.saved-arts');
+
+  savedArtsContainer.addEventListener('mouseover', (e) => {
+    const gameElement = e.target.closest('.game');
+    if (gameElement) {
+      const btn = gameElement.querySelector('.seemorebtn');
+      if (btn) {
+        btn.classList.add('addtext');
+      }
+    }
+  });
+
+  savedArtsContainer.addEventListener('mouseout', (e) => {
+    const gameElement = e.target.closest('.game');
+    if (gameElement) {
+      const btn = gameElement.querySelector('.seemorebtn');
+      if (btn) {
+        btn.classList.remove('addtext');
+      }
+    }
+  });
+
+  savedArtsContainer.addEventListener('click', (e) => {
+    if (e.target.matches('.seemorebtn')) {
+      const btn = e.target;
+      const gameElement = btn.closest('.game');
+      if (gameElement) {
+        const btn = gameElement.querySelector('.seemorebtn');
+        gameElement.style.overflow = 'auto';
+        btn.style.display = 'none'
+        gameElement.classList.add('hide-overlay');
+      }
+    }
+  });
+}
+
+saved_arts.addEventListener('click',e=>{
+  if(e.target.className==='delete-icon'){
+    const getParent = e.target.parentElement.parentElement;
+    const getTitle = getParent.firstElementChild.textContent.trim()
+    const getDiv = getParent.parentElement
+    fetch('../includes/removeArt.php',{
+      method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ title: getTitle })
+    }).then(response => {
+      if (response.ok) {
+        return response.json(); 
+      }
+      throw new Error('Network response was not ok.');
+    })
+    .then(data => {
+      getDiv.remove()
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+  }
 })
 
 savedBtns.forEach((btn) => {

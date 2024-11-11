@@ -105,7 +105,14 @@ require_once('../includes/displayPlans.php');
           <!--  -->
           <div class="right-side saved-games">
           <!-- using fetch to get the includes file -->
+          </div>
+
+
+        <div class="right-side saved-arts">
+          <!-- getting saved arts form db -->
         </div>
+
+
       </div>
     </div>
 

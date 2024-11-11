@@ -70,17 +70,6 @@ session_start();
         })
       })
 
-
-// const lessonPlanContainer = document.getElementById('lessonPlanContainer')
-
-// lessonPlanContainer.addEventListener('click', e => {
-//     const targetClass = e.target.className
-//     if(targetClass==='star-icon' || targetClass==='btn') {
-//       alert('Please create an account in order to favorite games');
-//     }
-// });
-
-
 document.addEventListener('DOMContentLoaded', () => {
   const lessonPlanContainer = document.getElementById('lessonPlanContainer');
 

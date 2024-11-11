@@ -210,15 +210,6 @@ a .worksheet:hover{
   right: 0;
 }
 
-/* .deletePlan:hover{
-  background: rgba(46, 164, 233, 0.849);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(0px);
-  -webkit-backdrop-filter: blur(0px);
-  border: 1px solid rgba(46, 163, 233, 1);
-  border-bottom-left-radius: 10px;
-} */
-
 .icon-delete{
   width: 30px;
 }
@@ -231,20 +222,6 @@ a .worksheet:hover{
 
 
 .delete_worksheet_btn {
-  /* position: absolute;
-  right: 0;
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  
-  display: flex;
-  justify-content: center;
-  background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
-  border: 0;
-  color: #FFFFFF;
-  cursor: pointer;
-  outline: transparent; */
-
   position: absolute;
   right: -20px;
   top: -20px;
@@ -255,9 +232,6 @@ a .worksheet:hover{
 }
 
 .delete_worksheet_btn:hover{
-  /* background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
-  border-radius: 5px; */
-
   background: rgba(240, 128, 128, 0.64);
   border-radius: 5px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -308,10 +282,9 @@ a .worksheet:hover{
   pointer-events: none; 
 }
 
-/* what the fuck even is this */
-/* .text-des{
-  max-height: 100px;
-} */
+.saved-arts{
+  display: none;
+}
 
 .seemorebtn{
   position: absolute;

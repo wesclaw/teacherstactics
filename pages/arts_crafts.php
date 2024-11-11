@@ -42,13 +42,41 @@ session_start();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script>
 
+
+// const saveCraftBtn =document.querySelectorAll('.save-craft-btn').forEach((btn)=>{
+//   btn.addEventListener('click',e=>{
+//     console.log(e.target)
+//   })
+// })
+
     
 const lessonPlanContainer = document.getElementById('lessonPlanContainer')
 
 lessonPlanContainer.addEventListener('click', e => {
     const targetClass = e.target.className
     if(targetClass==='star-icon' || targetClass==='btn') {
-      alert('Please create an account in order to favorite games');
+     const getParent = e.target.parentElement.parentElement;
+     const getChild = getParent.firstElementChild.textContent.trim()
+    
+     fetch('../includes/saveArt.php', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ url: getChild })
+            }
+          )
+        .then(response => response.json())
+          .then(data => {
+            if (data.success) {
+              alert('Art and Craft saved successfully!');
+            } else {
+              alert('Error saving crafts: ' + data.error);
+            }
+          })
+          .catch(error => {
+            console.error('Error:', error);
+          }); 
     }
 });
 
@@ -64,6 +92,8 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.classList.add('addtext');
       }
     }
+
+
   });
 
   lessonPlanContainer.addEventListener('mouseout', (e) => {
