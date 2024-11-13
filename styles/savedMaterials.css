@@ -73,8 +73,10 @@
 
 .title{
   text-align: center;
-  /* font-weight: bold; */
-  /* width: 100%; */
+}
+
+.saved-experiments{
+  display: none;
 }
 
 .level{
@@ -340,9 +342,29 @@ a .worksheet:hover{
   padding: 0px;
 }
 
-.delete-game-btn:hover{
+.delete-experiment-btn{
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  background-color: transparent;
+  background-color: none;
+  border: none;
+  outline: none;
+  padding: 0px;
+}
+
+.delete-experiment-btn:hover{
   background: rgba(22, 141, 211, 0.575);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border: 1px solid rgba(46, 163, 233, 1);
+  border-bottom-left-radius: 10px;
+}
+
+.delete-game-btn:hover{
   /* background: linear-gradient(to bottom right, #EF4765, #FF9A5A); */
+  background: rgba(22, 141, 211, 0.575);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(0px);
   -webkit-backdrop-filter: blur(0px);

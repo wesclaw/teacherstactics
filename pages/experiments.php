@@ -45,7 +45,26 @@ session_start();
     lessonPlanContainer.addEventListener('click', e => {
         const targetClass = e.target.className
         if(targetClass==='star-icon' || targetClass==='btn') {
-          alert('Please create an account in order to favorite games');
+          const getParent = e.target.parentElement.parentElement;
+          const getFile =getParent.firstElementChild.textContent.trim()
+          fetch('../includes/saveExperiments.php',{
+            method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ title: getFile })
+          }).then(response => response.json())
+          .then(data => {
+            if (data.success) {
+              alert('worksheet saved successfully!');
+            } else {
+              alert('Error saving worksheet: ' + data.error);
+            }
+          })
+          .catch(error => {
+            console.error('Error:', error);
+          }); 
+
         }
     });
 
