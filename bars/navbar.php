@@ -1,4 +1,4 @@
- <?php require_once('../includes/getProfileImage.php'); ?>
+ 
 
     <link rel="stylesheet" href="../styles/navbar.css">
   
@@ -8,9 +8,10 @@
       <a href="<?php 
         // Check if user is logged in
         if (isset($_SESSION['user_id'])) { 
-            echo '../user/main.php'; // Redirect to user dashboard if logged in
+          require_once('../includes/getProfileImage.php');
+          echo '../user/main.php'; 
         } else { 
-            echo '../pages/index.php'; // Redirect to homepage if not logged in
+            echo '../index.php'; // Redirect to homepage if not logged in
         } 
         ?>">
         <img src="../icons/logo3.png" class="nav-logo">

@@ -27,7 +27,9 @@ if (isset($_SESSION['user_id'])) {
   <body>
     </body>
 
-    <?php include '../bars/navbar.php'?>
+    
+
+    <?php include("../bars/navbar.php")?>
 
    <div class="container main-section">
 
