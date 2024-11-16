@@ -49,12 +49,12 @@ if (isset($_SESSION['user_id'])) {
     </form>
     
     <a href="registration.php" style="text-align: center; margin-top: 10px;">Don't have an account? Sign up here</a>
-    <div class="google-sign-in-container">
+    <!-- <div class="google-sign-in-container">
       <button class="google-btn">
         <img src="../icons/google.png" class="google-img">
         Log in with Google
       </button>
-    </div>
+    </div> -->
    </div>
     
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

@@ -54,9 +54,9 @@ function checkForMaterials(btn){
       fetchWorksheets();
     }
   }else if(getText==='Games'){
+    saved_games.style.display = 'flex'
     rightSide.style.display = 'none';
     saved_worksheets.style.display = 'none';
-    saved_games.style.display = 'flex'
     saved_arts.style.display = 'none'
     saved_experiments.style.display = 'none'
     if (!saved_games.hasAttribute('data-loaded')) {
@@ -64,21 +64,21 @@ function checkForMaterials(btn){
       saved_games.setAttribute('data-loaded', 'true');
     }
   }else if(getText==='Arts & Crafts'){
+    saved_arts.style.display = 'flex'
     rightSide.style.display = 'none';
     saved_worksheets.style.display = 'none';
     saved_games.style.display = 'none'
-    saved_arts.style.display = 'flex'
     saved_experiments.style.display = 'none'
     if (!saved_arts.hasAttribute('data-loaded')) {
       fetchArts();
       saved_arts.setAttribute('data-loaded', 'true');
     }
   }else if(getText==='Experiments'){
+    saved_experiments.style.display = 'flex'
     rightSide.style.display = 'none';
     saved_worksheets.style.display = 'none';
     saved_games.style.display = 'none'
     saved_arts.style.display = 'none'
-    saved_experiments.style.display = 'flex'
     if (!saved_experiments.hasAttribute('data-loaded')) {
       fetchExperiments();
       saved_experiments.setAttribute('data-loaded', 'true');
