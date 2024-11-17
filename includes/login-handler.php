@@ -1,6 +1,8 @@
 <?php
-require_once('dbh.inc.php'); // Include your database connection file
-session_start(); // Start the session
+require_once('dbh.inc.php'); 
+
+// require_once('includes/dbh.inc.php'); 
+session_start(); 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get the input values
