@@ -22,7 +22,8 @@ session_start();  // Start the session
     <link rel="stylesheet" href="../styles/styles.css">
   </head> 
   <body>
-    <?php include("bars/navbar.php")?>
+    
+    <?php include("../bars/navbar.php")?>
 <main>
   <div class="container">
     <h1>Innovate Your English Classroom</h1>
@@ -36,7 +37,7 @@ session_start();  // Start the session
     <div style="display: flex; align-items: center; justify-content: center;"> 
     <!-- i added these classes to the div. before it was just an empty div but changed the btn to an a tag -->
 
-    <a href="pages/login.php">
+    <a href="login.php">
         <button class="login-btn">
           <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
           <img src="../icons/login.png" class="btn-icon">
@@ -46,7 +47,7 @@ session_start();  // Start the session
       </a>
 
    
-      <a href="/pages/registration.php" class="member-link">
+      <a href="registration.php" class="member-link">
         <button class="member-btn">
           <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
           <img src="../icons/plus.png" class="btn-icon">
