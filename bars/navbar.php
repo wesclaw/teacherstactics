@@ -11,7 +11,7 @@
           require_once('../includes/getProfileImage.php');
           echo '../user/main.php'; 
         } else { 
-            echo 'index.php'; // Redirect to homepage if not logged in
+            echo '../index.php'; // Redirect to homepage if not logged in
         } 
         ?>">
         <img src="../icons/logo3.png" class="nav-logo">
