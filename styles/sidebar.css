@@ -102,3 +102,49 @@ label{
   bottom: 0;
   cursor: pointer;
 }
+
+
+@media (max-height: 700px){
+
+
+  .sidebar{
+    width: 200px; 
+  }
+  
+  .holder h4{
+    font-size: 1rem;
+  }
+
+  .accordion-button{
+    font-size: 1rem;
+  }
+  
+  .search-lesson{
+    font-size: 1rem;
+    font-size: 1rem;
+  }
+  
+  .accordion-button{
+    font-size: 1rem;
+  }
+  
+  label{
+    width: 100%;
+    padding: 5px;
+    cursor: pointer;
+    font-size: .8rem;
+  }
+
+  .accordion-button{
+    font-size: .8rem !important;
+    padding: 6px;
+  }
+
+
+}
+
+@media (max-height: 900px){
+  .worksheet{
+    zoom: 0.8;
+  }
+}

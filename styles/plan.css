@@ -277,3 +277,16 @@ iframe{
     display: none;
   }
 }
+
+
+@media (max-height: 700px){
+  
+  .plan{
+    zoom: 0.8;
+  }
+
+  .sidebar{
+    display: flex;
+  }
+ 
+}

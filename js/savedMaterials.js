@@ -44,6 +44,7 @@ function checkForMaterials(btn){
     saved_worksheets.style.display = 'none';
     saved_games.style.display = 'none'
     saved_arts.style.display = 'none'
+    saved_experiments.style.display = 'none'
   } else if(getText==='Worksheets'){
     rightSide.style.display = 'none';
     saved_worksheets.style.display = 'flex';

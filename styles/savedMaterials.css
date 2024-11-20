@@ -388,3 +388,19 @@ a .worksheet:hover{
 .title{
   text-decoration: underline;
 }
+
+
+@media (max-height: 700px){
+  .wrapper-for-materials{
+    zoom: 0.7;
+  }
+
+  .game{
+    zoom: 1;
+  }
+
+  .right-side{
+    max-height: 100vh;
+  }
+  
+}

@@ -244,3 +244,30 @@ body{
   border: 4px dashed black;
 }
 
+@media (max-height: 700px){
+  .user{
+    zoom: 0.7 !important;
+  }
+
+  .pop-up{
+    max-width: 900px;
+    zoom: 0.6;
+    top: 50px;
+  }
+  
+}
+
+
+
+@media (max-height: 800px){
+  
+  .user{
+    zoom: 0.7 !important;
+  }
+
+
+  .pop-up{
+    max-width: 900px;
+    zoom: 0.7;
+  }
+}

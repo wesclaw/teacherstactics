@@ -6,18 +6,15 @@
 }
 
 main{
-  height: 100vh;
- 
-
-  /* background-image: linear-gradient(180deg, var(--lightblue), var(--main-lightblue), var(--lightyellow)); */
-
   background-color: var(--main-blue);
- 
+  height: 100vh;
+  display: flex;
+  justify-content: center;
 }
 
 
 main .container{
-  height: 100vh;
+  max-height: 100vh !important;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,13 +26,9 @@ h1{
   font-weight: bold;
   text-align: center;
   color: rgb(70, 69, 69);
-
-  
   font-family: "Poppins", sans-serif;
   font-weight: 700;
   font-style: normal;
-  
-  
 }
 
 main .container p {
@@ -89,3 +82,68 @@ main .container p {
   color: black !important;
 }
 
+@media (max-height: 700px){
+    
+  h1{
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(70, 69, 69);
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  main .container p {
+    font-size: 1rem;
+    text-align: center;
+    max-width: 500px;
+    color: rgba(0, 0, 0, .55);
+  }
+
+  .btn-icon{
+    width: 20px;
+  }
+
+  .member-btn{
+    background-color: rgb(98, 76, 241);
+    padding: 10px 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0px 0px 3px rgba(20, 18, 18, 0.514);
+    border-radius: 3px;
+  }
+
+  .member-btn:hover{
+    box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.486);
+  }
+
+  .member-btn p{
+    margin: 0;
+    color: white !important;
+  }
+
+  .login-btn{
+    padding: 10px 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0px 0px 3px rgba(20, 18, 18, 0.514);
+    border: none;
+    background-color: ghostwhite;
+    margin-right: 20px;
+    border-radius: 3px;
+    /* remove margin-right on mobile */
+  }
+
+  .login-btn:hover{
+    box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.493);
+  }
+
+  .login-btn p {
+    margin: 0;
+    color: black !important;
+  }
+
+}

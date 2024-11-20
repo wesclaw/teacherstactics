@@ -90,3 +90,28 @@ a:hover{
     background-position: 315px 0, 0 0, 0 190px, 50px 195px;
   }
 }
+
+
+@media (max-height: 700px){
+
+
+  a{
+    text-decoration: none;
+    font-size: 1.2rem !important;
+  }
+  
+  .worksheet{
+    zoom:0.6 !important;
+  }
+
+  .worksheet-wrapper{
+    width: calc(100vw - 230px);
+  }
+  
+}
+
+@media (max-height: 900px){
+  .worksheet{
+    zoom: 0.8;
+  }
+}

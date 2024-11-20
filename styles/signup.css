@@ -92,3 +92,99 @@ h1{
   text-align: center;
   margin-top: 10px;
 }
+
+
+@media (max-height: 700px){
+
+  body{
+    height: 100vh;
+  }
+
+  .main-section{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    max-height: 100vh;
+    padding-top: 90px;
+  }
+
+  .form-group{
+    margin-top: 15px;
+    width: 400px;
+  }
+
+  input{
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 50px;
+    border: none;
+    padding-left: 20px;
+    width: 100%;
+    outline: none;
+  }
+
+  h1{
+    font-size: 1.5rem;
+    text-decoration: underline;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: .01em;
+    color: rgba(0, 0, 0, 0.747);
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .input_style{
+    box-shadow: inset 1px 1px rgba(0, 0, 0, 0.452); 
+  }
+
+  .create-account-btn{
+    background-color: rgb(98, 76, 241);
+    /* background-color: #5774fc; */
+    color: ghostwhite;
+    font-weight: bold;
+  }
+  .create-account-btn:hover{
+    background-color: rgb(110, 97, 196);
+    color: ghostwhite;
+    font-weight: bold;
+  }
+
+  .input_style:focus{
+    outline: 1px solid rgba(0, 0, 0, 0.425);
+  }
+
+  .google-sign-in-container{
+    margin-top: 20px;
+  }
+
+  .google-btn{
+    padding: 10px;
+    font-family:Arial, Helvetica, sans-serif;
+    border: none;
+    outline: none;
+    background-color: white;
+    box-shadow: 3px 1px 3px rgba(0, 0, 0, 0.342);
+    color: rgba(37, 37, 37, 0.692);
+    font-weight: bold;
+    border-radius: 3px;
+  }
+
+  .google-btn:hover{
+    box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.199);
+  }
+
+  .google-img{
+    width: 30px;
+    height: 30px;
+  }
+
+  .error-message{
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+  }
+}

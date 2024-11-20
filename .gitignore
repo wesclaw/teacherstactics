@@ -1,6 +1,6 @@
 .env
 
-# /vendor/
+/vendor/
 
-# /uploads/
+/uploads/
 

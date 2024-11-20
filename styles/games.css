@@ -184,3 +184,25 @@ li{
 .btn:hover .hover-message {
   display: block;
 }
+
+
+@media (max-height: 700px){
+  
+  .games-plan{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 205px;
+  }
+
+  .game{
+    zoom: 0.7;
+  }
+
+  .sport-name{
+    width: calc(100% - 205px);
+  }
+  
+  .game-icon {
+    width: 40px;
+  }
+}
