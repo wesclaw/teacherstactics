@@ -41,17 +41,6 @@ const topPart = document.querySelector('.top-part')
 topPart.addEventListener('click', notAMemberModule)
 
 
-// this code finds any sentence ending in ':' and then wrapping the whole sentence in <br> tags and then setting the sentences to a <b> tag.
-
-/////im not sure why this code stopped working so i made the other one that rmeove the first br tag
-
-// const full_lesson = document.querySelector('.full_lesson');
-// const lessonText = full_lesson.innerHTML
-// const regex = /([^.!?:]*?:)(?=\s|$)/g;
-// const modifiedText = lessonText.replace(regex, '<br><b>$1</b><br>');
-// lessonText.innerHTML = modifiedText;
-
-
 const fullLesson = document.querySelector('.full_lesson');
 let lessonText = fullLesson.innerHTML;
 const regex = /([^.!?:]*?:)(?=\s|$)/g;

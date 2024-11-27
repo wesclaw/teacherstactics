@@ -48,29 +48,38 @@
         <input type="password" name="repeat_password" placeholder="Repeat Password" class="input_style"> 
       </div>
       <div class="form-group">
-        <input type="submit" name="submit" placeholder="Repeat Password" value="Create Account" class="create-account-btn">
+
+      <input type="submit" name="submit" value="Create Account" class="create-account-btn">
       </div>
       <!--  -->
       <?php if ($error): ?>
     <h6 class="error-message"><?php echo $error; ?></h6>
       <?php endif; ?>
+
+      <!--  -->
+      <div class="g-recaptcha" data-sitekey="6LevAIwqAAAAAD19A1zqsqLqnOC7EcgaW1cvySUD"></div>
+      <!--  -->
       
       <!--  -->
     </form>
     <!--  -->
-   
-    <!--  -->
-    <p style="margin-top: 20px; font-family: sans-serif;">By creating an account, you agree to our <a href="#">terms</a></p>
-    <a href="login.php" style="text-align: center; margin-top: 10px;">Already have an account? Log in here</a>
-    <!-- <div class="google-sign-in-container">
-      <button class="google-btn">
-        <img src="../icons/google.png" class="google-img">
-        Sign up with Google
-      </button>
-    </div>
-   </div> -->
     
+    <!--  -->
+    <p style="margin-top: 20px; font-family: sans-serif;">By creating an account, you agree to our <a href="../terms/Terms of Service.pdf" target="'_blank">terms</a></p>
+    <a href="login.php" style="text-align: center; margin-top: 10px;">Already have an account? Log in here</a>
+   
+    <!--RECAPTHA  -->
+   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+   <!--  -->
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="" async defer></script>
+    <script async defer>
+      document.querySelector('form').addEventListener('submit', function(e) {
+        var recaptchaResponse = grecaptcha.getResponse(); 
+        if (recaptchaResponse.length === 0) {
+            e.preventDefault(); // Prevent form submission
+            alert('Please verify that you are not a robot.'); 
+        }
+    });
+    </script>
   </body>
 </html>
